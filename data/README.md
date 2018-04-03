@@ -7,7 +7,7 @@ Each CSV file is named with the number of decisions.
 Each CSV file is structured with request and response parts. The request part is described by the borrower and loan columns.
 The response is contained in the report columns.
 
-Columns are:
+Input columns are:
 * borrower.FirstName: the first name of the borrower,
 * borrower.LastName: the last name of the borrower, 
 * borrower.BirthDate: the birth date of the borrower, 
@@ -18,7 +18,9 @@ Columns are:
 * loan.Amount: the loan amount in dollars, 
 * loan.StartDate: the start date of the loan, 
 * loan.Duration: the duration in months of the loan, 
-* loanToValue, 
+* loanToValue.
+
+Output columns are:
 * report.isApproved: the approval of the loan that is the key outcome in the decision, 
 * report.isValidData: the validation of the input data, 
 * report.isInsuranceRequired: specifies if an insurance is seen as required, 
