@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ibm.decisions.sparko</groupId>
+	<artifactId>simpleloanvalidationsparkrunner</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+	<name>simpleloanvalidationsparkrunner</name>
+	<description>This is an iintegration sample of a rule based automation in Apache Spark  </description>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>loan-validation-xom</module>
+		<module>decisions-spark-core</module>
+		<module>loanvalidation-spark</module>
+	</modules>
+
+</project>
