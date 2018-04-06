@@ -12,7 +12,7 @@
 	<description></description>
 	<properties>
 		<jrules.version>8.9.2</jrules.version>
-		<jrules.install>TOBEFILL</jrules.install>
+		<jrules.install>/TO_BE_FILLED</jrules.install>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -25,16 +25,29 @@
 		<dependency>
 			<groupId>com.ilog.rules.executionserver</groupId>
 			<artifactId>loanvalidation</artifactId>
-
 			<version>${jrules.version}</version>
 			<scope>system</scope>
     		<systemPath>${basedir}/libs/loanvalidation-xom.jar</systemPath>
 		</dependency>
 		<dependency>
+			<groupId>com.ilog.rules.executionserver</groupId>
+			<artifactId>loanvalidation-ruleapp</artifactId>
+			<version>${jrules.version}</version>
+			<scope>system</scope>
+    		<systemPath>${basedir}/ruleapps/loanvalidation.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.ilog.rules.executionserver</groupId>
+			<artifactId>jconnector-api</artifactId>
+			<version>${jrules.version}</version>
+			<scope>system</scope>
+    		<systemPath>${jrules.install}/executionserver/lib/j2ee_connector-1_5-fr.jar</systemPath>
+		</dependency>
+		<!--dependency>
 			<groupId>javax.resource</groupId>
 			<artifactId>connector-api</artifactId>
 			<version>1.5-IBM</version>
-		</dependency>
+		</dependency-->
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-core_2.11</artifactId>
