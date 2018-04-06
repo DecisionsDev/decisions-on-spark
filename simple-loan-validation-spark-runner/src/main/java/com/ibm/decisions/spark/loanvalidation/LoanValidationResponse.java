@@ -24,7 +24,7 @@ package com.ibm.decisions.spark.loanvalidation;
 
 import java.util.Map;
 
-import com.ibm.decisions.spark.DecisionTrace;
+import com.ibm.decisions.spark.core.DecisionTrace;
 
 import ilog.rules.res.session.IlrSessionResponse;
 import loan.Report;

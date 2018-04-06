@@ -1,0 +1,16 @@
+com/ibm/decisions/spark/loanvalidation/SimpleLoanValidationSparkRunnerCSV.class
+com/ibm/decisions/spark/loanvalidation/SimpleLoanValidationSparkRunnerCSV$5.class
+com/ibm/decisions/spark/loanvalidation/SimpleLoanValidationSparkRunnerCSV$6.class
+com/ibm/decisions/spark/loanvalidation/SimpleLoanValidationSparkRunnerCSV$2.class
+com/ibm/decisions/spark/loanvalidation/JSONSerializer.class
+com/ibm/decisions/spark/loanvalidation/LoanValidationRequest.class
+com/ibm/decisions/spark/core/DecisionCoverage.class
+com/ibm/decisions/spark/loanvalidation/SimpleLoanValidationSparkRunnerCSV$1.class
+com/ibm/decisions/spark/loanvalidation/LoanValidationDecision.class
+com/ibm/decisions/spark/loanvalidation/LoanValidationResponse.class
+com/ibm/decisions/spark/core/Util.class
+com/ibm/decisions/spark/loanvalidation/SimpleLoanValidationSparkRunnerCSV$3.class
+com/ibm/decisions/spark/loanvalidation/LoanValidationRESRunner.class
+com/ibm/decisions/spark/core/RuleInformation.class
+com/ibm/decisions/spark/loanvalidation/SimpleLoanValidationSparkRunnerCSV$4.class
+com/ibm/decisions/spark/core/DecisionTrace.class
