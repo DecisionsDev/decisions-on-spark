@@ -2,7 +2,7 @@
 This folder contains the source code to execute the ODM loan validation sample in an Apache Spark cluster.
 
 ## Get the code
-github pull
+git pull
 
 ## Build
 mvn clean install
