@@ -1,0 +1,43 @@
+<!--
+
+  Licensed Materials - Property of IBM
+  5724X98 5724Y15 5655V82 5724X99 5724Y16 5655V89 5725B69 5655W88 5725C52 5655W90 5655Y31
+  Copyright IBM Corp. 1987, 2017 All Rights Reserved
+  US Government Users Restricted Rights - Use, duplication or
+  disclosure restricted by GSA ADP Schedule Contract with
+  IBM Corp.
+
+-->
+<assembly>
+  <id>execution</id>
+  <formats>
+    <format>jar</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <fileSets>
+    <fileSet>
+      <directory>target/classes</directory>
+      <includes>
+	    <include>com/ibm/rules/util/ffdc/*.class</include>
+        <include>ilog/rules/**</include>
+        <include>default**.properties</include>
+        <include>META-INF/default_ra.xml</include>
+      </includes>
+      <outputDirectory>/</outputDirectory>
+    </fileSet>
+  </fileSets>
+  <dependencySets>
+    <dependencySet>
+        <outputDirectory>/</outputDirectory>
+        <useProjectArtifact>true</useProjectArtifact>
+        <unpack>true</unpack>
+        <scope>runtime</scope>
+    </dependencySet>
+    <dependencySet>
+        <outputDirectory>/</outputDirectory>
+        <unpack>true</unpack>
+        <scope>system</scope>
+    </dependencySet>
+</dependencySets>
+ 
+</assembly>

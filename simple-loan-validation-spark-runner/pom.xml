@@ -24,6 +24,13 @@
         </dependency>
         <dependency>
             <groupId>com.ilog.rules.executionserver</groupId>
+            <artifactId>jrules-engine</artifactId>
+            <version>${odm.version}</version>
+            <scope>system</scope>
+            <systemPath>${odm.install}/executionserver/lib/jrules-engine.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ilog.rules.executionserver</groupId>
             <artifactId>loanvalidation</artifactId>
             <version>${odm.version}</version>
             <scope>system</scope>
@@ -77,6 +84,27 @@
                 <configuration>
                     <mainClass>com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerCSV</mainClass>
                 </configuration>
+
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>make-assembly-execution</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/assembly/bin-execution.xml</descriptor>
+                            </descriptors>
+                            <workDirectory>target/assembly/work</workDirectory>
+                        </configuration>
+                    </execution>
+
+                </executions>
             </plugin>
         </plugins>
     </build>
