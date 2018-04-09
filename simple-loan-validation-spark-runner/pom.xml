@@ -12,7 +12,7 @@
     <description></description>
     <properties>
         <odm.version>8.9.2</odm.version>
-        <odm.install>/Users/pierrefeillet/Libs/ODM/8920</odm.install>
+        <odm.install>ODM_HOME_DIR</odm.install>
     </properties>
     <dependencies>
         <dependency>
@@ -22,20 +22,13 @@
             <scope>system</scope>
             <systemPath>${odm.install}/executionserver/lib/jrules-res-execution.jar</systemPath>
         </dependency>
-        <!--dependency>
+        <dependency>
             <groupId>com.ilog.rules.executionserver</groupId>
             <artifactId>jrules-engine</artifactId>
             <version>${odm.version}</version>
             <scope>system</scope>
             <systemPath>${odm.install}/executionserver/lib/jrules-engine.jar</systemPath>
         </dependency>
-        <dependency>
-            <groupId>com.ilog.rules.executionserver</groupId>
-            <artifactId>loanvalidation</artifactId>
-            <version>${odm.version}</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/libs/loanvalidation-xom.jar</systemPath>
-        </dependency-->
         <dependency>
             <groupId>com.ilog.rules.executionserver</groupId>
             <artifactId>loanvalidation-ruleapp</artifactId>
