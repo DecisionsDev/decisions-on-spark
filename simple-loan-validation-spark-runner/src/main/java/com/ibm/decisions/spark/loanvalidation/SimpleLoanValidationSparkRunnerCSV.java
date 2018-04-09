@@ -40,8 +40,8 @@ public class SimpleLoanValidationSparkRunnerCSV {
 		JavaSparkContext sc = new JavaSparkContext(conf);
 	
 		//1K
-		String requestFileName = "../data/loanvalidation/1K/loanvalidation-requests-1K.csv";
-		String decisionFileName = "../data/loanvalidation/1K/loanvalidation-decisions-1K.csv";
+		String requestFileName = "../data/loanvalidation/loanvalidation-requests-1K.csv";
+		String decisionFileName = "../data/loanvalidation/loanvalidation-decisions-1K.csv";
 		automateDecisions(sc, requestFileName, decisionFileName);
 		
 		//10K
