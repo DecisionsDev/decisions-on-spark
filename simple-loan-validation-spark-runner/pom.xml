@@ -1,74 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.ibm.decisions.sparko</groupId>
-	<artifactId>simpleloanvalidationsparkrunner</artifactId>
-	<version>1.0-SNAPSHOT</version>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ibm.decisions.sparko</groupId>
+    <artifactId>simpleloanvalidationsparkrunner</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
 
-	<packaging>jar</packaging>
-	<name>ODMDev/sparko</name>
-	<description></description>
-	<properties>
-		<jrules.version>8.9.2</jrules.version>
-		<jrules.install>/TO_BE_FILLED</jrules.install>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>com.ilog.rules.executionserver</groupId>
-			<artifactId>jrules-res</artifactId>
-			<version>${jrules.version}</version>
-			<scope>system</scope>
-    		<systemPath>${jrules.install}/executionserver/lib/jrules-res-execution.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>com.ilog.rules.executionserver</groupId>
-			<artifactId>loanvalidation</artifactId>
-			<version>${jrules.version}</version>
-			<scope>system</scope>
-    		<systemPath>${basedir}/libs/loanvalidation-xom.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>com.ilog.rules.executionserver</groupId>
-			<artifactId>loanvalidation-ruleapp</artifactId>
-			<version>${jrules.version}</version>
-			<scope>system</scope>
-    		<systemPath>${basedir}/ruleapps/loanvalidation.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>com.ilog.rules.executionserver</groupId>
-			<artifactId>jconnector-api</artifactId>
-			<version>${jrules.version}</version>
-			<scope>system</scope>
-    		<systemPath>${jrules.install}/executionserver/lib/j2ee_connector-1_5-fr.jar</systemPath>
-		</dependency>
-		<!--dependency>
-			<groupId>javax.resource</groupId>
-			<artifactId>connector-api</artifactId>
-			<version>1.5-IBM</version>
-		</dependency-->
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-core_2.11</artifactId>
-		<version>2.1.0</version>
-		</dependency>
-		
-		
+    <packaging>jar</packaging>
+    <name>ODMDev/sparko</name>
+    <description></description>
+    <properties>
+        <odm.version>8.9.2</odm.version>
+        <odm.install>/TO_BE_FILLED</odm.install>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.ilog.rules.executionserver</groupId>
+            <artifactId>jrules-res</artifactId>
+            <version>${odm.version}</version>
+            <scope>system</scope>
+            <systemPath>${odm.install}/executionserver/lib/jrules-res-execution.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ilog.rules.executionserver</groupId>
+            <artifactId>loanvalidation</artifactId>
+            <version>${odm.version}</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/loanvalidation-xom.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ilog.rules.executionserver</groupId>
+            <artifactId>loanvalidation-ruleapp</artifactId>
+            <version>${odm.version}</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/ruleapps/loanvalidation.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ilog.rules.executionserver</groupId>
+            <artifactId>jconnector-api</artifactId>
+            <version>${odm.version}</version>
+            <scope>system</scope>
+            <systemPath>${odm.install}/executionserver/lib/j2ee_connector-1_5-fr.jar</systemPath>
+        </dependency>
+        <!--dependency>
+            <groupId>javax.resource</groupId>
+            <artifactId>connector-api</artifactId>
+            <version>1.5-IBM</version>
+        </dependency-->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.11</artifactId>
+            <version>2.1.0</version>
+        </dependency>
 
-<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
-<dependency>
-    <groupId>joda-time</groupId>
-    <artifactId>joda-time</artifactId>
-    <version>2.9.3</version>
-</dependency>
 
-	</dependencies>
+        <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.3</version>
+        </dependency>
 
-	<!--======================= -->
-	<!-- BUILD PROCESS & LAYOUT -->
-	<!--======================= -->
-	
+    </dependencies>
+
+
+    <!--======================= -->
+    <!-- BUILD PROCESS & LAYOUT -->
+    <!--======================= -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <mainClass>com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerCSV</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 
 

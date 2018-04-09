@@ -5,8 +5,7 @@ This folder contains the source code to execute the ODM loan validation sample i
 git pull
 
 ## Build
-mvn clean install
+mvn clean install -Dodm.install=<INSTALLDIR>
 
 ## Run
-java -cp simpleloanvalidationsparkrunner-1.0-SNAPSHOT.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerCSV
-
+mvn  exec:java -Dodm.install=<INSTALLDIR>
