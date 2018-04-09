@@ -12,7 +12,7 @@
     <description></description>
     <properties>
         <odm.version>8.9.2</odm.version>
-        <odm.install>/TO_BE_FILLED</odm.install>
+        <odm.install>ODM_HOME_DIRECTORY</odm.install>
     </properties>
     <dependencies>
         <dependency>
