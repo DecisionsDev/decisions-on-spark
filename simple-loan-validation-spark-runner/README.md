@@ -13,5 +13,5 @@ mvn clean install -Dodm.install=<INSTALLDIR>
 
 ## Run
 ```console
-mvn  exec:java -Dodm.install=<INSTALLDIR>
+mvn exec:java -Dodm.install=<INSTALLDIR>
 ```
