@@ -40,7 +40,7 @@ public class SimpleLoanValidationSparkRunnerJSON {
 		JavaSparkContext sc = new JavaSparkContext(conf);
 	
 		//1K
-		String requestFileName = "data/loanvalidation/1K/loanvalidation-requests-1K.csv";
+		String requestFileName = "data/loanvalidation/1K/loanvalidation-requests-1K.json";
 		String decisionFileName = "data/loanvalidation/1K/loanvalidation-decisions-1K.json";
 		automateDecisions(sc, requestFileName, decisionFileName);
 		
@@ -75,14 +75,6 @@ public class SimpleLoanValidationSparkRunnerJSON {
 			public LoanValidationDecision call(LoanValidationRequest request) {
 				LoanValidationRESRunner runner = new LoanValidationRESRunner();
 				return runner.execute(request);
-			}
-		};
-
-		Function<String, LoanValidationRequest> deserializeRequestFromCSV = new Function<String, LoanValidationRequest>() {
-			private static final long serialVersionUID = 1L;
-
-			public LoanValidationRequest call(String line) {
-				return LoanValidationRequest.parseAsCSV(line);
 			}
 		};
 		
@@ -121,7 +113,15 @@ public class SimpleLoanValidationSparkRunnerJSON {
 				}
 			}
 		};
+		
+		Function<String, LoanValidationRequest> deserializeRequestFromJSON = new Function<String, LoanValidationRequest>() {
+			private static final long serialVersionUID = 1L;
 
+			public LoanValidationRequest call(String json) {
+				return LoanValidationRequest.parseAsJSON(json);
+			}
+		};
+		
 		long startTime = System.currentTimeMillis();
 
 		// Local dir
@@ -135,7 +135,7 @@ public class SimpleLoanValidationSparkRunnerJSON {
 		// RDD creation
 		JavaRDD<String> requestData = sc.textFile(requestFileName);
 		requestData.count();
-		JavaRDD<LoanValidationRequest> requestRDD = requestData.map(deserializeRequestFromCSV);
+		JavaRDD<LoanValidationRequest> requestRDD = requestData.map(deserializeRequestFromJSON);
 		
 		// Produce a RDD of decisions
 		//

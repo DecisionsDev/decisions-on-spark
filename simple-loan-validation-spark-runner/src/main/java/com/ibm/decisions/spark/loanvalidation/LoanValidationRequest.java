@@ -22,9 +22,16 @@
 
 package com.ibm.decisions.spark.loanvalidation;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
+
+import org.apache.spark.api.java.function.Function;
 import org.joda.time.Instant;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import loan.*;
 
@@ -71,19 +78,6 @@ public class LoanValidationRequest implements Serializable  {
 	}
 	
 	public static LoanValidationRequest parseAsCSV(String s) {
-		/*
-		 * buffer.append(this.borrower.getFirstName() + ", ");
-			buffer.append(this.borrower.getLastName() + ", ");
-			buffer.append(this.borrower.getBirthDate() + ", ");
-			buffer.append(this.borrower.getSSN() + ", ");
-			buffer.append(this.borrower.getZipCode() + ", ");
-			buffer.append(this.borrower.getCreditScore() + ", ");
-			buffer.append(this.borrower.getYearlyIncome() + ", ");
-			buffer.append(this.loanRequest.getAmount() + ", ");
-			buffer.append(this.loanRequest.getStartDate() + ", ");
-			buffer.append(this.loanRequest.getDuration() + ", ");
-			buffer.append(this.loanRequest.getLoanToValue());
-		 */
 		
 		String[] tokens = s.split(",");
 
@@ -115,6 +109,28 @@ public class LoanValidationRequest implements Serializable  {
 		LoanValidationRequest request = new LoanValidationRequest(borrower, loanRequest);
 
 		return request;
+	}
+	
+	public static LoanValidationRequest parseAsJSON(String requestJSON) {
+		ObjectMapper mapper = new ObjectMapper();
+		LoanValidationRequest requestFromJSON = null;
+		
+		try {
+			//ToDo Remove this shortcut
+			//mapper.writerWithDefaultPrettyPrinter();
+			
+			String originToken = "{\"request:";
+			requestJSON = requestJSON.substring(requestJSON.indexOf(originToken) + originToken.length() + 2);
+			requestJSON = requestJSON.substring(0, requestJSON.lastIndexOf("}"));
+			requestFromJSON = mapper.readValue(requestJSON, LoanValidationRequest.class);
+		} catch (JsonParseException e) {
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return requestFromJSON;
 	}
 
 	public String serializeAsJSON() {
