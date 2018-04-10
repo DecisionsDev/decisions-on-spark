@@ -22,6 +22,11 @@ Automate loan validation on a JSON applications dataset to produce a JSON decisi
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-execution.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerJSON 
 ```
 
+Automate loan validation on a JSON applications dataset to produce a JSON decision set and to display a Rule coverage
+```console
+java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-execution.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerJSONWithCoverage
+```
+
 ```console
 mvn exec:java -Dodm.install=<INSTALLDIR>
 ```
