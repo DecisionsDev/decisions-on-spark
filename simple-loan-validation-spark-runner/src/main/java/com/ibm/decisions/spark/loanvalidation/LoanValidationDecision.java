@@ -48,7 +48,7 @@ public class LoanValidationDecision {
 		return json;
 	}
 
-	public static LoanValidationDecision deserializeAsJSON(String decisionJSON) {
+	public static LoanValidationDecision parseAsJSON(String decisionJSON) {
 		ObjectMapper mapper = new ObjectMapper();
 		LoanValidationDecision decisionFromJSON = null;
 		try {

@@ -11,6 +11,8 @@
     <name>ODMDev/sparko</name>
     <description></description>
     <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target> 
         <odm.version>8.9.2</odm.version>
         <odm.install>ODM_HOME_DIR</odm.install>
     </properties>
@@ -43,11 +45,6 @@
             <scope>system</scope>
             <systemPath>${odm.install}/executionserver/lib/j2ee_connector-1_5-fr.jar</systemPath>
         </dependency>
-        <!--dependency>
-            <groupId>javax.resource</groupId>
-            <artifactId>connector-api</artifactId>
-            <version>1.5-IBM</version>
-        </dependency-->
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.11</artifactId>
