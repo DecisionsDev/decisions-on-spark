@@ -3,7 +3,7 @@ This folder contains the source code to execute the ODM loan validation sample i
 
 ## Get the code
 ```console
-git pull
+git clone
 ```
 
 ## Build
