@@ -40,8 +40,8 @@ public class SimpleLoanValidationSparkRunnerJSON {
 		JavaSparkContext sc = new JavaSparkContext(conf);
 	
 		//1K
-		String requestFileName = "data/loanvalidation/1K/loanvalidation-requests-1K.json";
-		String decisionFileName = "data/loanvalidation/1K/loanvalidation-decisions-1K.json";
+		String requestFileName = "../data/loanvalidation/loanvalidation-requests-1K.json";
+		String decisionFileName = "../data/loanvalidation/loanvalidation-decisions-1K.json";
 		automateDecisions(sc, requestFileName, decisionFileName);
 		
 		//10K
