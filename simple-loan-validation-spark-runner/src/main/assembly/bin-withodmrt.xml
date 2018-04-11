@@ -13,8 +13,10 @@
   <formats>
     <format>jar</format>
   </formats>
-  <includeBaseDirectory>false</includeBaseDirectory>
-  <fileSets>
+   
+  <includeBaseDirectory>false</includeBaseDirectory> 
+
+  <!-- fileSets>
     <fileSet>
       <directory>target/classes</directory>
       <includes>
@@ -25,13 +27,14 @@
       </includes>
       <outputDirectory>/</outputDirectory>
     </fileSet>
-  </fileSets>
+  </fileSets -->
   <dependencySets>
-    <dependencySet>
+     <dependencySet>
+      
         <outputDirectory>/</outputDirectory>
-        <useProjectArtifact>true</useProjectArtifact>
-        <unpack>true</unpack>
-        <scope>runtime</scope>
+      <includes>
+        <include>com.ibm.decisions.sparko:simpleloanvalidationsparkrunner</include>
+      </includes>
     </dependencySet>
     <dependencySet>
         <outputDirectory>/</outputDirectory>
