@@ -98,7 +98,8 @@
                         </goals>
                         <configuration>
                             <descriptors>
-                                <descriptor>src/main/assembly/bin-execution.xml</descriptor>
+                                <descriptor>src/main/assembly/bin-withspark.xml</descriptor>
+                                <descriptor>src/main/assembly/bin-withodmrt.xml</descriptor>
                             </descriptors>
                             <workDirectory>target/assembly/work</workDirectory>
                         </configuration>

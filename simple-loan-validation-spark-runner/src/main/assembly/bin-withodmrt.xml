@@ -9,7 +9,7 @@
 
 -->
 <assembly>
-  <id>withspark</id>
+  <id>withodmrt</id>
   <formats>
     <format>jar</format>
   </formats>
