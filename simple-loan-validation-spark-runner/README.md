@@ -33,5 +33,5 @@ java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-execution.jar com.i
 mvn exec:java -Dodm.install=<INSTALLDIR>
 ```
 
-The target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar contains required classes to submit a Spark job  
+The target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar contains required classes to submit a Spark job.
 
