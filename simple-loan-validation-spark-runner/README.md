@@ -16,12 +16,12 @@ mvn clean install -Dodm.install=<INSTALLDIR>
 ## Run
 Automate loan validation on a CSV applications dataset to produce a CSV decision set
 ```console
-java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-execution.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerCSV 
+java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerCSV 
 ```
 
 Automate loan validation on a JSON applications dataset to produce a JSON decision set
 ```console
-java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-execution.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerJSON 
+java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerJSON 
 ```
 
 Automate loan validation on a JSON applications dataset to produce a JSON decision set and to display a Rule coverage
