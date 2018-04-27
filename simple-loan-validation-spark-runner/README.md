@@ -52,3 +52,15 @@ By submitting the application you get a trace similar to this one.
 
 ![Flow](docs/images/submit-trace.png "submit trace")
 
+When opening the stdout file you can check the loan approval traces and obtain the KPIs.
+
+```console
+Loan approved=false with a yearly repayment=0.0 insurance required:false messages= [The borrower's age is not valid.,  The loan amount is under the maximum authorized] executed in thread Executor task launch worker for task 8
+Loan approved=true with a yearly repayment=1464.7636429039499 insurance required:true messages= [ The loan amount is under the maximum authorized, Low risk loan, Congratulations! Your loan has been approved] executed in thread Executor task launch worker for task 8
+
+Decision batch metrics
+Number of loan applications processed: 1000 in 2995 ms
+Number of decision per sec: 333.0
+Number of approved loan applications: 291 on a 1000 total
+Number of loans approved with a YearlyInterestRate > 5%: 291
+```console
