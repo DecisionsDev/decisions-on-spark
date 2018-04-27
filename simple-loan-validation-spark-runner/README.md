@@ -31,7 +31,7 @@ java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.i
 ## Run in a cluster
 Rule based automation works in a cluster with the same integration pattern and code.
 Only differences of the application are about:
-- the access to the datasets, as they are accessed by the driver and executors running on different machines and local file systems,
+- the access to the datasets, as the Spark driver and executors run on different machines and local file systems. In consequence data have to be stored in hdfs or other shared persistence.
 - the packaging, as Spark jars are not needed in the uber jar but already deployed in the cluster.
 
 The target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar contains required classes to submit a Spark job.
