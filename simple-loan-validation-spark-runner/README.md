@@ -50,5 +50,5 @@ target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar
 ```
 By submitting the application you get a trace similar to this one.
 
-![Flow](docs/images/submit.png "submit trace")
+![Flow](docs/images/submit-trace.png "submit trace")
 
