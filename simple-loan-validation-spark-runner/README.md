@@ -28,7 +28,7 @@ Automate loan validation on a JSON applications dataset to produce a JSON decisi
 ```console
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerJSONWithCoverage
 ```
-## Run on a cluster
+## Run in a cluster
 Rule based automation works in a cluster with the same integration pattern and code.
 Only differences of the application are about:
 - the access to the datasets, as they are accessed by the driver and executors running on different machines and local file systems,
@@ -40,6 +40,7 @@ Automate loan validation on a CSV applications dataset to produce a CSV decision
 ```console
 ./spark-submit.sh \
 --vcap ./vcap-odm123.json \
+--name “loan-validation”  \
 --deploy-mode cluster \
 --conf spark.service.spark_version=2.1 \
 --class com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerCSV \
