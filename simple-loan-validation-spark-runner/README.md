@@ -13,7 +13,7 @@ git clone
 mvn clean install -Dodm.install=<INSTALLDIR>
 ```
 
-## Run
+## Run locally
 Automate loan validation on a CSV applications dataset to produce a CSV decision set
 ```console
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerCSV 
@@ -28,10 +28,22 @@ Automate loan validation on a JSON applications dataset to produce a JSON decisi
 ```console
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerJSONWithCoverage
 ```
+## Run on a cluster
+Rule based automation works in a cluster with the same integration pattern and code.
+Only differences of the application are about:
+- the access to the datasets, as they are accessed by the driver and executors running on different machines and local file systems,
+- the packaging, as Spark jars are not needed in the uber jar but already deployed in the cluster.
+
+The target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar contains required classes to submit a Spark job.
+
+Automate loan validation on a CSV applications dataset to produce a CSV decision set
+```console
+java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerGenCSV 
+```
 
 ```console
 mvn exec:java -Dodm.install=<INSTALLDIR>
 ```
 
-The target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar contains required classes to submit a Spark job.
+
 
