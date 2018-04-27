@@ -36,14 +36,16 @@ Only differences of the application are about:
 
 The target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar contains required classes to submit a Spark job.
 
-Automate loan validation on a CSV applications dataset to produce a CSV decision set. Below id the submit command as tested with the IBM Cloud Spark service.
+The SimpleLoanValidationSparkRunnerGenCSV application generates in memory the requests, apply the loan validation decision logic, and computes metrics plus KPIs.
+
+Below is the submit command as tested with the IBM Cloud Spark service.
 ```console
 ./spark-submit.sh \
 --vcap ./vcap-odm123.json \
 --name “loan-validation”  \
 --deploy-mode cluster \
 --conf spark.service.spark_version=2.1 \
---class com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerCSV \
+--class com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerGenCSV \
 target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar
 ```
 
