@@ -44,9 +44,6 @@ Automate loan validation on a CSV applications dataset to produce a CSV decision
 --conf spark.service.spark_version=2.1 \
 --class com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerCSV \
 target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar
-
-./spark-submit.sh --vcap ./vcap-your-credential-file.json --deploy-mode cluster --conf spark.service.spark_version=2.1 --class com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerGenCSV target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar
-
 ```
 
 ```console
