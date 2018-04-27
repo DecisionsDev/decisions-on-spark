@@ -48,5 +48,7 @@ Below is the submit command as tested with the IBM Cloud Spark service.
 --class com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerGenCSV \
 target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar
 ```
+By submitting the application you get a trace similar to this one.
 
+![Flow](docs/images/submit.png "submit trace")
 
