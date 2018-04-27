@@ -55,6 +55,7 @@ By submitting the application you get a trace similar to this one.
 When opening the stdout file you can check the loan approval traces and obtain the KPIs.
 
 ```console
+...
 Loan approved=false with a yearly repayment=0.0 insurance required:false messages= [The borrower's age is not valid.,  The loan amount is under the maximum authorized] executed in thread Executor task launch worker for task 8
 Loan approved=true with a yearly repayment=1464.7636429039499 insurance required:true messages= [ The loan amount is under the maximum authorized, Low risk loan, Congratulations! Your loan has been approved] executed in thread Executor task launch worker for task 8
 
