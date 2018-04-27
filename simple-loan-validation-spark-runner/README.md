@@ -63,4 +63,4 @@ Number of loan applications processed: 1000 in 2995 ms
 Number of decision per sec: 333.0
 Number of approved loan applications: 291 on a 1000 total
 Number of loans approved with a YearlyInterestRate > 5%: 291
-```console
+```
