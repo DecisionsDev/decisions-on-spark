@@ -49,9 +49,4 @@ Below is the submit command as tested with the IBM Cloud Spark service.
 target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar
 ```
 
-```console
-mvn exec:java -Dodm.install=<INSTALLDIR>
-```
-
-
 
