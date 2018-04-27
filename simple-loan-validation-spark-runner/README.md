@@ -36,7 +36,7 @@ Only differences of the application are about:
 
 The target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar contains required classes to submit a Spark job.
 
-The SimpleLoanValidationSparkRunnerGenCSV application generates in memory the requests, apply the loan validation decision logic, and computes metrics plus KPIs.
+The SimpleLoanValidationSparkRunnerGenCSV application generates in memory the requests, applies the loan validation decision logic, and computes metrics plus KPIs.
 
 Below is the submit command as tested with the IBM Cloud Spark service.
 ```console
