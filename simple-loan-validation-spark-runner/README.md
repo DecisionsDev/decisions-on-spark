@@ -3,6 +3,9 @@ This folder contains the source code to execute the ODM loan validation sample i
 
 ![Flow](docs/images/decision_automation_in_map_reduce.png "Architecture")
 
+## Pre requisites
+You need an IBM ODM 892 installation to build the application. Root of your ODM installation is refered as <INSTALLDIR> in the instructions below. Maven files will look for the ODM jars under <INSTALLDIR>/executionserver/libs directory.
+
 ## Get the code
 ```console
 git clone
@@ -29,7 +32,7 @@ Automate loan validation on a JSON applications dataset to produce a JSON decisi
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerJSONWithCoverage
 ```
 ## Run in a cluster
-Rule based automation works in a cluster with the same integration pattern and code.
+Rule based automation works in a cluster with the same integration pattern and code than in standalone.
 Only differences of the application are about:
 - the access to the datasets, as the Spark driver and executors run on different machines and local file systems. In consequence data have to be stored in hdfs or other shared persistence.
 - the packaging, as Spark jars are not needed in the uber jar but already deployed in the cluster.
