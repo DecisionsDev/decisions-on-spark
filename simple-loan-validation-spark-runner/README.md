@@ -4,7 +4,7 @@ This folder contains the source code to execute the ODM loan validation sample i
 ![Flow](docs/images/decision_automation_in_map_reduce.png "Architecture")
 
 ## Pre requisites
-You need an IBM ODM 892 installation to build the application. Root of your ODM installation is refered as <INSTALLDIR> in the instructions below. Maven files will look for the ODM jars under <INSTALLDIR>/executionserver/libs directory.
+You need an IBM ODM 892 installation to build the application. Root of your ODM installation is referred as <INSTALLDIR> in the instructions below. Maven files will look for the ODM jars under <INSTALLDIR>/executionserver/libs directory.
 
 ## Get the code
 ```console
