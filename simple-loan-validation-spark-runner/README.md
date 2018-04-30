@@ -17,6 +17,11 @@ mvn clean install -Dodm.install=<INSTALLDIR>
 ```
 
 ## Run locally
+Open an terminal where your have cloned this repository.
+```console
+cd decisions-on-spark/simple-loan-validation-spark-runner
+```
+
 Automate loan validation on a CSV applications dataset to produce a CSV decision set
 ```console
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --input ../data/loanvalidation/1K/loanvalidation-requests-1K.csv --output ../data/loanvalidation/1K/loanvalidation-decisions-1K.csv --master local[8]
