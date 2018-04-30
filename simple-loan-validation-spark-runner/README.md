@@ -47,6 +47,7 @@ The target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar contains r
 
 The LoanValidationSparkRunner application can read or generate in memory the requests, then applies the loan validation decision logic, and computes metrics and finally KPIs.
 
+### Running in IBM Spark service
 Below is the submit command as tested with the IBM Cloud Spark service with a random generation of the requests.
 ```console
 ./spark-submit.sh \
