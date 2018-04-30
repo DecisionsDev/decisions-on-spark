@@ -7,36 +7,37 @@ This folder contains the source code to execute the ODM loan validation sample i
 You need an IBM ODM 892 installation to build the application. Root of your ODM installation is referred as <INSTALLDIR> in the instructions below. Maven files will look for the ODM jars under <INSTALLDIR>/executionserver/libs directory.
 
 ## Get the code
+Clone this repository.
 ```console
 git clone
 ```
-
+Open an terminal where your have cloned this repository.
+```console
+cd decisions-on-spark/simple-loan-validation-spark-runner
+```
 ## Build
 ```console
 mvn clean install -Dodm.install=<INSTALLDIR>
 ```
 
 ## Run locally
-Open an terminal where your have cloned this repository.
-```console
-cd decisions-on-spark/simple-loan-validation-spark-runner
-```
 
-Automate loan validation on a CSV applications dataset to produce a CSV decision set
+
+Automate loan validation on a CSV applications dataset to produce a CSV decision set.
 ```console
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --input ../data/loanvalidation/1K/loanvalidation-requests-1K.csv --output ../data/loanvalidation/1K/loanvalidation-decisions-1K.csv --master local[8]
 
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerCSV 
 ```
 
-Automate loan validation on a JSON applications dataset to produce a JSON decision set
+Automate loan validation on a JSON applications dataset to produce a JSON decision set.
 ```console
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --input ../data/loanvalidation/1K/loanvalidation-requests-1K.json --output ../data/loanvalidation/1K/loanvalidation-decisions-1K.json --master local[8]
 
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerJSON 
 ```
 
-Automate loan validation on a JSON applications dataset to produce a JSON decision set and to display a Rule coverage
+Automate loan validation on a JSON applications dataset to produce a JSON decision set and to display a Rule coverage.
 ```console
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --input ../data/loanvalidation/1K/loanvalidation-requests-1K.json --output ../data/loanvalidation/1K/loanvalidation-decisions-1K.json --master local[8] --rulecoverage
 
