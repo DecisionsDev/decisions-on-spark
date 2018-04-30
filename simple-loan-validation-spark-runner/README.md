@@ -45,9 +45,9 @@ Only differences of the application are about:
 
 The target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar contains required classes to submit a Spark job.
 
-The SimpleLoanValidationSparkRunnerGenCSV application generates in memory the requests, applies the loan validation decision logic, and computes metrics plus KPIs.
+The LoanValidationSparkRunner application can read or generate in memory the requests, then applies the loan validation decision logic, and computes metrics and finally KPIs.
 
-Below is the submit command as tested with the IBM Cloud Spark service.
+Below is the submit command as tested with the IBM Cloud Spark service with a random generation of the requests.
 ```console
 ./spark-submit.sh \
 --vcap ./vcap-odm123.json \
@@ -75,4 +75,17 @@ Number of loan applications processed: 1000 in 2995 ms
 Number of decision per sec: 333.0
 Number of approved loan applications: 291 on a 1000 total
 Number of loans approved with a YearlyInterestRate > 5%: 291
+```
+### Running Business Rules on IBM Analytic Engine
+Below is the submit command as tested with the public IBM Analylic Engine with a read of a request dataset file.
+
+```console
+...
+spark-submit \
+--name “loan-validation” \
+--conf spark.service.spark_version=2.1 \
+--class com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner \
+/home/wce/clsadmin/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar \
+--input hdfs://machine2.bi.services.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-requests-1K.csv  \
+--output hdfs://machine2.bi.services.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-decisions-1K.csv
 ```
