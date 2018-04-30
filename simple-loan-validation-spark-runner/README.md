@@ -19,16 +19,22 @@ mvn clean install -Dodm.install=<INSTALLDIR>
 ## Run locally
 Automate loan validation on a CSV applications dataset to produce a CSV decision set
 ```console
+java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --input ../data/loanvalidation/1K/loanvalidation-requests-1K.csv --output ../data/loanvalidation/1K/loanvalidation-decisions-1K.csv --master local[8]
+
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerCSV 
 ```
 
 Automate loan validation on a JSON applications dataset to produce a JSON decision set
 ```console
+java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --input ../data/loanvalidation/1K/loanvalidation-requests-1K.json --output ../data/loanvalidation/1K/loanvalidation-decisions-1K.json --master local[8]
+
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerJSON 
 ```
 
 Automate loan validation on a JSON applications dataset to produce a JSON decision set and to display a Rule coverage
 ```console
+java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --input ../data/loanvalidation/1K/loanvalidation-requests-1K.json --output ../data/loanvalidation/1K/loanvalidation-decisions-1K.json --master local[8] --rulecoverage
+
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.SimpleLoanValidationSparkRunnerJSONWithCoverage
 ```
 ## Run in a cluster
@@ -43,6 +49,16 @@ The SimpleLoanValidationSparkRunnerGenCSV application generates in memory the re
 
 Below is the submit command as tested with the IBM Cloud Spark service.
 ```console
+./spark-submit.sh \
+--vcap ./vcap-odm123.json \
+--name “loan-validation”  \
+--deploy-mode cluster \
+--conf spark.service.spark_version=2.1 \
+--class com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner \
+target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar \
+--inputgen 1000  \
+--output loanvalidation-decisions-1K.json
+
 ./spark-submit.sh \
 --vcap ./vcap-odm123.json \
 --name “loan-validation”  \
