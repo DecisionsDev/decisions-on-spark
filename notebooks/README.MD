@@ -1,5 +1,5 @@
 
-Decision Automation Notebooks
+# Decision Automation Notebooks
 
 This directory regroups sample notebooks of decision automation and analytics. 
 To run these notebooks please import them into Jupyter or Watson Studio.
