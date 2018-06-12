@@ -1,76 +1,76 @@
-| rule | count |
-computation.rate 7,0
-computation.salary2score 5,43
-insurance.insurance 8,3
-computation.rate 10,0
-insurance.insurance 11,57
-computation.rate 21,0
-insurance.insurance 6,45
-computation.rate 18,0
-computation.salary2score 3,6
-insurance.insurance 2,29
-computation.bankruptcyScore 4,0
-computation.rate 14,0
+|rule|count|
+computation.rate.7,0
+computation.salary2score.5,43
+insurance.insurance.8,3
+computation.rate.10,0
+insurance.insurance.11,57
+computation.rate.21,0
+insurance.insurance.6,45
+computation.rate.18,0
+computation.salary2score.3,6
+insurance.insurance.2,29
+computation.bankruptcyScore.4,0
+computation.rate.14,0
 eligibility.checkCreditScore,0
-eligibility.grade 2,24
-computation.rate 12,95
-computation.rate 23,0
-computation.rate 9,0
-computation.rate 3,0
+eligibility.grade.2,24
+computation.rate.12,95
+computation.rate.23,0
+computation.rate.9,0
+computation.rate.3,0
 computation.repayment,650
 validation.borrower.checkAge,1000
-computation.rate 1,0
+computation.rate.1,0
 computation.neverBankruptcy,650
 validation.borrower.checkName,1000
-computation.bankruptcyScore 2,0
-eligibility.grade 8,86
+computation.bankruptcyScore.2,0
+eligibility.grade.8,86
 eligibility.checkIncome,299
 computation.initialCorporateScore,650
-computation.rate 16,114
-computation.rate 5,0
-insurance.insurance 4,0
-computation.salary2score 7,125
-eligibility.grade 11,172
-computation.salary2score 1,17
-eligibility.grade 6,6
+computation.rate.16,114
+computation.rate.5,0
+insurance.insurance.4,0
+computation.salary2score.7,125
+eligibility.grade.11,172
+computation.salary2score.1,17
+eligibility.grade.6,6
 eligibility.approval,650
-eligibility.grade 4,33
-insurance.insurance 1,47
-eligibility.grade 12,35
-computation.rate 20,164
-computation.rate 22,0
-computation.rate 19,0
+eligibility.grade.4,33
+insurance.insurance.1,47
+eligibility.grade.12,35
+computation.rate.20,164
+computation.rate.22,0
+computation.rate.19,0
 validation.loan.checkAmount,1000
 insurance.defaultInsurance,308
-computation.salary2score 6,78
+computation.salary2score.6,78
 validation.borrower.checkSSNdigits,1000
-computation.rate 2,0
-eligibility.grade 9,10
-insurance.insurance 10,13
+computation.rate.2,0
+eligibility.grade.9,10
+insurance.insurance.10,13
 validation.borrower.checkZipcode,1000
-computation.rate 13,0
-computation.salary2score 2,19
-computation.rate 8,78
-insurance.unvalidated action,308
-eligibility.grade 7,66
-computation.rate 15,0
-computation.salary2score 4,22
-eligibility.grade 5,47
+computation.rate.13,0
+computation.salary2score.2,19
+computation.rate.8,78
+insurance.unvalidated.action,308
+eligibility.grade.7,66
+computation.rate.15,0
+computation.salary2score.4,22
+eligibility.grade.5,47
 validation.borrower.checkSSNareanumber,1000
-computation.rate 17,0
-insurance.insurance 12,56
-computation.rate 6,0
-insurance.insurance 5,9
-computation.salary2score 8,340
-insurance.insurance 9,1
-eligibility.grade 10,143
-eligibility.grade 3,5
-computation.bankruptcyScore 1,0
+computation.rate.17,0
+insurance.insurance.12,56
+computation.rate.6,0
+insurance.insurance.5,9
+computation.salary2score.8,340
+insurance.insurance.9,1
+eligibility.grade.10,143
+eligibility.grade.3,5
+computation.bankruptcyScore.1,0
 validation.test.checkTest,1000
-computation.rate 4,96
-computation.bankruptcyScore 3,0
-computation.rate 11,0
-computation.rate 24,103
-eligibility.grade 1,23
-insurance.insurance 3,1
-insurance.insurance 7,47
+computation.rate.4,96
+computation.bankruptcyScore.3,0
+computation.rate.11,0
+computation.rate.24,103
+eligibility.grade.1,23
+insurance.insurance.3,1
+insurance.insurance.7,47
