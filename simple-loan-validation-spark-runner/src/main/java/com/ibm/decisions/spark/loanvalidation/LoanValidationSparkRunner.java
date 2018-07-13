@@ -47,9 +47,12 @@ public class LoanValidationSparkRunner {
 		//
 		final String usage = "Usage:\r\n" + "     " + applicationName
 				+ " --input <input-file> --output <output-file> [options]\r\n" + "     " + applicationName
+				+ " --inputgen <request-nb> --output <output-file> [options]\r\n" + "     " + applicationName
 				+ " --version  \r\n" + "\r\n"
 				+ "     input-file:                 json or csv format file that contains the loan applications \r\n"
 				+ "                                 can be a local or hdfs file\r\n"
+				+ "     request-nb                  the number of requests that the program generates and then processes\\r\\n\""
+				+ "                                 an alternate to the input-file read"
 				+ "     output-file:                json or csv format file that contains the loan applications \r\n"
 				+ "                                 can be a local or hdfs file\r\n" + "\r\n" + " options:\r\n"
 				+ "     --version                   Print out the version\r\n"
@@ -57,7 +60,6 @@ public class LoanValidationSparkRunner {
 				+ "                                 specify no master option for a submit \r\n"
 				+ "     --rulecoverage              Produce the rule coverage\r\n"
 				+ "     --trace                     local[8] for standalone NYI\r\n"
-				+ "     --gen REQUEST_NB            REQUEST_NB is the number of requests that the program generates and then processes NYI\r\n"
 				+ "                                 input-file is not used in this generation mode\r\n";
 
 		// No args
@@ -119,10 +121,10 @@ public class LoanValidationSparkRunner {
 		String outputFile = argMap.get("--output");
 		String masterConfig = argMap.get("--master");
 		
-		boolean inputGeneration = argMap.get("--inputgeneration") != null;
+		boolean inputGeneration = argMap.get("--inputgen") != null;
 		long inputGenerationNumber = 0;
 		if (inputGeneration)  {
-			inputGenerationNumber = Long.parseLong(argMap.get("--inputgeneration"));
+			inputGenerationNumber = Long.parseLong(argMap.get("--inputgen"));
 		}
 		
 		boolean ruleCoverage = argMap.get("--rulecoverage") != null;
@@ -154,11 +156,11 @@ public class LoanValidationSparkRunner {
 		// "data/loanvalidation/1K/loanvalidation-decisions-1K.csv";
 		String decisionFileName = outputFile;
 
-		automateDecisions(sc, requestFileName, decisionFileName, inputGeneration, ruleCoverage);
+		automateDecisions(sc, requestFileName, decisionFileName, inputGeneration, inputGenerationNumber, ruleCoverage);
 	}
 
 	@SuppressWarnings("unused")
-	public static void automateDecisions(JavaSparkContext sc, String requestFileName, String decisionFileName, boolean datasetGeneration, boolean ruleCoverage) {
+	public static void automateDecisions(JavaSparkContext sc, String requestFileName, String decisionFileName, boolean datasetGeneration, long inputGenerationNumber, boolean ruleCoverage) {
 
 		Function<LoanValidationRequest, LoanValidationDecision> executeDecisionService = new Function<LoanValidationRequest, LoanValidationDecision>() {
 			private static final long serialVersionUID = 1L;
@@ -259,7 +261,7 @@ public class LoanValidationSparkRunner {
 			}
 		} else {
 			RequestGenerator requestGenerator = new RequestGenerator(sc);
-			requestRDD = requestGenerator.generateRandomRequestRequestRDD(1000);
+			requestRDD = requestGenerator.generateRandomRequestRequestRDD(inputGenerationNumber);
 		}
 
 		requestRDD.count();
@@ -269,7 +271,7 @@ public class LoanValidationSparkRunner {
 		System.out.println("Starting decision automation...");
 		System.out.println("Dataset generation: " + datasetGeneration);
 		JavaRDD<LoanValidationDecision> decisions = requestRDD.map(executeDecisionService).cache();
-		System.out.println("Decision making ended");
+		System.out.println("Automation ended with " + decisions.count()  + " decisions");
 
 		long stopTime = System.currentTimeMillis();
 
