@@ -1,11 +1,3 @@
-transaction.id , transaction.client.id , transaction.marchand.id, transaction.amount, transaction.risk.score1 ,transaction.approval,transaction.actualfraud, report.getMessages 
-1,121,1957-081222,1220,1, true, true,
-2,121,1957-081222,471,1, false, false,
-3,122,1957-081222,45,0, true, true,
-4,123,1957-081222,3000,0, true, true,
-5,121,1957-081222,1220,1, true, true,
-6,121,1957-081222,471,1, false, false,
-7,122,1957-081222,45,0, true, true,
-8,123,1957-081222,3000,0, true, true,
-9,121,1957-081222,1220,1, true, true,
-10,121,1957-081222,471,1, false, false,
+simulation.id , transaction.learnable.score1 , transaction.learnable.score2, transaction.aggregatedloss
+1,0.2,0.3,100
+2,0.2,0.3,100
