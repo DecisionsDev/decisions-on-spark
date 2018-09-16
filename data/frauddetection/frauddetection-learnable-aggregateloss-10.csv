@@ -1,4 +1,4 @@
-simulation.id , score1 , score2, transaction.aggregatedloss
-1,100,82,100
-2,100,82,100
+simulation.id , score1 , score2, aggregatedloss
+1,0.1,0.3,100
+2,0.4,0.3,100
 
