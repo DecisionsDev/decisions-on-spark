@@ -111,6 +111,9 @@ public class LoanValidationRESRunner {
 			//sessionRequest.getTraceFilter().setInfoAllFilters(true);
 			sessionRequest.getTraceFilter().setInfoRules(true);
 			sessionRequest.getTraceFilter().setInfoRulesNotFired(true);
+			sessionRequest.getTraceFilter().setInfoTasks(true);
+			sessionRequest.getTraceFilter().setInfoTotalTasksNotExecuted(true);
+			sessionRequest.getTraceFilter().setInfoExecutionEvents(true);
 
 			Map<String, Object> inputParameters = sessionRequest
 					.getInputParameters();

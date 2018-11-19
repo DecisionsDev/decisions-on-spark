@@ -1,0 +1,17 @@
+no extra configuration defined
+Executing from: /gpfs/global_fs01/sym_shared/YPProdSpark/user/sb1f-e2fb2aec88783d-178f40bd326e/data/workdir/driver-20180713071657-4982-363adb8d-af42-4f84-8c75-fa0b3dbb7ebf/.
+Loading dataset file: null
+Generating randomly 1000 decision requests
+Starting decision automation...
+Dataset generation: true
+Automation ended with 1000 decisions
+Computing Rule execution aggregates
+Execution Rule tuple RDD count is 1000
+Unique Rule names count is 75
+Directory loanvalidation-decisions-1K.json does not exist.
+
+Decision batch metrics
+Number of loan applications processed: 1000 in 15411 ms
+Number of decision per sec: 64.0
+Number of approved loan applications: 292 on a 1000 total
+Number of loans approved with a YearlyInterestRate > 5%: 292

@@ -1,0 +1,75 @@
+++++ /usr/local/src/analytic-libs/profile.sh 2.1 2.11 2.7
++++ local 'profiledata=EXTRA_CLASSPATH='\''/usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/*'\'' EXTRA_PYTHONPATH='\''/usr/local/src/analytic-libs/spark-2.1/python-2.7:/usr/local/src/analytic-libs/spark-2.1/python:/usr/local/src/analytic-libs/python'\'''
++++ eval local 'EXTRA_CLASSPATH='\''/usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/*'\''' 'EXTRA_PYTHONPATH='\''/usr/local/src/analytic-libs/spark-2.1/python-2.7:/usr/local/src/analytic-libs/spark-2.1/python:/usr/local/src/analytic-libs/python'\'''
+++++ local 'EXTRA_CLASSPATH=/usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/*' EXTRA_PYTHONPATH=/usr/local/src/analytic-libs/spark-2.1/python-2.7:/usr/local/src/analytic-libs/spark-2.1/python:/usr/local/src/analytic-libs/python
++++ [[ -n /usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/* ]]
++++ export 'SPARK_DIST_CLASSPATH+=:/usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/*'
++++ SPARK_DIST_CLASSPATH+=':/usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/*'
++++ [[ -n /usr/local/src/analytic-libs/spark-2.1/python-2.7:/usr/local/src/analytic-libs/spark-2.1/python:/usr/local/src/analytic-libs/python ]]
++++ export PYTHONPATH+=:/usr/local/src/analytic-libs/spark-2.1/python-2.7:/usr/local/src/analytic-libs/spark-2.1/python:/usr/local/src/analytic-libs/python
++++ PYTHONPATH+=:/usr/local/src/analytic-libs/spark-2.1/python-2.7:/usr/local/src/analytic-libs/spark-2.1/python:/usr/local/src/analytic-libs/python
++++ [[ /usr/local/src/analytic-libs/profile.sh == */wml-libs* ]]
++++ set +x
+++++ /usr/local/src/wml-libs/profile.sh 2.1 2.11 2.7
++++ local 'profiledata=EXTRA_CLASSPATH='\''/usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/*'\'' EXTRA_PYTHONPATH='\''/usr/local/src/wml-libs.v30/python-2.7:/usr/local/src/wml-libs.v30/spark-2.1/python-2.7'\'' TAM_DIR='\''/usr/local/src/wml-libs.v30/tam'\'''
++++ eval local 'EXTRA_CLASSPATH='\''/usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/*'\''' 'EXTRA_PYTHONPATH='\''/usr/local/src/wml-libs.v30/python-2.7:/usr/local/src/wml-libs.v30/spark-2.1/python-2.7'\''' 'TAM_DIR='\''/usr/local/src/wml-libs.v30/tam'\'''
+++++ local 'EXTRA_CLASSPATH=/usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/*' EXTRA_PYTHONPATH=/usr/local/src/wml-libs.v30/python-2.7:/usr/local/src/wml-libs.v30/spark-2.1/python-2.7 TAM_DIR=/usr/local/src/wml-libs.v30/tam
++++ [[ -n /usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/* ]]
++++ export 'SPARK_DIST_CLASSPATH+=:/usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/*'
++++ SPARK_DIST_CLASSPATH+=':/usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/*'
++++ [[ -n /usr/local/src/wml-libs.v30/python-2.7:/usr/local/src/wml-libs.v30/spark-2.1/python-2.7 ]]
++++ export PYTHONPATH+=:/usr/local/src/wml-libs.v30/python-2.7:/usr/local/src/wml-libs.v30/spark-2.1/python-2.7
++++ PYTHONPATH+=:/usr/local/src/wml-libs.v30/python-2.7:/usr/local/src/wml-libs.v30/spark-2.1/python-2.7
++++ [[ /usr/local/src/wml-libs/profile.sh == */wml-libs* ]]
++++ [[ -n /usr/local/src/wml-libs.v30/tam ]]
++++ export NGWB_TAM_FILE_LOCATION=/usr/local/src/wml-libs.v30/tam
++++ NGWB_TAM_FILE_LOCATION=/usr/local/src/wml-libs.v30/tam
++++ set +x
+Spark Command: /usr/local/src/spark21master/ibm-java-x86_64-80/bin/java -cp /usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/spark-launcher_2.11-2.1.2.jar:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/spark-network-shuffle_2.11-2.1.2.jar:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/gson-2.2.4.jar:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/guava-14.0.1.jar:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/Java-WebSocket-1.3.0.jar:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/spark-ego_2.11-2.1.2.jar:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/spark-network-common_2.11-2.1.2.jar:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/thirdparty/avro-1.8.0.jar:/usr/local/src/spark21master/spark/profile/batch/:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/jars/*:/usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/*:/usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/*:/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/:/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/*:/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/scala-2.11:/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/scala-2.11/*:/usr/local/src/dataconnector-stocator/spark-2.0.0/libs/*:/usr/local/src/dataconnector-s3-2.0/spark-2.0.0/libs/*:/usr/local/src/dataconnector-cloudant-2.0/spark-2.0.0/libs/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/jars/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/jdbc/lib/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/thirdparty/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/libs/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/thirdparty/aws/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/config/:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/FaspStreamSDK/lib/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/jars/JISPlugins/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/branded_jdbc/lib/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/ASBServer/apps/lib/iis/*/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/connectors/*/*:/usr/local/src/event-stream-2.0/spark-2.0.0/libs/*:/usr/local/src/dataconnector-db2/*:/usr/local/src/datasource-idax/* -Dspark.executor.extraClassPath=/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/*: -Dspark.service.hashed_tenant_id=drqZ3lx0wZAjq+1tGx+RTTMzS35bUrX0bePBKA== -Dspark.eventLog.enabled=true -Dspark.service.plan_name=ibm.SparkService.PayGoPersonal -Dspark.authenticate.secret=.secret -Dspark.ego.authenticate.tenantSecret.pathPrefix=/gpfs/fs01/user -Dspark.service.spark_version=2.1 -Dspark.driver.extraLibraryPath=/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/*: -Dspark.authenticate.enableSaslEncryption=true -Dspark.eventLog.dir=/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/events -Dspark.master=spark://yp-spark-dal09-env5-0009:7089 -Dspark.executor.extraLibraryPath=/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/*: -Dspark.driver.extraClassPath=/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/*: -Dspark.driver.extraJavaOptions=-Xdump:tool:events=excessivegc,exec=kill -9 %pid -Dspark.executor.memory=1024m -Dspark.io.encryption.enabled=true -Dspark.ego.authenticate.tenantSecret.filename=.secret -Dspark.app.name=“loan-validation” -Dspark.network.sasl.serverAlwaysEncrypt=true -Dspark.jars=/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/d12d92d3dca2e4d5ba670c4f3cf34d7fc4c6ab9a/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar -Dspark.driver.maxResultSize=1210M -Dspark.authenticate=true -Dspark.files.useFetchCache=false -Xdump:tool:events=excessivegc,exec=kill -9 %pid -Dspark.shuffle.service.port=7342 -Xmx1512m org.apache.spark.deploy.ego.EGOClusterDriverWrapper {{WORKER_URL}} /gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/d12d92d3dca2e4d5ba670c4f3cf34d7fc4c6ab9a/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner
+========================================
+log4j:ERROR Could not find value for key log4j.appender.FILE
+log4j:ERROR Could not instantiate appender named "FILE".
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/jars/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/src/wml-libs.v30/spark-2.0/jars/tika-app-2.0-1.14.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/src/wml-libs.v30/spark-2.0/jars/ml-event-client-scala-library-0.1.55-201709150512-allinone.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/thirdparty/slf4j-simple-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+18/07/19 15:33:36 INFO deploy.ego.EGOClusterDriverWrapper: Started daemon with process name: 20440@yp-spark-dal09-env5-0049
+18/07/19 15:33:36 INFO spark.util.SignalUtils: Registered signal handler for TERM
+18/07/19 15:33:36 INFO spark.util.SignalUtils: Registered signal handler for HUP
+18/07/19 15:33:36 INFO spark.util.SignalUtils: Registered signal handler for INT
+18/07/19 15:33:36 WARN hadoop.util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/07/19 15:33:37 INFO apache.spark.SecurityManager: Changing view acls to: sb1f-e2fb2aec88783d-178f40bd326e
+18/07/19 15:33:37 INFO apache.spark.SecurityManager: Changing modify acls to: sb1f-e2fb2aec88783d-178f40bd326e
+18/07/19 15:33:37 INFO apache.spark.SecurityManager: Changing view acls groups to: 
+18/07/19 15:33:37 INFO apache.spark.SecurityManager: Changing modify acls groups to: 
+18/07/19 15:33:37 INFO apache.spark.SecurityManager: SecurityManager: authentication enabled; ui acls disabled; users  with view permissions: Set(sb1f-e2fb2aec88783d-178f40bd326e); groups with view permissions: Set(); users  with modify permissions: Set(sb1f-e2fb2aec88783d-178f40bd326e); groups with modify permissions: Set()
+18/07/19 15:33:37 INFO spark.util.Utils: Successfully started service 'EGOClusterDriverWrapper-driver-20180719153334-0068-b724e45b-b1ef-4826-acc5-9ec3c143e7d8' on port 36334.
+18/07/19 15:33:38 INFO network.client.TransportClientFactory: Successfully created connection to yp-spark-dal09-env5-0009/10.142.16.72:7089 after 660 ms (629 ms spent in bootstraps)
+18/07/19 15:33:38 INFO apache.spark.SecurityManager: Changing view acls to: sb1f-e2fb2aec88783d-178f40bd326e
+18/07/19 15:33:38 INFO apache.spark.SecurityManager: Changing modify acls to: sb1f-e2fb2aec88783d-178f40bd326e
+18/07/19 15:33:38 INFO apache.spark.SecurityManager: Changing view acls groups to: 
+18/07/19 15:33:38 INFO apache.spark.SecurityManager: Changing modify acls groups to: 
+18/07/19 15:33:38 INFO apache.spark.SecurityManager: SecurityManager: authentication enabled; ui acls disabled; users  with view permissions: Set(sb1f-e2fb2aec88783d-178f40bd326e); groups with view permissions: Set(); users  with modify permissions: Set(sb1f-e2fb2aec88783d-178f40bd326e); groups with modify permissions: Set()
+18/07/19 15:33:38 INFO deploy.ego.EGOClusterDriverWrapper: Fetching jar file from /gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/d12d92d3dca2e4d5ba670c4f3cf34d7fc4c6ab9a/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar to /tmp/spark-21-ego-master/work/spark-driver-d6073f0c-380f-4688-bf29-f82de1ac9fae/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar
+18/07/19 15:33:38 INFO spark.util.Utils: Copying /gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/d12d92d3dca2e4d5ba670c4f3cf34d7fc4c6ab9a/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar to /tmp/spark-21-ego-master/work/spark-driver-d6073f0c-380f-4688-bf29-f82de1ac9fae/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar
+18/07/19 15:33:38 INFO deploy.ego.EGOClusterDriverWrapper: Starting the user JAR in a separate Thread
+18/07/19 15:33:38 INFO deploy.ego.EGOClusterDriverWrapper: Waiting for spark context initialization ... 0
+18/07/19 15:33:38 WARN hadoop.util.ShutdownHookManager: ShutdownHook '' failed, java.lang.ExceptionInInitializerError
+java.lang.ExceptionInInitializerError
+	at java.lang.J9VMInternals.ensureError(J9VMInternals.java:146)
+	at java.lang.J9VMInternals.recordInitializationFailure(J9VMInternals.java:135)
+	at org.apache.spark.deploy.ego.EGOClusterDriverWrapper.finish(EGOClusterDriverWrapper.scala:250)
+	at org.apache.spark.deploy.ego.EGOClusterDriverWrapper$$anon$4.run(EGOClusterDriverWrapper.scala:196)
+	at org.apache.hadoop.util.ShutdownHookManager$1.run(ShutdownHookManager.java:54)
+Caused by: java.lang.IllegalStateException: Shutdown in progress, cannot add a shutdownHook
+	at org.apache.hadoop.util.ShutdownHookManager.addShutdownHook(ShutdownHookManager.java:152)
+	at org.apache.spark.util.SparkShutdownHookManager.install(ShutdownHookManager.scala:180)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks$lzycompute(ShutdownHookManager.scala:50)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks(ShutdownHookManager.scala:48)
+	at org.apache.spark.util.ShutdownHookManager$.addShutdownHook(ShutdownHookManager.scala:153)
+	at org.apache.spark.util.ShutdownHookManager$.<init>(ShutdownHookManager.scala:58)
+	at org.apache.spark.util.ShutdownHookManager$.<clinit>(ShutdownHookManager.scala)
+	... 3 more

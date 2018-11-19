@@ -1,0 +1,518 @@
+++++ /usr/local/src/analytic-libs/profile.sh 2.1 2.11 2.7
++++ local 'profiledata=EXTRA_CLASSPATH='\''/usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/*'\'' EXTRA_PYTHONPATH='\''/usr/local/src/analytic-libs/spark-2.1/python-2.7:/usr/local/src/analytic-libs/spark-2.1/python:/usr/local/src/analytic-libs/python'\'''
++++ eval local 'EXTRA_CLASSPATH='\''/usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/*'\''' 'EXTRA_PYTHONPATH='\''/usr/local/src/analytic-libs/spark-2.1/python-2.7:/usr/local/src/analytic-libs/spark-2.1/python:/usr/local/src/analytic-libs/python'\'''
+++++ local 'EXTRA_CLASSPATH=/usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/*' EXTRA_PYTHONPATH=/usr/local/src/analytic-libs/spark-2.1/python-2.7:/usr/local/src/analytic-libs/spark-2.1/python:/usr/local/src/analytic-libs/python
++++ [[ -n /usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/* ]]
++++ export 'SPARK_DIST_CLASSPATH+=:/usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/*'
++++ SPARK_DIST_CLASSPATH+=':/usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/*'
++++ [[ -n /usr/local/src/analytic-libs/spark-2.1/python-2.7:/usr/local/src/analytic-libs/spark-2.1/python:/usr/local/src/analytic-libs/python ]]
++++ export PYTHONPATH+=:/usr/local/src/analytic-libs/spark-2.1/python-2.7:/usr/local/src/analytic-libs/spark-2.1/python:/usr/local/src/analytic-libs/python
++++ PYTHONPATH+=:/usr/local/src/analytic-libs/spark-2.1/python-2.7:/usr/local/src/analytic-libs/spark-2.1/python:/usr/local/src/analytic-libs/python
++++ [[ /usr/local/src/analytic-libs/profile.sh == */wml-libs* ]]
++++ set +x
+++++ /usr/local/src/wml-libs/profile.sh 2.1 2.11 2.7
++++ local 'profiledata=EXTRA_CLASSPATH='\''/usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/*'\'' EXTRA_PYTHONPATH='\''/usr/local/src/wml-libs.v30/python-2.7:/usr/local/src/wml-libs.v30/spark-2.1/python-2.7'\'' TAM_DIR='\''/usr/local/src/wml-libs.v30/tam'\'''
++++ eval local 'EXTRA_CLASSPATH='\''/usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/*'\''' 'EXTRA_PYTHONPATH='\''/usr/local/src/wml-libs.v30/python-2.7:/usr/local/src/wml-libs.v30/spark-2.1/python-2.7'\''' 'TAM_DIR='\''/usr/local/src/wml-libs.v30/tam'\'''
+++++ local 'EXTRA_CLASSPATH=/usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/*' EXTRA_PYTHONPATH=/usr/local/src/wml-libs.v30/python-2.7:/usr/local/src/wml-libs.v30/spark-2.1/python-2.7 TAM_DIR=/usr/local/src/wml-libs.v30/tam
++++ [[ -n /usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/* ]]
++++ export 'SPARK_DIST_CLASSPATH+=:/usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/*'
++++ SPARK_DIST_CLASSPATH+=':/usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/*'
++++ [[ -n /usr/local/src/wml-libs.v30/python-2.7:/usr/local/src/wml-libs.v30/spark-2.1/python-2.7 ]]
++++ export PYTHONPATH+=:/usr/local/src/wml-libs.v30/python-2.7:/usr/local/src/wml-libs.v30/spark-2.1/python-2.7
++++ PYTHONPATH+=:/usr/local/src/wml-libs.v30/python-2.7:/usr/local/src/wml-libs.v30/spark-2.1/python-2.7
++++ [[ /usr/local/src/wml-libs/profile.sh == */wml-libs* ]]
++++ [[ -n /usr/local/src/wml-libs.v30/tam ]]
++++ export NGWB_TAM_FILE_LOCATION=/usr/local/src/wml-libs.v30/tam
++++ NGWB_TAM_FILE_LOCATION=/usr/local/src/wml-libs.v30/tam
++++ set +x
+Spark Command: /usr/local/src/spark21master/ibm-java-x86_64-80/bin/java -cp /usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/spark-launcher_2.11-2.1.2.jar:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/spark-network-shuffle_2.11-2.1.2.jar:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/gson-2.2.4.jar:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/guava-14.0.1.jar:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/Java-WebSocket-1.3.0.jar:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/spark-ego_2.11-2.1.2.jar:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/ego/spark-network-common_2.11-2.1.2.jar:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/thirdparty/avro-1.8.0.jar:/usr/local/src/spark21master/spark/profile/batch/:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/jars/*:/usr/local/src/analytic-libs/common/*:/usr/local/src/analytic-libs/spark-2.1/*:/usr/local/src/wml-libs.v30/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/jars/*:/usr/local/src/wml-libs.v30/spark-2.1/dataconnector-dw-2.1/*:/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/:/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/*:/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/scala-2.11:/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/scala-2.11/*:/usr/local/src/dataconnector-stocator/spark-2.0.0/libs/*:/usr/local/src/dataconnector-s3-2.0/spark-2.0.0/libs/*:/usr/local/src/dataconnector-cloudant-2.0/spark-2.0.0/libs/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/jars/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/jdbc/lib/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/thirdparty/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/libs/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/thirdparty/aws/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/config/:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/FaspStreamSDK/lib/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/jars/JISPlugins/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/branded_jdbc/lib/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/ASBServer/apps/lib/iis/*/*:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/connectors/*/*:/usr/local/src/event-stream-2.0/spark-2.0.0/libs/*:/usr/local/src/dataconnector-db2/*:/usr/local/src/datasource-idax/* -Dspark.executor.extraClassPath=/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/*: -Dspark.service.hashed_tenant_id=drqZ3lx0wZAjq+1tGx+RTTMzS35bUrX0bePBKA== -Dspark.eventLog.enabled=true -Dspark.service.plan_name=ibm.SparkService.PayGoPersonal -Dspark.authenticate.secret=.secret -Dspark.ego.authenticate.tenantSecret.pathPrefix=/gpfs/fs01/user -Dspark.service.spark_version=2.1 -Dspark.driver.extraLibraryPath=/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/*: -Dspark.authenticate.enableSaslEncryption=true -Dspark.eventLog.dir=/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/events -Dspark.master=spark://yp-spark-dal09-env5-0009:7089 -Dspark.executor.extraLibraryPath=/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/*: -Dspark.driver.extraClassPath=/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/libs/*: -Dspark.driver.extraJavaOptions=-Xdump:tool:events=excessivegc,exec=kill -9 %pid -Dspark.executor.memory=1024m -Dspark.jars=/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/4f3f1e0333b1aef32d7d8b00e1f7b598dc1f7821/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar -Dspark.io.encryption.enabled=true -Dspark.ego.authenticate.tenantSecret.filename=.secret -Dspark.app.name=“loan-validation” -Dspark.network.sasl.serverAlwaysEncrypt=true -Dspark.driver.maxResultSize=1210M -Dspark.authenticate=true -Dspark.files.useFetchCache=false -Xdump:tool:events=excessivegc,exec=kill -9 %pid -Dspark.shuffle.service.port=7342 -Xmx1512m org.apache.spark.deploy.ego.EGOClusterDriverWrapper {{WORKER_URL}} /gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/4f3f1e0333b1aef32d7d8b00e1f7b598dc1f7821/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --inputgen 1000 --output loanvalidation-decisions-1K.json
+========================================
+log4j:ERROR Could not find value for key log4j.appender.FILE
+log4j:ERROR Could not instantiate appender named "FILE".
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/src/spark21master/spark-2.1.2-bin-2.7.3/jars/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/src/wml-libs.v30/spark-2.0/jars/ml-event-client-scala-library-0.1.55-201709150512-allinone.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/src/wml-libs.v30/spark-2.0/jars/tika-app-2.0-1.14.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/src/dataconnector-dw-2.0/spark-2.0.0/Server/connectivity/thirdparty/slf4j-simple-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+18/07/19 10:18:53 INFO deploy.ego.EGOClusterDriverWrapper: Started daemon with process name: 18660@yp-spark-dal09-env5-0030
+18/07/19 10:18:53 INFO spark.util.SignalUtils: Registered signal handler for TERM
+18/07/19 10:18:53 INFO spark.util.SignalUtils: Registered signal handler for HUP
+18/07/19 10:18:53 INFO spark.util.SignalUtils: Registered signal handler for INT
+18/07/19 10:18:54 WARN hadoop.util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/07/19 10:18:54 INFO apache.spark.SecurityManager: Changing view acls to: sb1f-e2fb2aec88783d-178f40bd326e
+18/07/19 10:18:54 INFO apache.spark.SecurityManager: Changing modify acls to: sb1f-e2fb2aec88783d-178f40bd326e
+18/07/19 10:18:54 INFO apache.spark.SecurityManager: Changing view acls groups to: 
+18/07/19 10:18:54 INFO apache.spark.SecurityManager: Changing modify acls groups to: 
+18/07/19 10:18:54 INFO apache.spark.SecurityManager: SecurityManager: authentication enabled; ui acls disabled; users  with view permissions: Set(sb1f-e2fb2aec88783d-178f40bd326e); groups with view permissions: Set(); users  with modify permissions: Set(sb1f-e2fb2aec88783d-178f40bd326e); groups with modify permissions: Set()
+18/07/19 10:18:54 INFO spark.util.Utils: Successfully started service 'EGOClusterDriverWrapper-driver-20180719101851-0749-9413a9c0-9c4d-43a1-8320-75fbd41474f7' on port 38063.
+18/07/19 10:18:55 INFO network.client.TransportClientFactory: Successfully created connection to yp-spark-dal09-env5-0009/10.142.16.72:7089 after 989 ms (957 ms spent in bootstraps)
+18/07/19 10:18:56 INFO apache.spark.SecurityManager: Changing view acls to: sb1f-e2fb2aec88783d-178f40bd326e
+18/07/19 10:18:56 INFO apache.spark.SecurityManager: Changing modify acls to: sb1f-e2fb2aec88783d-178f40bd326e
+18/07/19 10:18:56 INFO apache.spark.SecurityManager: Changing view acls groups to: 
+18/07/19 10:18:56 INFO apache.spark.SecurityManager: Changing modify acls groups to: 
+18/07/19 10:18:56 INFO apache.spark.SecurityManager: SecurityManager: authentication enabled; ui acls disabled; users  with view permissions: Set(sb1f-e2fb2aec88783d-178f40bd326e); groups with view permissions: Set(); users  with modify permissions: Set(sb1f-e2fb2aec88783d-178f40bd326e); groups with modify permissions: Set()
+18/07/19 10:18:56 INFO deploy.ego.EGOClusterDriverWrapper: Fetching jar file from /gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/4f3f1e0333b1aef32d7d8b00e1f7b598dc1f7821/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar to /tmp/spark-21-ego-master/work/spark-driver-8d7c3725-2388-41ea-98d6-1327c7e78a5d/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar
+18/07/19 10:18:56 INFO spark.util.Utils: Copying /gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/4f3f1e0333b1aef32d7d8b00e1f7b598dc1f7821/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar to /tmp/spark-21-ego-master/work/spark-driver-8d7c3725-2388-41ea-98d6-1327c7e78a5d/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar
+18/07/19 10:18:56 INFO deploy.ego.EGOClusterDriverWrapper: Starting the user JAR in a separate Thread
+18/07/19 10:18:56 INFO deploy.ego.EGOClusterDriverWrapper: Waiting for spark context initialization ... 0
+18/07/19 10:18:56 INFO apache.spark.SparkContext: Running Spark version 2.1.2
+18/07/19 10:18:56 INFO apache.spark.SecurityManager: Changing view acls to: sb1f-e2fb2aec88783d-178f40bd326e
+18/07/19 10:18:56 INFO apache.spark.SecurityManager: Changing modify acls to: sb1f-e2fb2aec88783d-178f40bd326e
+18/07/19 10:18:56 INFO apache.spark.SecurityManager: Changing view acls groups to: 
+18/07/19 10:18:56 INFO apache.spark.SecurityManager: Changing modify acls groups to: 
+18/07/19 10:18:56 INFO apache.spark.SecurityManager: SecurityManager: authentication enabled; ui acls disabled; users  with view permissions: Set(sb1f-e2fb2aec88783d-178f40bd326e); groups with view permissions: Set(); users  with modify permissions: Set(sb1f-e2fb2aec88783d-178f40bd326e); groups with modify permissions: Set()
+18/07/19 10:18:56 INFO spark.util.Utils: Successfully started service 'sparkDriver' on port 38057.
+18/07/19 10:18:56 INFO apache.spark.SparkEnv: Registering MapOutputTracker
+18/07/19 10:18:56 INFO apache.spark.SparkEnv: Registering BlockManagerMaster
+18/07/19 10:18:56 INFO spark.storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+18/07/19 10:18:56 INFO spark.storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+18/07/19 10:18:56 INFO storage.memory.MemoryStore: MemoryStore started with capacity 727.2 MB
+18/07/19 10:18:56 INFO apache.spark.SparkEnv: Registering OutputCommitCoordinator
+18/07/19 10:18:56 INFO jetty.util.log: Logging initialized @3781ms
+18/07/19 10:18:56 INFO jetty.server.Server: jetty-9.2.z-SNAPSHOT
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-1fb82721{/login,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@30f7b769{/logout,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-495aa7b2{/jobs,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-6138b24b{/jobs/json,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@41d23324{/jobs/job,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4867bc19{/jobs/job/json,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@30050762{/stages,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@22bf27de{/stages/json,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-4526a1b6{/stages/stage,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@54e2a019{/stages/stage/json,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-2cf2fadb{/stages/pool,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-2fda615{/stages/pool/json,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-45b6097f{/storage,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@61bb3bc6{/storage/json,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-4914bc85{/storage/rdd,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-2aa2f4cc{/storage/rdd/json,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-152f493f{/environment,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@146cbd00{/environment/json,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-5c466af9{/executors,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@32d61930{/executors/json,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-10b84a2e{/executors/threadDump,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-62f3c912{/executors/threadDump/json,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-680447d2{/static,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-45f7c8b9{/,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-12d163df{/api,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-288275b8{/jobs/job/kill,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-b5a5cb0{/stages/stage/kill,null,AVAILABLE,@Spark}
+18/07/19 10:18:56 INFO jetty.server.ServerConnector: Started Spark@ff3a6242{HTTP/1.1}{0.0.0.0:35404}
+18/07/19 10:18:56 INFO jetty.server.Server: Started @3944ms
+18/07/19 10:18:56 INFO spark.util.Utils: Successfully started service 'SparkUI' on port 35404.
+18/07/19 10:18:56 INFO spark.ui.SparkUI: Bound SparkUI to 0.0.0.0, and started at http://10.143.133.122:35404
+18/07/19 10:18:56 INFO apache.spark.SparkContext: Added JAR /gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/data/4f3f1e0333b1aef32d7d8b00e1f7b598dc1f7821/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar at spark://10.143.133.122:38057/jars/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar with timestamp 1532013536766
+18/07/19 10:18:56 INFO spark.util.EGOSparkDockerConfig: Executor Container Type is 'normal' from local configuration file.
+18/07/19 10:18:56 INFO spark.util.EGOSparkDockerConfig: Driver Container Type is 'normal' from local configuration file.
+18/07/19 10:18:56 INFO spark.util.EGOSparkDockerConfig: spark-ego-docker.conf will not be parsed as docker is not defined as any container type.
+18/07/19 10:18:56 INFO cluster.ego.EGOFineGrainedSchedulerBackend: setting reserve=0, priority=1, limit=2147483647, gpuLimit=2147483647, master=[Ljava.lang.String;@31d05395
+18/07/19 10:18:56 INFO client.ego.EGOAppClient$ClientEndpoint: Connecting to master spark://yp-spark-dal09-env5-0009:7089...
+18/07/19 10:18:56 INFO network.client.TransportClientFactory: Successfully created connection to yp-spark-dal09-env5-0009/10.142.16.72:7089 after 51 ms (50 ms spent in bootstraps)
+18/07/19 10:18:57 INFO network.client.TransportClientFactory: Successfully created connection to /10.143.133.122:38063 after 87 ms (86 ms spent in bootstraps)
+18/07/19 10:18:57 INFO cluster.ego.EGOFineGrainedSchedulerBackend: Connected to Spark cluster with app ID app-20180719101856-0719-8a03a432-ba5b-4020-830b-26890c93fa97
+18/07/19 10:18:57 INFO cluster.ego.EGOFineGrainedSchedulerBackend: Application registered successfully as app-20180719101856-0719-8a03a432-ba5b-4020-830b-26890c93fa97, executor Container type is normal
+18/07/19 10:18:57 INFO spark.storage.DiskBlockManager: Init the driver local dir
+18/07/19 10:18:57 INFO spark.storage.DiskBlockManager: Created local directory at /tmp/spark-21-ego-master/work/blockmgr-46468329-46f1-4f4f-a265-5ff4ce3c184d
+18/07/19 10:18:57 INFO spark.util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39496.
+18/07/19 10:18:57 INFO network.netty.NettyBlockTransferService: Server created on 10.143.133.122:39496
+18/07/19 10:18:57 INFO spark.storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+18/07/19 10:18:57 INFO spark.storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.143.133.122, 39496, None)
+18/07/19 10:18:57 INFO spark.storage.BlockManagerMasterEndpoint: Registering block manager 10.143.133.122:39496 with 727.2 MB RAM, BlockManagerId(driver, 10.143.133.122, 39496, None)
+18/07/19 10:18:57 INFO spark.storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.143.133.122, 39496, None)
+18/07/19 10:18:57 INFO spark.storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.143.133.122, 39496, None)
+18/07/19 10:18:57 INFO server.handler.ContextHandler: Started o.s.j.s.ServletContextHandler@-7d56e47{/metrics/json,null,AVAILABLE,@Spark}
+18/07/19 10:18:57 INFO spark.scheduler.EventLoggingListener: Logging events to file:/gpfs/fs01/user/sb1f-e2fb2aec88783d-178f40bd326e/events/app-20180719101856-0719-8a03a432-ba5b-4020-830b-26890c93fa97
+18/07/19 10:18:57 INFO cluster.ego.EGODeployScheduler: Spark context initialized.
+18/07/19 10:18:57 INFO apache.spark.SparkContext: Starting job: count at LoanValidationSparkRunner.java:267
+18/07/19 10:18:57 INFO spark.scheduler.DAGScheduler: Got job 0 (count at LoanValidationSparkRunner.java:267) with 2 output partitions
+18/07/19 10:18:57 INFO spark.scheduler.DAGScheduler: Final stage: ResultStage 0 (count at LoanValidationSparkRunner.java:267)
+18/07/19 10:18:57 INFO spark.scheduler.DAGScheduler: Parents of final stage: List()
+18/07/19 10:18:57 INFO spark.scheduler.DAGScheduler: Missing parents: List()
+18/07/19 10:18:57 INFO spark.scheduler.DAGScheduler: Submitting ResultStage 0 (ParallelCollectionRDD[0] at parallelize at RequestGenerator.java:158), which has no missing parents
+18/07/19 10:18:57 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId(0)
+18/07/19 10:18:57 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 0: CPU
+18/07/19 10:18:57 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId is 0, rg is CPU
+18/07/19 10:18:57 INFO storage.memory.MemoryStore: Block broadcast_0 stored as values in memory (estimated size 1448.0 B, free 727.2 MB)
+18/07/19 10:18:57 INFO storage.memory.MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 1006.0 B, free 727.2 MB)
+18/07/19 10:18:57 INFO spark.storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.143.133.122:39496 (size: 1006.0 B, free: 727.2 MB)
+18/07/19 10:18:57 INFO apache.spark.SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:997
+18/07/19 10:18:57 INFO spark.scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 0 (ParallelCollectionRDD[0] at parallelize at RequestGenerator.java:158)
+18/07/19 10:18:57 INFO cluster.ego.EGODeployScheduler: Adding task set 0.0 with 2 tasks
+18/07/19 10:18:57 INFO cluster.ego.EGOFineGrainedSchedulerBackend: <EVENT> Spark driver 916e9d55-0a6f-403b-bdc4-f90016ddbb40 workload coming in
+18/07/19 10:19:03 INFO cluster.ego.EGOFineGrainedSchedulerBackend: Registered executor NettyRpcEndpointRef(null) (10.143.133.172:36078) with ID 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e
+18/07/19 10:19:03 INFO spark.storage.BlockManagerMasterEndpoint: Registering block manager yp-spark-dal09-env5-0047:44366 with 3.4 GB RAM, BlockManagerId(3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e, yp-spark-dal09-env5-0047, 44366, None)
+18/07/19 10:19:03 WARN spark.scheduler.TaskSetManager: Stage 0 contains a task of very large size (205 KB). The maximum recommended task size is 100 KB.
+18/07/19 10:19:03 INFO spark.scheduler.TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, yp-spark-dal09-env5-0047, executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e, partition 0, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:03 INFO cluster.ego.EGOFineGrainedSchedulerBackend: Registered executor NettyRpcEndpointRef(null) (10.143.133.18:59378) with ID 09bf44a8-2599-46cd-a143-e7f82561bcba
+18/07/19 10:19:03 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 0 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e
+18/07/19 10:19:03 INFO spark.storage.BlockManagerMasterEndpoint: Registering block manager yp-spark-dal09-env5-0019:40039 with 3.4 GB RAM, BlockManagerId(09bf44a8-2599-46cd-a143-e7f82561bcba, yp-spark-dal09-env5-0019, 40039, None)
+18/07/19 10:19:03 INFO spark.scheduler.TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, yp-spark-dal09-env5-0019, executor 09bf44a8-2599-46cd-a143-e7f82561bcba, partition 1, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:03 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 1 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba
+18/07/19 10:19:06 INFO spark.storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on yp-spark-dal09-env5-0019:40039 (size: 1006.0 B, free: 3.4 GB)
+18/07/19 10:19:06 INFO spark.storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on yp-spark-dal09-env5-0047:44366 (size: 1006.0 B, free: 3.4 GB)
+18/07/19 10:19:06 INFO spark.scheduler.TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 2588 ms on yp-spark-dal09-env5-0019 (executor 09bf44a8-2599-46cd-a143-e7f82561bcba) (1/2)
+18/07/19 10:19:06 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 1 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba with SUCCESS
+18/07/19 10:19:06 INFO spark.scheduler.TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 2795 ms on yp-spark-dal09-env5-0047 (executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e) (2/2)
+18/07/19 10:19:06 INFO cluster.ego.EGODeployScheduler: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+18/07/19 10:19:06 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 0 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e with SUCCESS
+18/07/19 10:19:06 INFO spark.scheduler.DAGScheduler: ResultStage 0 (count at LoanValidationSparkRunner.java:267) finished in 8.344 s
+18/07/19 10:19:06 INFO spark.scheduler.DAGScheduler: Job 0 finished: count at LoanValidationSparkRunner.java:267, took 8.506188 s
+18/07/19 10:19:06 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageCompleted: stageId(0)
+18/07/19 10:19:06 INFO apache.spark.SparkContext: Starting job: count at LoanValidationSparkRunner.java:274
+18/07/19 10:19:06 INFO spark.scheduler.DAGScheduler: Got job 1 (count at LoanValidationSparkRunner.java:274) with 2 output partitions
+18/07/19 10:19:06 INFO spark.scheduler.DAGScheduler: Final stage: ResultStage 1 (count at LoanValidationSparkRunner.java:274)
+18/07/19 10:19:06 INFO spark.scheduler.DAGScheduler: Parents of final stage: List()
+18/07/19 10:19:06 INFO spark.scheduler.DAGScheduler: Missing parents: List()
+18/07/19 10:19:06 INFO spark.scheduler.DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[1] at map at LoanValidationSparkRunner.java:273), which has no missing parents
+18/07/19 10:19:06 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId(1)
+18/07/19 10:19:06 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 1: CPU
+18/07/19 10:19:06 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 0: CPU
+18/07/19 10:19:06 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId is 1, rg is CPU
+18/07/19 10:19:06 INFO storage.memory.MemoryStore: Block broadcast_1 stored as values in memory (estimated size 2.1 KB, free 727.2 MB)
+18/07/19 10:19:06 INFO storage.memory.MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 1383.0 B, free 727.2 MB)
+18/07/19 10:19:06 INFO spark.storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.143.133.122:39496 (size: 1383.0 B, free: 727.2 MB)
+18/07/19 10:19:06 INFO apache.spark.SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:997
+18/07/19 10:19:06 INFO spark.scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 1 (MapPartitionsRDD[1] at map at LoanValidationSparkRunner.java:273)
+18/07/19 10:19:06 INFO cluster.ego.EGODeployScheduler: Adding task set 1.0 with 2 tasks
+18/07/19 10:19:06 WARN spark.scheduler.TaskSetManager: Stage 1 contains a task of very large size (205 KB). The maximum recommended task size is 100 KB.
+18/07/19 10:19:06 INFO spark.scheduler.TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2, yp-spark-dal09-env5-0047, executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e, partition 0, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:06 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 2 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e
+18/07/19 10:19:06 INFO spark.scheduler.TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3, yp-spark-dal09-env5-0019, executor 09bf44a8-2599-46cd-a143-e7f82561bcba, partition 1, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:06 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 3 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba
+18/07/19 10:19:06 INFO spark.storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on yp-spark-dal09-env5-0019:40039 (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:06 INFO spark.storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on yp-spark-dal09-env5-0047:44366 (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:11 INFO spark.storage.BlockManagerInfo: Added rdd_1_1 in memory on yp-spark-dal09-env5-0019:40039 (size: 8.8 MB, free: 3.4 GB)
+18/07/19 10:19:11 INFO spark.scheduler.TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 5482 ms on yp-spark-dal09-env5-0019 (executor 09bf44a8-2599-46cd-a143-e7f82561bcba) (1/2)
+18/07/19 10:19:11 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 3 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba with SUCCESS
+18/07/19 10:19:11 INFO spark.storage.BlockManagerInfo: Added rdd_1_0 in memory on yp-spark-dal09-env5-0047:44366 (size: 8.8 MB, free: 3.4 GB)
+18/07/19 10:19:11 INFO spark.scheduler.TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 5727 ms on yp-spark-dal09-env5-0047 (executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e) (2/2)
+18/07/19 10:19:11 INFO cluster.ego.EGODeployScheduler: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+18/07/19 10:19:11 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 2 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e with SUCCESS
+18/07/19 10:19:11 INFO spark.scheduler.DAGScheduler: ResultStage 1 (count at LoanValidationSparkRunner.java:274) finished in 5.728 s
+18/07/19 10:19:11 INFO spark.scheduler.DAGScheduler: Job 1 finished: count at LoanValidationSparkRunner.java:274, took 5.749355 s
+18/07/19 10:19:11 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageCompleted: stageId(1)
+18/07/19 10:19:12 INFO conf.Configuration.deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+18/07/19 10:19:12 INFO conf.Configuration.deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+18/07/19 10:19:12 INFO conf.Configuration.deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+18/07/19 10:19:12 INFO conf.Configuration.deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+18/07/19 10:19:12 INFO conf.Configuration.deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+18/07/19 10:19:12 INFO lib.output.FileOutputCommitter: File Output Committer Algorithm version is 1
+18/07/19 10:19:12 INFO spark.storage.BlockManagerInfo: Removed broadcast_1_piece0 on 10.143.133.122:39496 in memory (size: 1383.0 B, free: 727.2 MB)
+18/07/19 10:19:12 INFO spark.storage.BlockManagerInfo: Removed broadcast_1_piece0 on yp-spark-dal09-env5-0047:44366 in memory (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:12 INFO spark.storage.BlockManagerInfo: Removed broadcast_1_piece0 on yp-spark-dal09-env5-0019:40039 in memory (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:12 INFO apache.spark.SparkContext: Starting job: saveAsTextFile at LoanValidationSparkRunner.java:300
+18/07/19 10:19:12 INFO spark.scheduler.DAGScheduler: Got job 2 (saveAsTextFile at LoanValidationSparkRunner.java:300) with 1 output partitions
+18/07/19 10:19:12 INFO spark.scheduler.DAGScheduler: Final stage: ResultStage 2 (saveAsTextFile at LoanValidationSparkRunner.java:300)
+18/07/19 10:19:12 INFO spark.scheduler.DAGScheduler: Parents of final stage: List()
+18/07/19 10:19:12 INFO spark.scheduler.DAGScheduler: Missing parents: List()
+18/07/19 10:19:12 INFO spark.scheduler.DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[4] at saveAsTextFile at LoanValidationSparkRunner.java:300), which has no missing parents
+18/07/19 10:19:12 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId(2)
+18/07/19 10:19:12 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 4: CPU
+18/07/19 10:19:12 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 1: CPU
+18/07/19 10:19:12 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 2: CPU
+18/07/19 10:19:12 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 0: CPU
+18/07/19 10:19:12 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 3: CPU
+18/07/19 10:19:12 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId is 2, rg is CPU
+18/07/19 10:19:12 INFO storage.memory.MemoryStore: Block broadcast_2 stored as values in memory (estimated size 73.6 KB, free 727.1 MB)
+18/07/19 10:19:12 INFO storage.memory.MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 26.6 KB, free 727.1 MB)
+18/07/19 10:19:12 INFO spark.storage.BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.143.133.122:39496 (size: 26.6 KB, free: 727.2 MB)
+18/07/19 10:19:12 INFO apache.spark.SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:997
+18/07/19 10:19:12 INFO spark.scheduler.DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[4] at saveAsTextFile at LoanValidationSparkRunner.java:300)
+18/07/19 10:19:12 INFO cluster.ego.EGODeployScheduler: Adding task set 2.0 with 1 tasks
+18/07/19 10:19:12 WARN spark.scheduler.TaskSetManager: Stage 2 contains a task of very large size (402 KB). The maximum recommended task size is 100 KB.
+18/07/19 10:19:12 INFO spark.scheduler.TaskSetManager: Starting task 0.0 in stage 2.0 (TID 4, yp-spark-dal09-env5-0047, executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e, partition 0, PROCESS_LOCAL, 411706 bytes)
+18/07/19 10:19:12 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 4 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e
+18/07/19 10:19:12 INFO spark.storage.BlockManagerInfo: Added broadcast_2_piece0 in memory on yp-spark-dal09-env5-0047:44366 (size: 26.6 KB, free: 3.4 GB)
+18/07/19 10:19:14 INFO spark.storage.BlockManagerInfo: Added rdd_2_0 in memory on yp-spark-dal09-env5-0047:44366 (size: 9.6 MB, free: 3.4 GB)
+18/07/19 10:19:15 INFO spark.storage.BlockManagerInfo: Added rdd_2_1 in memory on yp-spark-dal09-env5-0047:44366 (size: 9.6 MB, free: 3.4 GB)
+18/07/19 10:19:15 INFO spark.scheduler.TaskSetManager: Finished task 0.0 in stage 2.0 (TID 4) in 3577 ms on yp-spark-dal09-env5-0047 (executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e) (1/1)
+18/07/19 10:19:15 INFO cluster.ego.EGODeployScheduler: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 4 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e with SUCCESS
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: ResultStage 2 (saveAsTextFile at LoanValidationSparkRunner.java:300) finished in 3.580 s
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: Job 2 finished: saveAsTextFile at LoanValidationSparkRunner.java:300, took 3.642366 s
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageCompleted: stageId(2)
+18/07/19 10:19:15 INFO apache.spark.SparkContext: Starting job: count at LoanValidationSparkRunner.java:305
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: Got job 3 (count at LoanValidationSparkRunner.java:305) with 2 output partitions
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: Final stage: ResultStage 3 (count at LoanValidationSparkRunner.java:305)
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: Parents of final stage: List()
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: Missing parents: List()
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[1] at map at LoanValidationSparkRunner.java:273), which has no missing parents
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId(3)
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 1: CPU
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 0: CPU
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId is 3, rg is CPU
+18/07/19 10:19:15 INFO storage.memory.MemoryStore: Block broadcast_3 stored as values in memory (estimated size 2.1 KB, free 727.1 MB)
+18/07/19 10:19:15 INFO storage.memory.MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 1383.0 B, free 727.1 MB)
+18/07/19 10:19:15 INFO spark.storage.BlockManagerInfo: Added broadcast_3_piece0 in memory on 10.143.133.122:39496 (size: 1383.0 B, free: 727.2 MB)
+18/07/19 10:19:15 INFO apache.spark.SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:997
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 3 (MapPartitionsRDD[1] at map at LoanValidationSparkRunner.java:273)
+18/07/19 10:19:15 INFO cluster.ego.EGODeployScheduler: Adding task set 3.0 with 2 tasks
+18/07/19 10:19:15 INFO spark.storage.BlockManagerInfo: Removed broadcast_2_piece0 on 10.143.133.122:39496 in memory (size: 26.6 KB, free: 727.2 MB)
+18/07/19 10:19:15 WARN spark.scheduler.TaskSetManager: Stage 3 contains a task of very large size (205 KB). The maximum recommended task size is 100 KB.
+18/07/19 10:19:15 INFO spark.scheduler.TaskSetManager: Starting task 1.0 in stage 3.0 (TID 5, yp-spark-dal09-env5-0019, executor 09bf44a8-2599-46cd-a143-e7f82561bcba, partition 1, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:15 INFO spark.storage.BlockManagerInfo: Removed broadcast_2_piece0 on yp-spark-dal09-env5-0047:44366 in memory (size: 26.6 KB, free: 3.4 GB)
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 5 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba
+18/07/19 10:19:15 INFO spark.scheduler.TaskSetManager: Starting task 0.0 in stage 3.0 (TID 6, yp-spark-dal09-env5-0047, executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e, partition 0, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 6 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e
+18/07/19 10:19:15 INFO spark.storage.BlockManagerInfo: Added broadcast_3_piece0 in memory on yp-spark-dal09-env5-0047:44366 (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:15 INFO spark.storage.BlockManagerInfo: Added broadcast_3_piece0 in memory on yp-spark-dal09-env5-0019:40039 (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:15 INFO spark.scheduler.TaskSetManager: Finished task 0.0 in stage 3.0 (TID 6) in 80 ms on yp-spark-dal09-env5-0047 (executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e) (1/2)
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 6 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e with SUCCESS
+18/07/19 10:19:15 INFO spark.scheduler.TaskSetManager: Finished task 1.0 in stage 3.0 (TID 5) in 96 ms on yp-spark-dal09-env5-0019 (executor 09bf44a8-2599-46cd-a143-e7f82561bcba) (2/2)
+18/07/19 10:19:15 INFO cluster.ego.EGODeployScheduler: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: ResultStage 3 (count at LoanValidationSparkRunner.java:305) finished in 0.098 s
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: Job 3 finished: count at LoanValidationSparkRunner.java:305, took 0.113639 s
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 5 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba with SUCCESS
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageCompleted: stageId(3)
+18/07/19 10:19:15 INFO apache.spark.SparkContext: Starting job: count at LoanValidationSparkRunner.java:307
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: Got job 4 (count at LoanValidationSparkRunner.java:307) with 2 output partitions
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: Final stage: ResultStage 4 (count at LoanValidationSparkRunner.java:307)
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: Parents of final stage: List()
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: Missing parents: List()
+18/07/19 10:19:15 INFO spark.scheduler.DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[1] at map at LoanValidationSparkRunner.java:273), which has no missing parents
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId(4)
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 1: CPU
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 0: CPU
+18/07/19 10:19:15 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId is 4, rg is CPU
+18/07/19 10:19:16 INFO storage.memory.MemoryStore: Block broadcast_4 stored as values in memory (estimated size 2.1 KB, free 727.2 MB)
+18/07/19 10:19:16 INFO storage.memory.MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 1383.0 B, free 727.2 MB)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_3_piece0 on 10.143.133.122:39496 in memory (size: 1383.0 B, free: 727.2 MB)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Added broadcast_4_piece0 in memory on 10.143.133.122:39496 (size: 1383.0 B, free: 727.2 MB)
+18/07/19 10:19:16 INFO apache.spark.SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:997
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_3_piece0 on yp-spark-dal09-env5-0019:40039 in memory (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 4 (MapPartitionsRDD[1] at map at LoanValidationSparkRunner.java:273)
+18/07/19 10:19:16 INFO cluster.ego.EGODeployScheduler: Adding task set 4.0 with 2 tasks
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_3_piece0 on yp-spark-dal09-env5-0047:44366 in memory (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:16 WARN spark.scheduler.TaskSetManager: Stage 4 contains a task of very large size (205 KB). The maximum recommended task size is 100 KB.
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Starting task 0.0 in stage 4.0 (TID 7, yp-spark-dal09-env5-0047, executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e, partition 0, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 7 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Starting task 1.0 in stage 4.0 (TID 8, yp-spark-dal09-env5-0019, executor 09bf44a8-2599-46cd-a143-e7f82561bcba, partition 1, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 8 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Added broadcast_4_piece0 in memory on yp-spark-dal09-env5-0047:44366 (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Added broadcast_4_piece0 in memory on yp-spark-dal09-env5-0019:40039 (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Finished task 0.0 in stage 4.0 (TID 7) in 73 ms on yp-spark-dal09-env5-0047 (executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e) (1/2)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 7 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e with SUCCESS
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Finished task 1.0 in stage 4.0 (TID 8) in 82 ms on yp-spark-dal09-env5-0019 (executor 09bf44a8-2599-46cd-a143-e7f82561bcba) (2/2)
+18/07/19 10:19:16 INFO cluster.ego.EGODeployScheduler: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 8 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba with SUCCESS
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: ResultStage 4 (count at LoanValidationSparkRunner.java:307) finished in 0.091 s
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Job 4 finished: count at LoanValidationSparkRunner.java:307, took 0.114793 s
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_4_piece0 on 10.143.133.122:39496 in memory (size: 1383.0 B, free: 727.2 MB)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageCompleted: stageId(4)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_4_piece0 on yp-spark-dal09-env5-0047:44366 in memory (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_4_piece0 on yp-spark-dal09-env5-0019:40039 in memory (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO apache.spark.SparkContext: Starting job: count at LoanValidationSparkRunner.java:312
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Got job 5 (count at LoanValidationSparkRunner.java:312) with 2 output partitions
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Final stage: ResultStage 5 (count at LoanValidationSparkRunner.java:312)
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Parents of final stage: List()
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Missing parents: List()
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Submitting ResultStage 5 (MapPartitionsRDD[5] at filter at LoanValidationSparkRunner.java:312), which has no missing parents
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId(5)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 5: CPU
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 1: CPU
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 0: CPU
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId is 5, rg is CPU
+18/07/19 10:19:16 INFO storage.memory.MemoryStore: Block broadcast_5 stored as values in memory (estimated size 2.4 KB, free 727.2 MB)
+18/07/19 10:19:16 INFO storage.memory.MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 1494.0 B, free 727.2 MB)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Added broadcast_5_piece0 in memory on 10.143.133.122:39496 (size: 1494.0 B, free: 727.2 MB)
+18/07/19 10:19:16 INFO apache.spark.SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:997
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 5 (MapPartitionsRDD[5] at filter at LoanValidationSparkRunner.java:312)
+18/07/19 10:19:16 INFO cluster.ego.EGODeployScheduler: Adding task set 5.0 with 2 tasks
+18/07/19 10:19:16 WARN spark.scheduler.TaskSetManager: Stage 5 contains a task of very large size (205 KB). The maximum recommended task size is 100 KB.
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Starting task 1.0 in stage 5.0 (TID 9, yp-spark-dal09-env5-0019, executor 09bf44a8-2599-46cd-a143-e7f82561bcba, partition 1, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 9 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Starting task 0.0 in stage 5.0 (TID 10, yp-spark-dal09-env5-0047, executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e, partition 0, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 10 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Added broadcast_5_piece0 in memory on yp-spark-dal09-env5-0047:44366 (size: 1494.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Finished task 0.0 in stage 5.0 (TID 10) in 72 ms on yp-spark-dal09-env5-0047 (executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e) (1/2)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 10 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e with SUCCESS
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Added broadcast_5_piece0 in memory on yp-spark-dal09-env5-0019:40039 (size: 1494.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Finished task 1.0 in stage 5.0 (TID 9) in 117 ms on yp-spark-dal09-env5-0019 (executor 09bf44a8-2599-46cd-a143-e7f82561bcba) (2/2)
+18/07/19 10:19:16 INFO cluster.ego.EGODeployScheduler: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 9 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba with SUCCESS
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: ResultStage 5 (count at LoanValidationSparkRunner.java:312) finished in 0.120 s
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Job 5 finished: count at LoanValidationSparkRunner.java:312, took 0.143717 s
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_5_piece0 on 10.143.133.122:39496 in memory (size: 1494.0 B, free: 727.2 MB)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageCompleted: stageId(5)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_5_piece0 on yp-spark-dal09-env5-0019:40039 in memory (size: 1494.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_5_piece0 on yp-spark-dal09-env5-0047:44366 in memory (size: 1494.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO apache.spark.SparkContext: Starting job: count at LoanValidationSparkRunner.java:316
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Got job 6 (count at LoanValidationSparkRunner.java:316) with 2 output partitions
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Final stage: ResultStage 6 (count at LoanValidationSparkRunner.java:316)
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Parents of final stage: List()
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Missing parents: List()
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[7] at filter at LoanValidationSparkRunner.java:316), which has no missing parents
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId(6)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 7: CPU
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 1: CPU
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 0: CPU
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 6: CPU
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId is 6, rg is CPU
+18/07/19 10:19:16 INFO storage.memory.MemoryStore: Block broadcast_6 stored as values in memory (estimated size 2.5 KB, free 727.2 MB)
+18/07/19 10:19:16 INFO storage.memory.MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 1527.0 B, free 727.2 MB)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Added broadcast_6_piece0 in memory on 10.143.133.122:39496 (size: 1527.0 B, free: 727.2 MB)
+18/07/19 10:19:16 INFO apache.spark.SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:997
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 6 (MapPartitionsRDD[7] at filter at LoanValidationSparkRunner.java:316)
+18/07/19 10:19:16 INFO cluster.ego.EGODeployScheduler: Adding task set 6.0 with 2 tasks
+18/07/19 10:19:16 WARN spark.scheduler.TaskSetManager: Stage 6 contains a task of very large size (205 KB). The maximum recommended task size is 100 KB.
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Starting task 1.0 in stage 6.0 (TID 11, yp-spark-dal09-env5-0019, executor 09bf44a8-2599-46cd-a143-e7f82561bcba, partition 1, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 11 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Starting task 0.0 in stage 6.0 (TID 12, yp-spark-dal09-env5-0047, executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e, partition 0, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 12 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Added broadcast_6_piece0 in memory on yp-spark-dal09-env5-0047:44366 (size: 1527.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Added broadcast_6_piece0 in memory on yp-spark-dal09-env5-0019:40039 (size: 1527.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Finished task 0.0 in stage 6.0 (TID 12) in 63 ms on yp-spark-dal09-env5-0047 (executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e) (1/2)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 12 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e with SUCCESS
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Finished task 1.0 in stage 6.0 (TID 11) in 79 ms on yp-spark-dal09-env5-0019 (executor 09bf44a8-2599-46cd-a143-e7f82561bcba) (2/2)
+18/07/19 10:19:16 INFO cluster.ego.EGODeployScheduler: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 11 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba with SUCCESS
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: ResultStage 6 (count at LoanValidationSparkRunner.java:316) finished in 0.081 s
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Job 6 finished: count at LoanValidationSparkRunner.java:316, took 0.094355 s
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageCompleted: stageId(6)
+18/07/19 10:19:16 INFO apache.spark.SparkContext: Starting job: count at LoanValidationSparkRunner.java:319
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Got job 7 (count at LoanValidationSparkRunner.java:319) with 2 output partitions
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Final stage: ResultStage 7 (count at LoanValidationSparkRunner.java:319)
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Parents of final stage: List()
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Missing parents: List()
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Submitting ResultStage 7 (MapPartitionsRDD[1] at map at LoanValidationSparkRunner.java:273), which has no missing parents
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId(7)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 1: CPU
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: RDD 0: CPU
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId is 7, rg is CPU
+18/07/19 10:19:16 INFO storage.memory.MemoryStore: Block broadcast_7 stored as values in memory (estimated size 2.1 KB, free 727.2 MB)
+18/07/19 10:19:16 INFO storage.memory.MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 1383.0 B, free 727.2 MB)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_6_piece0 on 10.143.133.122:39496 in memory (size: 1527.0 B, free: 727.2 MB)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Added broadcast_7_piece0 in memory on 10.143.133.122:39496 (size: 1383.0 B, free: 727.2 MB)
+18/07/19 10:19:16 INFO apache.spark.SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:997
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 7 (MapPartitionsRDD[1] at map at LoanValidationSparkRunner.java:273)
+18/07/19 10:19:16 INFO cluster.ego.EGODeployScheduler: Adding task set 7.0 with 2 tasks
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_6_piece0 on yp-spark-dal09-env5-0047:44366 in memory (size: 1527.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_6_piece0 on yp-spark-dal09-env5-0019:40039 in memory (size: 1527.0 B, free: 3.4 GB)
+18/07/19 10:19:16 WARN spark.scheduler.TaskSetManager: Stage 7 contains a task of very large size (205 KB). The maximum recommended task size is 100 KB.
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Starting task 0.0 in stage 7.0 (TID 13, yp-spark-dal09-env5-0047, executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e, partition 0, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 13 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Starting task 1.0 in stage 7.0 (TID 14, yp-spark-dal09-env5-0019, executor 09bf44a8-2599-46cd-a143-e7f82561bcba, partition 1, PROCESS_LOCAL, 210365 bytes)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskStart: TID 14 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Added broadcast_7_piece0 in memory on yp-spark-dal09-env5-0047:44366 (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Added broadcast_7_piece0 in memory on yp-spark-dal09-env5-0019:40039 (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Finished task 0.0 in stage 7.0 (TID 13) in 69 ms on yp-spark-dal09-env5-0047 (executor 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e) (1/2)
+18/07/19 10:19:16 INFO spark.scheduler.TaskSetManager: Finished task 1.0 in stage 7.0 (TID 14) in 63 ms on yp-spark-dal09-env5-0019 (executor 09bf44a8-2599-46cd-a143-e7f82561bcba) (2/2)
+18/07/19 10:19:16 INFO cluster.ego.EGODeployScheduler: Removed TaskSet 7.0, whose tasks have all completed, from pool 
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 13 ( Index 0 ) on 3cc65fe3-68b0-4b2d-b8ce-ad3b603aec4e with SUCCESS
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: ResultStage 7 (count at LoanValidationSparkRunner.java:319) finished in 0.071 s
+18/07/19 10:19:16 INFO spark.scheduler.DAGScheduler: Job 7 finished: count at LoanValidationSparkRunner.java:319, took 0.087049 s
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onTaskEnd: TID 14 ( Index 1 ) on 09bf44a8-2599-46cd-a143-e7f82561bcba with SUCCESS
+18/07/19 10:19:16 INFO deploy.ego.EGOClusterDriverWrapper: Final app status: 0, exitCode: 0
+18/07/19 10:19:16 INFO deploy.ego.EGOClusterDriverWrapper: Sending driver program state to master
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: onStageCompleted: stageId(7)
+18/07/19 10:19:16 INFO apache.spark.SparkContext: Invoking stop() from shutdown hook
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: hosts Set(yp-spark-dal09-env5-0047, yp-spark-dal09-env5-0019) need to delete the cache data for application[%s] app-20180719101856-0719-8a03a432-ba5b-4020-830b-26890c93fa97
+18/07/19 10:19:16 INFO jetty.server.ServerConnector: Stopped Spark@ff3a6242{HTTP/1.1}{0.0.0.0:0}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-b5a5cb0{/stages/stage/kill,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-288275b8{/jobs/job/kill,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-12d163df{/api,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-45f7c8b9{/,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-680447d2{/static,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-62f3c912{/executors/threadDump/json,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-10b84a2e{/executors/threadDump,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@32d61930{/executors/json,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-5c466af9{/executors,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@146cbd00{/environment/json,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-152f493f{/environment,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-2aa2f4cc{/storage/rdd/json,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-4914bc85{/storage/rdd,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@61bb3bc6{/storage/json,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-45b6097f{/storage,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-2fda615{/stages/pool/json,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_7_piece0 on 10.143.133.122:39496 in memory (size: 1383.0 B, free: 727.2 MB)
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-2cf2fadb{/stages/pool,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@54e2a019{/stages/stage/json,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-4526a1b6{/stages/stage,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@22bf27de{/stages/json,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@30050762{/stages,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@4867bc19{/jobs/job/json,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@41d23324{/jobs/job,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-6138b24b{/jobs/json,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-495aa7b2{/jobs,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@30f7b769{/logout,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO server.handler.ContextHandler: Stopped o.s.j.s.ServletContextHandler@-1fb82721{/login,null,UNAVAILABLE,@Spark}
+18/07/19 10:19:16 INFO network.client.TransportClientFactory: Successfully created connection to yp-spark-dal09-env5-0047/10.143.133.172:7342 after 68 ms (67 ms spent in bootstraps)
+18/07/19 10:19:16 INFO spark.ui.SparkUI: Stopped Spark web UI at http://10.143.133.122:35404
+18/07/19 10:19:16 INFO spark.storage.BlockManager: Removing RDD 2
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_7_piece0 on yp-spark-dal09-env5-0019:40039 in memory (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO spark.storage.BlockManagerInfo: Removed broadcast_7_piece0 on yp-spark-dal09-env5-0047:44366 in memory (size: 1383.0 B, free: 3.4 GB)
+18/07/19 10:19:16 INFO network.client.TransportClientFactory: Successfully created connection to yp-spark-dal09-env5-0019/10.143.133.18:7342 after 15 ms (13 ms spent in bootstraps)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: Waiting for rpc request receive the response.
+18/07/19 10:19:16 WARN spark.storage.BlockManagerMaster: Failed to remove RDD 2 - Failed to create local dir in /tmp/spark-21-ego-master/work/blockmgr-71533b6d-67e9-49a4-8ffe-6e775a09eab5/17.
+java.io.IOException: Failed to create local dir in /tmp/spark-21-ego-master/work/blockmgr-71533b6d-67e9-49a4-8ffe-6e775a09eab5/17.
+	at org.apache.spark.storage.DiskBlockManager.getFile(DiskBlockManager.scala:89)
+	at org.apache.spark.storage.DiskStore.remove(DiskStore.scala:111)
+	at org.apache.spark.storage.BlockManager.removeBlockInternal(BlockManager.scala:1404)
+	at org.apache.spark.storage.BlockManager.removeBlock(BlockManager.scala:1392)
+	at org.apache.spark.storage.BlockManager$$anonfun$removeRdd$2.apply(BlockManager.scala:1366)
+	at org.apache.spark.storage.BlockManager$$anonfun$removeRdd$2.apply(BlockManager.scala:1366)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1336)
+	at org.apache.spark.storage.BlockManager.removeRdd(BlockManager.scala:1366)
+	at org.apache.spark.storage.BlockManagerSlaveEndpoint$$anonfun$receiveAndReply$1$$anonfun$applyOrElse$2.apply$mcI$sp(BlockManagerSlaveEndpoint.scala:53)
+	at org.apache.spark.storage.BlockManagerSlaveEndpoint$$anonfun$receiveAndReply$1$$anonfun$applyOrElse$2.apply(BlockManagerSlaveEndpoint.scala:53)
+	at org.apache.spark.storage.BlockManagerSlaveEndpoint$$anonfun$receiveAndReply$1$$anonfun$applyOrElse$2.apply(BlockManagerSlaveEndpoint.scala:53)
+	at org.apache.spark.storage.BlockManagerSlaveEndpoint$$anonfun$1.apply(BlockManagerSlaveEndpoint.scala:82)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1160)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:811)
+18/07/19 10:19:16 ERROR apache.spark.ContextCleaner: Error cleaning RDD 2
+org.apache.spark.SparkException: Exception thrown in awaitResult
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$1.applyOrElse(RpcTimeout.scala:77)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$1.applyOrElse(RpcTimeout.scala:75)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.PartialFunction$OrElse.apply(PartialFunction.scala:167)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:83)
+	at org.apache.spark.storage.BlockManagerMaster.removeRdd(BlockManagerMaster.scala:125)
+	at org.apache.spark.SparkContext.unpersistRDD(SparkContext.scala:1712)
+	at org.apache.spark.ContextCleaner.doCleanupRDD(ContextCleaner.scala:222)
+	at org.apache.spark.ContextCleaner$$anonfun$org$apache$spark$ContextCleaner$$keepCleaning$1$$anonfun$apply$mcV$sp$1.apply(ContextCleaner.scala:199)
+	at org.apache.spark.ContextCleaner$$anonfun$org$apache$spark$ContextCleaner$$keepCleaning$1$$anonfun$apply$mcV$sp$1.apply(ContextCleaner.scala:194)
+	at scala.Option.foreach(Option.scala:257)
+	at org.apache.spark.ContextCleaner$$anonfun$org$apache$spark$ContextCleaner$$keepCleaning$1.apply$mcV$sp(ContextCleaner.scala:194)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1371)
+	at org.apache.spark.ContextCleaner.org$apache$spark$ContextCleaner$$keepCleaning(ContextCleaner.scala:187)
+	at org.apache.spark.ContextCleaner$$anon$1.run(ContextCleaner.scala:74)
+Caused by: java.io.IOException: Failed to create local dir in /tmp/spark-21-ego-master/work/blockmgr-71533b6d-67e9-49a4-8ffe-6e775a09eab5/17.
+	at org.apache.spark.storage.DiskBlockManager.getFile(DiskBlockManager.scala:89)
+	at org.apache.spark.storage.DiskStore.remove(DiskStore.scala:111)
+	at org.apache.spark.storage.BlockManager.removeBlockInternal(BlockManager.scala:1404)
+	at org.apache.spark.storage.BlockManager.removeBlock(BlockManager.scala:1392)
+	at org.apache.spark.storage.BlockManager$$anonfun$removeRdd$2.apply(BlockManager.scala:1366)
+	at org.apache.spark.storage.BlockManager$$anonfun$removeRdd$2.apply(BlockManager.scala:1366)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1336)
+	at org.apache.spark.storage.BlockManager.removeRdd(BlockManager.scala:1366)
+	at org.apache.spark.storage.BlockManagerSlaveEndpoint$$anonfun$receiveAndReply$1$$anonfun$applyOrElse$2.apply$mcI$sp(BlockManagerSlaveEndpoint.scala:53)
+	at org.apache.spark.storage.BlockManagerSlaveEndpoint$$anonfun$receiveAndReply$1$$anonfun$applyOrElse$2.apply(BlockManagerSlaveEndpoint.scala:53)
+	at org.apache.spark.storage.BlockManagerSlaveEndpoint$$anonfun$receiveAndReply$1$$anonfun$applyOrElse$2.apply(BlockManagerSlaveEndpoint.scala:53)
+	at org.apache.spark.storage.BlockManagerSlaveEndpoint$$anonfun$1.apply(BlockManagerSlaveEndpoint.scala:82)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1160)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:811)
+18/07/19 10:19:16 INFO cluster.ego.EGOFineGrainedSchedulerBackend: Spark driver enters idle mode
+18/07/19 10:19:17 INFO cluster.ego.EGODeployScheduler: Spark context stopped.
+18/07/19 10:19:17 INFO apache.spark.MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+18/07/19 10:19:17 INFO storage.memory.MemoryStore: MemoryStore cleared
+18/07/19 10:19:17 INFO spark.storage.BlockManager: BlockManager stopped
+18/07/19 10:19:17 INFO spark.storage.BlockManagerMaster: BlockManagerMaster stopped
+18/07/19 10:19:17 INFO spark.scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+18/07/19 10:19:17 INFO apache.spark.SparkContext: Successfully stopped SparkContext
+18/07/19 10:19:17 INFO spark.util.ShutdownHookManager: Shutdown hook called
+18/07/19 10:19:17 INFO spark.util.ShutdownHookManager: Deleting directory /tmp/spark-21-ego-master/work/spark-f1a527c1-2309-4125-874f-8c7f7393805b
+18/07/19 10:19:17 INFO deploy.ego.EGOClusterDriverWrapper: staging dir is None
+18/07/19 10:19:17 INFO deploy.ego.EGOClusterDriverWrapper: Deleting local temp file /tmp/spark-21-ego-master/work/spark-driver-8d7c3725-2388-41ea-98d6-1327c7e78a5d/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar: true
+18/07/19 10:19:17 INFO deploy.ego.EGOClusterDriverWrapper: Deleting local temp file /tmp/spark-21-ego-master/work/spark-driver-8d7c3725-2388-41ea-98d6-1327c7e78a5d: true

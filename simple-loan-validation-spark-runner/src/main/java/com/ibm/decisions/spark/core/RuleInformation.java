@@ -22,10 +22,17 @@
 
 package com.ibm.decisions.spark.core;
 
+import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import ilog.rules.res.session.ruleset.IlrRuleInformation;
 
-public class RuleInformation {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class RuleInformation implements Serializable {
 
+	private static final long serialVersionUID = -8462058417466215767L;
+	
 	private String businessName;
 	private String name;
 	

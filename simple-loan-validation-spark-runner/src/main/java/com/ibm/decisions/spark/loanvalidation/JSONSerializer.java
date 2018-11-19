@@ -29,6 +29,7 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ibm.decisions.spark.core.DecisionTrace;
 
 public class JSONSerializer {
 
@@ -62,6 +63,10 @@ public class JSONSerializer {
 	
 	public String serialize(LoanValidationRequest request) {
 		return serialize(request, "request", false); 
+	}
+	
+	public String serialize(DecisionTrace decisionTrace) {
+		return serialize(decisionTrace, "decisionTrace", false); 
 	}
 	
 	protected String serialize(Object object, String objectName, boolean prettyPrint) {

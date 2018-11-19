@@ -23,11 +23,15 @@
 package com.ibm.decisions.spark.loanvalidation;
 
 import java.io.IOException;
+import java.io.Serializable;
+
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class LoanValidationDecision {
+public class LoanValidationDecision implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	public LoanValidationDecision() {
 	}

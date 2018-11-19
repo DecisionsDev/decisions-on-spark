@@ -1,0 +1,18 @@
+no extra configuration defined
+Usage:
+     LoanValidationSparkRunner --input <input-file> --output <output-file> [options]
+     LoanValidationSparkRunner --inputgen <request-nb> --output <output-file> [options]
+     LoanValidationSparkRunner --version  
+
+     input-file:                 json or csv format file that contains the loan applications 
+                                 can be a local or hdfs file
+     request-nb                  the number of requests that the program generates and then processes\r\n"                                 an alternate to the input-file read     output-file:                json or csv format file that contains the loan applications 
+                                 can be a local or hdfs file
+
+ options:
+     --version                   Print out the version
+     --master                    Set the master 
+                                 specify no master option for a submit 
+     --rulecoverage              Produce the rule coverage
+     --trace                     local[8] for standalone NYI
+                                 input-file is not used in this generation mode

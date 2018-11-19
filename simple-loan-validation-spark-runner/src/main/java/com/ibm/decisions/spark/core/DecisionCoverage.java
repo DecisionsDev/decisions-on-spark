@@ -22,11 +22,19 @@
 
 package com.ibm.decisions.spark.core;
 
+import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import ilog.rules.res.session.ruleset.IlrRuleInformation;
 
-public class DecisionCoverage {
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+public class DecisionCoverage implements Serializable {
 
+	private static final long serialVersionUID = -3820997412536584075L;
+	
 	public RuleInformation ruleInformation;
+	public TaskInformation taskInformation;
 	public Long count;
 	
 	public DecisionCoverage() {
@@ -44,5 +52,21 @@ public class DecisionCoverage {
 	
 	public void setRuleInformation(RuleInformation ruleInfo) {
 		this.ruleInformation = ruleInfo;
+	}
+	
+	public TaskInformation getTaskInformation() {
+		return taskInformation;
+	}
+	
+	public void setTaskInformation(TaskInformation taskInfo) {
+		this.taskInformation = taskInfo;
+	}
+	
+	public Long getCount() {
+		return count;
+	}
+	
+	public void setCount(Long value) {
+		this.count = value;
 	}
 }

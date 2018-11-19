@@ -147,7 +147,7 @@ public class RequestGenerator {
 		return new LoanValidationRequest(borrowerFirstName, borrowerLastName, borrowerCreditScore, borrowerYearlyIncome, birthDate, SSNCode, zipCode, loanAmount, startDate, loanDuration, loanToValue);
 	}
 	
-	public static JavaRDD<LoanValidationRequest> generateRandomRequests(JavaSparkContext sc, long requestTargetNumber) {
+	public static JavaRDD<LoanValidationRequest> generateRandomRequestsORI(JavaSparkContext sc, long requestTargetNumber) {
 		JavaRDD<LoanValidationRequest> requests;
 		ArrayList<LoanValidationRequest> requestArray = new ArrayList<LoanValidationRequest>();
 		for (int i=0; i < requestTargetNumber; i++) {
@@ -156,6 +156,33 @@ public class RequestGenerator {
 		}
 		
 		return sc.parallelize(requestArray);
+	}
+
+
+	public static JavaRDD<LoanValidationRequest> generateRandomRequests(JavaSparkContext sc, long requestTargetNumber) {
+
+		Function<Long, LoanValidationRequest> generateRequest = new Function<Long, LoanValidationRequest>() {
+			private static final long serialVersionUID = 1L;
+
+			public LoanValidationRequest call(Long id) {
+				return RequestGenerator.generateRandomRequest(sc);
+			}
+		};
+
+
+		JavaRDD<Long> requestIDs;
+		JavaRDD<LoanValidationRequest> requests = new JavaRDD<LoanValidationRequest>();
+
+		ArrayList<Long> requestIDArray = new ArrayList<Long>();
+		for (int i=0; i < requestTargetNumber; i++) {
+			Long requestID = new Long(1);
+			requestIDArray.add(requestID);
+		}
+		
+		requestIDs = sc.parallelize(requestIDArray);
+		requests = requestIDs.map(generateRequest);
+
+		return requests;
 	}
 
 }

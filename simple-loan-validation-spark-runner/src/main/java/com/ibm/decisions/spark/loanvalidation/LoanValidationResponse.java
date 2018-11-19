@@ -22,6 +22,7 @@
 
 package com.ibm.decisions.spark.loanvalidation;
 
+import java.io.Serializable;
 import java.util.Map;
 
 import com.ibm.decisions.spark.core.DecisionTrace;
@@ -29,7 +30,9 @@ import com.ibm.decisions.spark.core.DecisionTrace;
 import ilog.rules.res.session.IlrSessionResponse;
 import loan.Report;
 
-public class LoanValidationResponse {
+public class LoanValidationResponse implements Serializable {
+
+	private static final long serialVersionUID = -6774578413146956427L;
 
 	//Variable signature
 	public Report report;
