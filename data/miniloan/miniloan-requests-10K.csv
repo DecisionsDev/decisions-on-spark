@@ -1,4 +1,4 @@
-name, creditScore, income, loanAmount, monthDuration, rate
+name,creditScore,income,loanAmount,monthDuration,rate
 John Doe, 550, 80000, 250000, 240, 0.05d
 John Woo, 540, 100000, 250000, 240, 0.05d
 Peter Woo, 540, 60000, 250000, 120, 0.05d
