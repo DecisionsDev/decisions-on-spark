@@ -1,4 +1,4 @@
-creditScore,income,loanAmount,monthDuration,rate,yearlyReimbursement,default
+creditScore,income,loanAmount,monthDuration,rate,yearlyReimbursement,paymentDefault
 436,290532,136331,240,0.08,13979,0
 701,94722,150099,120,0.08,15091,0
 670,86878,269819,180,0.08,26947,1
