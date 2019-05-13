@@ -38,11 +38,6 @@
           "messages": [],
           "approvalStatus": "true []"
         }
-      },
-      "decision-events":
-          "name": "miniloan"
-        }
-      ]
-    }
+      }
   }
 }
