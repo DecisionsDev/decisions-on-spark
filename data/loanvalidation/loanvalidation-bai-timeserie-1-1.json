@@ -11,17 +11,13 @@
   "data": {
     "test_deployment.loan_validation_with_score_and_grade.in.loan.numberOfMonthlyPayments": 61,
     "test_deployment.loan_validation_with_score_a.messages": [
-      "The borrower's SSN should be formatted with 3-2-4 digits"
     ],
     "test_deployment.loan_validation_with_score_and_grade.out.report.yearlyInterestRate": 0
   },
   "trace.task.names": [
-    "loanvalidation"
   ],
   "trace.task.durations": [
-    33
   ],
   "trace.rule.names": [
-    "validation.borrower.checkSSNareanumber"
   ]
 }
