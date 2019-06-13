@@ -1,0 +1,173 @@
+{
+   "business-events-envelope-version":"1.0.1",
+   "business-events-extension-version":"odm/1.0.0",
+   "category":"odm:Execution",
+   "id":"61d4be46-63e2-4d8b-9fb7-dd45c4f5e4110",
+   "timestamp":"2019-02-10T17:06:34.442+01:00",
+   "type":"odm:Execution:TRACE",
+   "source":{
+      "type":"ruleset",
+      "id":"/de300ruleapp/1.0/de300rulesBAIenabled/1.0"
+   },
+   "data":{
+      "odm":{
+         "total-duration-ms":105,
+         "input-parameters":{
+            "campaign":{
+               "segments":[
+
+               ],
+               "id":10,
+               "name":"a",
+               "type":"shop",
+               "channel":"internet"
+            },
+            "client":{
+               "id":100,
+               "name":"bop"
+            },
+            "consumer":{
+               "consumerid":15,
+               "cookieid":100,
+               "emailaddress":"toto@gamil.com",
+               "phonenumber":"0601020304",
+               "ipaddress":"12345678",
+               "firstname":"bop",
+               "lastname":"WWW",
+               "middlename":" ",
+               "nickname":" ",
+               "username":"zebre",
+               "password":"pw",
+               "dateofbirth":825462000000,
+               "age":20,
+               "gender":"M",
+               "incomegroupcode":2,
+               "personicscluster":10,
+               "city":"NY",
+               "state":"NY",
+               "zipcode":"01",
+               "areacode":1,
+               "prodstyleofinterest":"Mus",
+               "prodcatofinterest1":"book",
+               "prodcatofinterest2":" ",
+               "purchasedprodcat1":"book",
+               "purchasedprodcat2":" ",
+               "propensitytoopen":2.2,
+               "propensitytoclick":0.0,
+               "propensitytopurchase":2.3,
+               "propensitytovisit":2.4,
+               "statusactive":"S",
+               "profilesource":" ",
+               "preferredchannel":" ",
+               "monthlypreferredmsgfrequency":4,
+               "mtdmessagecount":5,
+               "browsertype":"google chrome",
+               "createdon":1549814794270,
+               "lastupdatedon":1549814794270,
+               "lastsubscribedon":1549814794270,
+               "lastunsubscribedon":1549814794270,
+               "messages":null
+            }
+         },
+         "output-parameters":{
+            "campaign":{
+               "segments":[
+
+               ],
+               "id":10,
+               "name":"a",
+               "type":"shop",
+               "channel":"internet"
+            },
+            "client":{
+               "id":100,
+               "name":"bop"
+            },
+            "consumer":{
+               "consumerid":15,
+               "cookieid":100,
+               "emailaddress":"toto@gamil.com",
+               "phonenumber":"0601020304",
+               "ipaddress":"12345678",
+               "firstname":"bop",
+               "lastname":"WWW",
+               "middlename":" ",
+               "nickname":" ",
+               "username":"zebre",
+               "password":"pw",
+               "dateofbirth":825462000000,
+               "age":20,
+               "gender":"M",
+               "incomegroupcode":2,
+               "personicscluster":10,
+               "city":"NY",
+               "state":"NY",
+               "zipcode":"01",
+               "areacode":1,
+               "prodstyleofinterest":"Mus",
+               "prodcatofinterest1":"book",
+               "prodcatofinterest2":" ",
+               "purchasedprodcat1":"book",
+               "purchasedprodcat2":" ",
+               "propensitytoopen":2.2,
+               "propensitytoclick":0.0,
+               "propensitytopurchase":2.3,
+               "propensitytovisit":2.4,
+               "statusactive":"S",
+               "profilesource":" ",
+               "preferredchannel":" ",
+               "monthlypreferredmsgfrequency":4,
+               "mtdmessagecount":5,
+               "browsertype":"google chrome",
+               "createdon":1549814794270,
+               "lastupdatedon":1549814794270,
+               "lastsubscribedon":1549814794270,
+               "lastunsubscribedon":1549814794270,
+               "messages":null
+            }
+         },
+         "decision-events":[
+            {
+               "type":"task",
+               "decision-events":[
+                  {
+                     "type":"task",
+                     "end-date":1549814794542,
+                     "start-date":1549814794540,
+                     "name":"seq$_$flow$35$$$49$$"
+                  },
+                  {
+                     "type":"task",
+                     "end-date":1549814794543,
+                     "start-date":1549814794543,
+                     "name":"seq$_$flow$35$$$50$$"
+                  },
+                  {
+                     "type":"task",
+                     "end-date":1549814794545,
+                     "start-date":1549814794544,
+                     "name":"seq$_$flow$35$$$51$$"
+                  },
+                  {
+                     "type":"task",
+                     "end-date":1549814794545,
+                     "start-date":1549814794545,
+                     "name":"seq$_$flow$35$$$52$$"
+                  },
+                  {
+                     "type":"task",
+                     "end-date":1549814794546,
+                     "start-date":1549814794546,
+                     "name":"seq$_$flow$35$$$53$$"
+                  }
+               ],
+               "end-date":1549814794546,
+               "start-date":1549814794515,
+               "name":"seq_flow"
+            }
+         ]
+      }
+   },
+   "partition":0,
+   "offset":0
+}
