@@ -9,9 +9,9 @@
   "partition": 1,
   "duration": 2,
   "data": {
-    "test_deployment.loan_validation_with_score_and_grade.in.loan.numberOfMonthlyPayments": 61,
-    "test_deployment.loan_validation_with_score_a.messages": [],
-    "test_deployment.loan_validation_with_score_and_grade.out.report.yearlyInterestRate": 0
+    "numberOfMonthlyPayments": 61,
+    "loan_validation_with_score_a.messages": [],
+    "yearlyInterestRate": 0
   },
   "trace.task.names": [],
   "trace.task.durations": [],
