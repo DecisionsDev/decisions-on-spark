@@ -4,7 +4,7 @@
   "timestamp": "2019-06-13T15:01:49.888+02:00",
   "type": "EXECUTION_SUCCESS",
   "odmType": "ruleset",
-  "rulesetPath": "/test_deployment/1.0/loan_validation_with_score_and_grade/1.0",
+  "rulesetPath": "loan_validation_with_score_and_grade",
   "offset": 9814,
   "partition": 1,
   "duration": 2,
