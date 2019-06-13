@@ -8,11 +8,6 @@
   "offset": 9814,
   "partition": 1,
   "duration": 2,
-  "data": [
-    "numberOfMonthlyPayments": 61,
-    "loan_validation_with_score_a.messages": [],
-    "yearlyInterestRate": 0
-  ],
   "trace.task.names": [],
   "trace.task.durations": [],
   "trace.rule.names": []
