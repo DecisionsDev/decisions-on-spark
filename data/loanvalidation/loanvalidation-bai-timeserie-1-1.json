@@ -11,15 +11,9 @@
   "data": {
     "test_deployment.loan_validation_with_score_and_grade.in.loan.numberOfMonthlyPayments": 61,
     "test_deployment.loan_validation_with_score_a.messages": [
-      "The borrower's SSN should be formatted with 3-2-4 digits",
-      "The borrower's Zip Code should have 5 digits",
-      "The borrower's age is not valid."
+      "The borrower's SSN should be formatted with 3-2-4 digits"
     ],
-    "test_deployment.loan_validation_with_score_and_grade.out.report.yearlyInterestRate": 0,
-    "test_deployment.loan_validation_with_score_and_grade.out.report.monthlyRepayment": 0,
-    "test_deployment.loan_validation_with_score_and_grade.out.report.insurance": "none",
-    "test_deployment.loan_validation_with_score_and_grade.out.report.message": "The borrower's SSN should be formatted with 3-2-4 digits\nThe borrower's Zip Code should have 5 digits\nThe borrower's age is not valid.",
-    "test_deployment.loan_validation_with_score_and_grade.out.report.yearlyRepayment": 0
+    "test_deployment.loan_validation_with_score_and_grade.out.report.yearlyInterestRate": 0
   },
   "trace.task.names": [
     "loanvalidation"
