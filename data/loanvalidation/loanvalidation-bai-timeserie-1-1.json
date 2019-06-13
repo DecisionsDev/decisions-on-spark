@@ -22,20 +22,12 @@
     "test_deployment.loan_validation_with_score_and_grade.out.report.yearlyRepayment": 0
   },
   "trace.task.names": [
-    "loanvalidation",
-    "loanvalidation>initResult",
-    "loanvalidation>validation"
+    "loanvalidation"
   ],
   "trace.task.durations": [
-    33,
-    0,
-    16
+    33
   ],
   "trace.rule.names": [
-    "validation.borrower.checkSSNareanumber",
-    "validation.borrower.checkSSNdigits",
-    "validation.borrower.checkZipcode",
-    "validation.borrower.checkName",
-    "validation.borrower.checkAge"
+    "validation.borrower.checkSSNareanumber"
   ]
 }
