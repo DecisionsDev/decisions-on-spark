@@ -182,3 +182,4 @@ Sequenced executed Spark batches reuses the same smltag file and extend the list
 </Metric>
 ```
 This slmtag file directory has to be scanned by the IBM ILMT tool to consolidate and report the product usages.
+In the ILMT console Go to Reports -> Resource Utilization to see the "IBM Operational Decision Manager" usages.
