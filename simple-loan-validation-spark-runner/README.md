@@ -133,23 +133,21 @@ Number of loans approved with a YearlyInterestRate > 5%: 45
 The code includes a DecisionMeteringService class responsible for metering the decision automation usage made in the grid.
 Approach is straitforward as showedd in the sample. Typical invocation is as follows:
 ```console
-...
-  DecisionMetering decisionMetering = null;
-  DecisionMeteringReport report = null;
 
-  decisionMetering = new DecisionMetering("dba-metering"); //directory name can be changed
-  String batchId = sc.getConf().getAppId() + "-" +System.currentTimeMillis();
-  report = decisionMetering.createUsageReport(batchId);
+DecisionMetering decisionMetering = null;
+DecisionMeteringReport report = null;
+
+decisionMetering = new DecisionMetering("dba-metering"); //directory name can be changed
+String batchId = sc.getConf().getAppId() + "-" +System.currentTimeMillis();
+report = decisionMetering.createUsageReport(batchId);
 		
-  // Produce a RDD of decisions
-  //
-  
-  JavaRDD<LoanValidationDecision> decisions = requestRDD.map(executeDecisionService).cache();
+// Produce a RDD of decisions
+JavaRDD<LoanValidationDecision> decisions = requestRDD.map(executeDecisionService).cache();
 
-	long stopTime = System.currentTimeMillis();
+long stopTime = System.currentTimeMillis();
 
-	//Usage metering
-	report.setNbDecisions(decisions.count());
-	report.setStopTimeStamp();
-	report.writeILMTFile();
+//Usage metering
+report.setNbDecisions(decisions.count());
+report.setStopTimeStamp();
+report.writeILMTFile();
 ```
