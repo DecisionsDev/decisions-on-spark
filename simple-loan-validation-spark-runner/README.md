@@ -137,7 +137,7 @@ Approach is straitforward as showedd in the sample. Typical invocation is as fol
 DecisionMetering decisionMetering = null;
 DecisionMeteringReport report = null;
 
-decisionMetering = new DecisionMetering("dba-metering"); //directory name can be changed
+decisionMetering = new DecisionMetering("dba-metering");
 String batchId = sc.getConf().getAppId() + "-" +System.currentTimeMillis();
 report = decisionMetering.createUsageReport(batchId);
 		
