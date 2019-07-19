@@ -14,12 +14,12 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
 
-import com.ibm.decisions.spark.loanvalidation.LoanValidationRequest;
+import com.ibm.decisions.spark.loanvalidation.*;
 import com.ibm.decisions.spark.core.*;
 
 public class RequestGenerator {
 	
-	private JavaSparkContext sc;
+	//private JavaSparkContext sc;
 	
 	public static Function<LoanValidationRequest, String> serializeRequestAsJSON = new Function<LoanValidationRequest, String>() {
 		public String call(LoanValidationRequest request) {
@@ -45,14 +45,14 @@ public class RequestGenerator {
 		SparkConf conf = new SparkConf().setAppName("Loan Validation Decision Service").setMaster("local[8]");;
 		JavaSparkContext sc = new JavaSparkContext(conf);
 		
-		RequestGenerator requestGenerator = new RequestGenerator(sc);
-		JavaRDD<LoanValidationRequest> requestRDD = requestGenerator.generateRandomRequestRequestRDD(1000);
+		RequestGenerator requestGenerator = new RequestGenerator();
+		JavaRDD<LoanValidationRequest> requestRDD = requestGenerator.generateRandomRequestRequestRDD(1000, sc);
 		requestGenerator.writeRandomRequestFiles(requestRDD, "1K");
 		
-		requestRDD = requestGenerator.generateRandomRequestRequestRDD(10000);
+		requestRDD = requestGenerator.generateRandomRequestRequestRDD(10000, sc);
 		requestGenerator.writeRandomRequestFiles(requestRDD, "10K");
 		
-		requestRDD = requestGenerator.generateRandomRequestRequestRDD(100000);
+		requestRDD = requestGenerator.generateRandomRequestRequestRDD(100000, sc);
 		requestGenerator.writeRandomRequestFiles(requestRDD, "100K");
 		
 		/*
@@ -69,8 +69,8 @@ public class RequestGenerator {
 
 	}
 	
-	public RequestGenerator(JavaSparkContext sc)  {
-		this.sc = sc;
+	public RequestGenerator()  {
+		//this.sc = sc;
 	}
 
 	@SuppressWarnings("unused")
@@ -113,10 +113,10 @@ public class RequestGenerator {
 	}
 	
 	
-	public JavaRDD<LoanValidationRequest> generateRandomRequestRequestRDD(long nbGenerated) {
+	public JavaRDD<LoanValidationRequest> generateRandomRequestRequestRDD(long nbGenerated, JavaSparkContext sc) {
 
 		// RDD creation
-		JavaRDD<String> requestData = null;
+		//JavaRDD<String> requestData = null;
 		JavaRDD<LoanValidationRequest> requestRDD = null;
 		
 		requestRDD = RequestGenerator.generateRandomRequests(sc, nbGenerated);
@@ -125,7 +125,7 @@ public class RequestGenerator {
 		return requestRDD;
 	}
 	
-	public static LoanValidationRequest generateRandomRequest(JavaSparkContext sc) {
+	public static LoanValidationRequest generateRandomRequest() {
 
 		// Borrower name
 		String borrowerFirstName = "John";
@@ -136,7 +136,7 @@ public class RequestGenerator {
 		int borrowerYearlyIncome = (int) (400000 * Math.random());
 		int loanAmount = (int) (1500000 * Math.random());
 		int loanDuration = (int) (360 * Math.random()); //60 to 360 months
-		double yearlyInterestRate = 0.03d + ((0.03d * Math.random()));
+		//double yearlyInterestRate = 0.03d + ((0.03d * Math.random()));
 
 		Date birthDate = loan.DateUtil.makeDate(2018 - (int)(Math.random() * 120), (int)(Math.random() * 12), (int)(Math.random() * 29));
 		String SSNCode = "471-78-1234"; //@ToDo generate more cases
@@ -148,10 +148,10 @@ public class RequestGenerator {
 	}
 	
 	public static JavaRDD<LoanValidationRequest> generateRandomRequestsORI(JavaSparkContext sc, long requestTargetNumber) {
-		JavaRDD<LoanValidationRequest> requests;
+		//JavaRDD<LoanValidationRequest> requests;
 		ArrayList<LoanValidationRequest> requestArray = new ArrayList<LoanValidationRequest>();
 		for (int i=0; i < requestTargetNumber; i++) {
-			LoanValidationRequest request = generateRandomRequest(sc);
+			LoanValidationRequest request = generateRandomRequest();
 			requestArray.add(request);
 		}
 		
@@ -165,13 +165,12 @@ public class RequestGenerator {
 			private static final long serialVersionUID = 1L;
 
 			public LoanValidationRequest call(Long id) {
-				return RequestGenerator.generateRandomRequest(sc);
+				return RequestGenerator.generateRandomRequest();
 			}
 		};
 
-
 		JavaRDD<Long> requestIDs;
-		JavaRDD<LoanValidationRequest> requests = new JavaRDD<LoanValidationRequest>();
+		JavaRDD<LoanValidationRequest> requests = new JavaRDD<LoanValidationRequest>(null, null);
 
 		ArrayList<Long> requestIDArray = new ArrayList<Long>();
 		for (int i=0; i < requestTargetNumber; i++) {

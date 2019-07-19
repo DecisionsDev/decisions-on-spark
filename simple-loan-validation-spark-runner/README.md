@@ -37,6 +37,10 @@ java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.i
 Automate loan validation on a JSON applications dataset to produce a JSON decision set and to display a Rule coverage.
 ```console
 java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --input ../data/loanvalidation/1K/loanvalidation-requests-1K.json --output ../data/loanvalidation/1K/loanvalidation-decisions-1K.json --master local[8] --rulecoverage
+
+Automate loan validation on a JSON applications dataset to produce a JSON decision set and to meter the decision execution usage.
+```console
+java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --input ../data/loanvalidation/1K/loanvalidation-requests-1K.json --output ../data/loanvalidation/1K/loanvalidation-decisions-1K.json --master local[8] --metering
 ```
 ## Run in a cluster
 Rule based automation works in a cluster with the same integration pattern and code than in standalone.

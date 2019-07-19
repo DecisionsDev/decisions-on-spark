@@ -38,11 +38,26 @@ import loan.*;
 public class LoanValidationRequest implements Serializable  {
 
 	private static final long serialVersionUID = 1L;
-	//Operation signature
+
 	public Borrower borrower;
 	public LoanRequest loanRequest;
 	
 	public LoanValidationRequest() {
+	}
+	
+	public LoanValidationRequest(Borrower borrower, LoanRequest loan) {
+		this.borrower = borrower;
+		this.loanRequest = loan;
+	}
+	
+	//Borrower(String firstName, String lastName, Date birthDate,	String SSNCode)
+	public LoanValidationRequest(String firstName, String lastName, int borrowerCreditScore, int borrowerYearlyIncome, Date birthDate, String SSNCode, String zipCode, int loanAmount, Date startDate, int numberOfMonthlyPayments, double loanToValue) {
+		this.borrower = new Borrower(firstName, lastName, birthDate, SSNCode);
+		borrower.setCreditScore(borrowerCreditScore);
+		borrower.setYearlyIncome(borrowerYearlyIncome);
+		borrower.setZipCode(zipCode);
+		//public LoanRequest(Date startDate, int numberOfMonthlyPayments, int amount,double loanToValue)
+		this.loanRequest = new LoanRequest(startDate, numberOfMonthlyPayments, loanAmount, loanToValue);
 	}
 	
 	public Borrower getBorrower() {
@@ -59,22 +74,6 @@ public class LoanValidationRequest implements Serializable  {
 	
 	public void setLoan(LoanRequest loanRequest) {
 		this.loanRequest = loanRequest;
-	}
-	
-	
-	public LoanValidationRequest(Borrower borrower, LoanRequest loan) {
-		this.borrower = borrower;
-		this.loanRequest = loan;
-	}
-	
-	//Borrower(String firstName, String lastName, Date birthDate,	String SSNCode)
-	public LoanValidationRequest(String firstName, String lastName, int borrowerCreditScore, int borrowerYearlyIncome, Date birthDate, String SSNCode, String zipCode, int loanAmount, Date startDate, int numberOfMonthlyPayments, double loanToValue) {
-		this.borrower = new Borrower(firstName, lastName, birthDate, SSNCode);
-		borrower.setCreditScore(borrowerCreditScore);
-		borrower.setYearlyIncome(borrowerYearlyIncome);
-		borrower.setZipCode(zipCode);
-		//public LoanRequest(Date startDate, int numberOfMonthlyPayments, int amount,double loanToValue)
-		this.loanRequest = new LoanRequest(startDate, numberOfMonthlyPayments, loanAmount, loanToValue);
 	}
 	
 	public static LoanValidationRequest parseAsCSV(String s) {
