@@ -151,3 +151,4 @@ report.setNbDecisions(decisions.count());
 report.setStopTimeStamp();
 report.writeILMTFile();
 ```
+The writeILMTFile method writes the usage report on the local file system of the Spark driver.
