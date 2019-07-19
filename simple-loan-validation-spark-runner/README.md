@@ -151,7 +151,7 @@ report.setNbDecisions(decisions.count());
 report.setStopTimeStamp();
 report.writeILMTFile();
 ```
-The writeILMTFile method writes the usage report on the local file system of the Spark driver under a relative var/ibm/slmtags path. 
+The writeILMTFile method writes the usage report on the local file system of the Spark driver under a var/ibm/slmtags relative path. 
 
 Sequenced executed Spark batches reuses the same smltag file and extend the list of report items. Here is an example of slmtag file generated:
 
