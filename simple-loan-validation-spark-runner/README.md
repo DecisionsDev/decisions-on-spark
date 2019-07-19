@@ -132,6 +132,7 @@ Number of loans approved with a YearlyInterestRate > 5%: 45
 ### Usage metering
 The code includes a DecisionMeteringService class responsible for metering the decision automation usage made in the grid.
 Approach is straitforward as showedd in the sample. Typical invocation is as follows:
+```console
 ...
   DecisionMetering decisionMetering = null;
   DecisionMeteringReport report = null;
