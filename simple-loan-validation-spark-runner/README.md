@@ -156,7 +156,7 @@ The writeILMTFile method writes the usage report on the local file system of the
 Sequenced executed Spark batches reuses the same smltag file and extend the list of report items. Here is an example of slmtag file generated:
 
 ```console
-SchemaVersion>2.1.1</SchemaVersion>
+<SchemaVersion>2.1.1</SchemaVersion>
 <SoftwareIdentity>
 	<PersistentId>b1a07d4dc0364452aa6206bb6584061d</PersistentId>
 	<Name>IBM Operational Decision Manager Server</Name>
