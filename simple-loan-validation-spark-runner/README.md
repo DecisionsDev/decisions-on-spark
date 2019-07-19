@@ -132,7 +132,7 @@ Number of loans approved with a YearlyInterestRate > 5%: 45
 ### Usage metering
 The code includes a DecisionMeteringService class responsible for metering the decision automation usage made in the grid.
 Approach is straitforward as showedd in the sample. Typical invocation is as follows:
-
+...
   DecisionMetering decisionMetering = null;
   DecisionMeteringReport report = null;
 
@@ -142,7 +142,7 @@ Approach is straitforward as showedd in the sample. Typical invocation is as fol
 		
   // Produce a RDD of decisions
   //
-  ...
+  
   JavaRDD<LoanValidationDecision> decisions = requestRDD.map(executeDecisionService).cache();
 
 	long stopTime = System.currentTimeMillis();
@@ -151,4 +151,4 @@ Approach is straitforward as showedd in the sample. Typical invocation is as fol
 	report.setNbDecisions(decisions.count());
 	report.setStopTimeStamp();
 	report.writeILMTFile();
-   ...
+```
