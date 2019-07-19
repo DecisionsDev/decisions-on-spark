@@ -151,4 +151,33 @@ report.setNbDecisions(decisions.count());
 report.setStopTimeStamp();
 report.writeILMTFile();
 ```
-The writeILMTFile method writes the usage report on the local file system of the Spark driver.
+The writeILMTFile method writes the usage report on the local file system of the Spark driver under a relative var/ibm/slmtags path. 
+
+Sequenced executed Spark batches reuses the same smltag file and extend the list of report items. Here is an example of slmtag file generated:
+
+```console
+SchemaVersion>2.1.1</SchemaVersion>
+<SoftwareIdentity>
+	<PersistentId>b1a07d4dc0364452aa6206bb6584061d</PersistentId>
+	<Name>IBM Operational Decision Manager Server</Name>
+	<InstanceId>/usr/IBM/TAMIT</InstanceId>
+</SoftwareIdentity>
+<Metric logTime="2019-07-18T16:39:34+02:00">
+	<Type>VU_VALUE_UNIT</Type>
+	<SubType>MILLION_MONTHLY_DECISIONS</SubType>
+	<Value>1.235</Value>
+	<Period>
+		<StartTime>2019-07-18T16:39:34+02:00</StartTime>
+		<EndTime>2019-07-18T16:39:34+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-07-19T14:32:21+02:00">
+	<Type>VU_VALUE_UNIT</Type>
+	<SubType>THOUSAND_MONTHLY_ARTIFACTS</SubType>
+	<Value>23.456</Value>
+	<Period>
+		<StartTime>2019-07-19T14:30:04+02:00</StartTime>
+		<EndTime>2019-07-19T14:32:21+02:00</EndTime>
+	</Period>
+</Metric>
+```
