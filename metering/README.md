@@ -46,8 +46,8 @@ Sequenced executed Spark batches reuses the same smltag file and extend the list
 	<InstanceId>/usr/IBM/TAMIT</InstanceId>
 </SoftwareIdentity>
 <Metric logTime="2019-07-18T16:39:34+02:00">
-	<Type>VU_VALUE_UNIT</Type>
-	<SubType>MILLION_MONTHLY_DECISIONS</SubType>
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
 	<Value>1.235</Value>
 	<Period>
 		<StartTime>2019-07-18T16:39:34+02:00</StartTime>
@@ -55,8 +55,8 @@ Sequenced executed Spark batches reuses the same smltag file and extend the list
 	</Period>
 </Metric>
 <Metric logTime="2019-07-19T14:32:21+02:00">
-	<Type>VU_VALUE_UNIT</Type>
-	<SubType>THOUSAND_MONTHLY_ARTIFACTS</SubType>
+	<Type>THOUSAND_MONTHLY_ARTIFACTS</Type>
+	<SubType></SubType>
 	<Value>23.456</Value>
 	<Period>
 		<StartTime>2019-07-19T14:30:04+02:00</StartTime>
