@@ -3,11 +3,14 @@
 IBM DBA empowers to track a decision automation performed in an Apache Spark cluster. 
 The approachs is straightforward and leverages ILMT installed on a single machine.
 
-![Flow](../docs/images/decision_metering_spark_1.png "Metering architecture")
+![Metering architecture](../docs/images/decision_metering_spark_1.png "Metering architecture")
+
+When running an application that runs one or several rule based decision services in your Spark cluster you basically capture the number of decisions. You typically apply a count on your RDD or dataset of automated decisions.
+You then use the DecisionMetering & DecisionMeteringReport helper classes to track this number of decisions made and write it on the driver local file system, or other file system. The requirement is to have an ILMT agent scanning this file system to report the usage.
 
 ### Usage metering
 The helper code is provided in the simple app project. It includes a DecisionMeteringService class responsible for metering the decision automation usage made in the grid.
-Approach is straigtforward as showed in the sample. Typical invocation is as follows:
+Typical invocation is as follows:
 ```console
 
 DecisionMetering decisionMetering = null;
