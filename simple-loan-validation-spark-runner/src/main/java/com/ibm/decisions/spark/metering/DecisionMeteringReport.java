@@ -186,8 +186,19 @@ public class DecisionMeteringReport implements Serializable {
 			doubleNbDecisions = doubleKDecisions;
 		} 
 		
+		/*
+		Metric.VU_VALUE_UNIT can be used when metric is in the list. If it is missing you can pass a string.
+		Pass "MILLION_MONTHLY_DECISIONS" instead.
+		Metric executionMetric = new Metric("MILLION_MONTHLY_DECISIONS", metricName, doubleNbDecisions, startDate, stopDate); 
+		*/
+
+		/* First attempt
 		Metric executionMetric = new Metric(Metric.VU_VALUE_UNIT, 
 				metricName, doubleNbDecisions, startDate, stopDate); 
+		*/
+
+		Metric executionMetric = new Metric(metricName, 
+				"", doubleNbDecisions, startDate, stopDate); 
 
 		try {
 			logger.log(executionMetric);
@@ -268,13 +279,6 @@ public class DecisionMeteringReport implements Serializable {
 			e.printStackTrace();
 		}
 		return reportFromJSON;
-	}
-
-	public UsageTimeSlice extractTimeSlice() {
-
-		long timeSlice = (this.getStartTimeStamp().getYear() * 10000) + (this.getStartTimeStamp().getMonthValue() * 100)
-				+ this.getStartTimeStamp().getDayOfMonth();
-		return new UsageTimeSlice(timeSlice, this.getNbDecisions());
 	}
 
 }

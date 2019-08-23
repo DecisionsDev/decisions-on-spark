@@ -26,8 +26,6 @@ public class DecisionMetering implements Serializable {
 	private transient JavaSparkContext sc;
 	private String version = "1.0";
 	private String filePath;
-	
-	private UsageTransfertJournal transfertJournal;
 
 	private DecisionMeteringReport report;
 
@@ -43,7 +41,9 @@ public class DecisionMetering implements Serializable {
 	public static void main(String[] args) {
 		DecisionMetering decisionMetering = new DecisionMetering("dba-metering");
 		
-		//Testing report creation and writing
+		//Testing report creation and writing the native ILMT file
+		//
+
 		String batchId = "12221212";
 		DecisionMeteringReport report = decisionMetering.createUsageReport(batchId);
 		// Emulate the batch processing...
@@ -54,22 +54,26 @@ public class DecisionMetering implements Serializable {
 		}
 		report.setNbDecisions(4999111);
 		report.setStopTimeStamp();
+		report.writeILMTFile();
+
+		// Test JSON serialization and deserialization
+		//
 		
+		// Write the same usage in JSON
 		//decisionMetering.writeCSV();
 		decisionMetering.writeJSON();
-		
-		report.writeILMTFile();
-		
-		//
 
+		// Read the same usage in JSON
 		String jsonReport = report.getJSONUsage();
 		System.out.println(jsonReport);
 
+		// Load the same usage in JSON
 		DecisionMeteringReport report2 = DecisionMeteringReport.parseAsJSON(jsonReport);
 		String jsonReport2 = report2.getJSONUsage();
 		System.out.println(jsonReport2);
 
-		//Test with a stable report		
+		//Test with a single report and multiple usages
+		//
 		
 		DecisionMeteringReport report3 = decisionMetering.createUsageReport("123");
 		decisionMetering.setDecisionMeteringReport(report3); //To be checked
@@ -82,9 +86,6 @@ public class DecisionMetering implements Serializable {
 		report3.setStopTimeStamp(stop);
 		decisionMetering.writeJSON(report3);
 		
-		decisionMetering.initializeTransfertJournal();
-		
-		decisionMetering.scanDirectory();
 	}
 
 	public DecisionMeteringReport createUsageReport(String batchId) {
@@ -100,6 +101,13 @@ public class DecisionMetering implements Serializable {
 		return report;
 	}
 
+	public void writeHDFS() {
+		java.util.ArrayList<String> usageArrayList = new java.util.ArrayList<String>();
+		usageArrayList.add(report.getCSVUsage());
+		JavaRDD<String> decisionUsageRDD = sc.parallelize(usageArrayList);
+		decisionUsageRDD.coalesce(1).saveAsTextFile(getFilePath());
+	}
+
 	public void writeHDFS2() {
 		URI uri = URI.create("hdfs://host:port/file path" + "/" + getFilePath());
 		Configuration conf = new Configuration();
@@ -110,13 +118,6 @@ public class DecisionMetering implements Serializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	public void writeHDFS() {
-		java.util.ArrayList<String> usageArrayList = new java.util.ArrayList<String>();
-		usageArrayList.add(report.getCSVUsage());
-		JavaRDD<String> decisionUsageRDD = sc.parallelize(usageArrayList);
-		decisionUsageRDD.coalesce(1).saveAsTextFile(getFilePath());
 	}
 
 	private String getFilePath() {
@@ -186,106 +187,5 @@ public class DecisionMetering implements Serializable {
 			return DecisionMeteringReport.parseAsJSON(decisionMeteringReportJSON);
 		}
 	};
-
-	private Function<DecisionMeteringReport, UsageTimeSlice> extractUsageTimeSlice = new Function<DecisionMeteringReport, UsageTimeSlice>() {
-		private static final long serialVersionUID = 1L;
-
-		public UsageTimeSlice call(DecisionMeteringReport decisionMeteringReport) {
-			UsageTimeSlice usageTimeSlice = decisionMeteringReport.extractTimeSlice();
-			return usageTimeSlice;
-		}
-	};
-	
-	private VoidFunction<DecisionMeteringReport> writeIntoILMT = new VoidFunction<DecisionMeteringReport>() {
-		private static final long serialVersionUID = 1L;
-
-		public void call(DecisionMeteringReport decisionMeteringReport) {
-			
-			JournalEntry entry = new JournalEntry((long)1, (long)2);
-			transfertJournal.add(entry);
-			
-			ILMTMetering.write(decisionMeteringReport);
-		}
-	};
-	
-	public void initializeTransfertJournal()  {
-		this.transfertJournal = UsageTransfertJournal.GetInstance();
-	}
-
-	Function<DecisionMeteringReport, Boolean> isNotTransfered = new Function<DecisionMeteringReport, Boolean>() {
-		private static final long serialVersionUID = 1L;
-
-		public Boolean call(DecisionMeteringReport meteringReport) {
-			UsageTransfertJournal journal = UsageTransfertJournal.GetInstance();
-			boolean found = journal.containsKey(-1); //TODO Finish the implementation decisionMeteringId
-			if (found) {
-				System.out.println(meteringReport + " already marked as transfered in the journal ");
-			} else {
-				System.out.println(meteringReport + " not yet marked as transfered in the journal");
-			}		
-			
-			return !found;
-		}
-	};
-	
-	Function<DecisionMeteringReport, Boolean> isTransfered = new Function<DecisionMeteringReport, Boolean>() {
-		private static final long serialVersionUID = 1L;
-
-		public Boolean call(DecisionMeteringReport meteringReport) {
-			System.out.println(meteringReport + " transfered?");
-			return false;
-		}
-	};
-	
-	public void scanDirectory() {
-		SparkConf conf = new SparkConf().setAppName("Decision Metering Aggregation").setMaster("local[8]");
-		sc = new JavaSparkContext(conf);
-
-		// Open each file present in the directory and create a report rdd
-		JavaPairRDD<String, String> reportFiles = sc.wholeTextFiles(getFilePath() + "//*.json");
-		System.out.println(reportFiles.count() + " reports found at " + getFilePath() + "//*.json");
-
-		reportFiles.collect().forEach(System.out::println);
-
-		JavaRDD<DecisionMeteringReport> meteringReports = reportFiles.values().map(deserializeReportAsJSON);
-		System.out.println("All metering reports " + meteringReports.count());
-		
-		//Filter out metering reports that were already transfered into ILMT file
-		JavaRDD<DecisionMeteringReport> untransferedMeteringReports = meteringReports.filter(isNotTransfered);
-		System.out.println("Untransfered metering reports XXZ2: " + untransferedMeteringReports.count());
-		
-		//Filter out metering reports that were not already transfered into ILMT file
-		//JavaRDD<DecisionMeteringReport> transferedMeteringReports = meteringReports.filter(isTransfered);
-		//System.out.println("XXX-Transfered metering reports: " + transferedMeteringReports.count());
-		
-		//Create an ILMT entry for each job usage
-		untransferedMeteringReports.foreach(writeIntoILMT);
-		
-		JavaRDD<UsageTimeSlice> usageTimeSlices = meteringReports.map(extractUsageTimeSlice);
-		System.out.println("Usage Time Slices: " + usageTimeSlices.count());
-		System.out.println("MeteringReports: " + meteringReports.count());
-
-		// reduce>
-		JavaPairRDD<Long, Long> usageTimeSlicePairs = usageTimeSlices
-				.mapToPair(t -> new Tuple2<Long, Long>(t.getTimeSlice(), t.getCount())); // ToDo
-		System.out.println("Usage Time Slice Pairs: " + usageTimeSlicePairs.count());
-
-		JavaPairRDD<Long, Long> reducedTimeSlicePairs = usageTimeSlicePairs
-				.reduceByKey(new Function2<Long, Long, Long>() {
-					private static final long serialVersionUID = 1L;
-
-					public Long call(Long a, Long b) {
-						return a + b;
-					}
-				});
-
-		System.out.println("Usage Time Slice Pairs: " + reducedTimeSlicePairs.count());
-
-		reducedTimeSlicePairs.collect()
-				.forEach((a) -> System.out
-						.println("Consumption in " + a._1 / 10000 + "-" + (a._1 / 100 - (a._1 / 100 / 100 * 100)) + "-"
-								+ (a._1 - (a._1 / 100 * 100)) + " day : " + a._2 + " executions"));
-
-	}
 
 }
