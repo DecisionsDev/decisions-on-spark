@@ -3,7 +3,7 @@
 IBM DBA empowers to track a decision automation performed in an Apache Spark cluster. 
 The approachs is straightforward and leverages ILMT installed on a single machine.
 
-![Flow](docs/images/decision_metering_spark_1.png "Metering architecture")
+![Flow](../docs/images/decision_metering_spark_1.png "Metering architecture")
 
 ### Usage metering
 The helper code is provided in the simple app project. It includes a DecisionMeteringService class responsible for metering the decision automation usage made in the grid.
