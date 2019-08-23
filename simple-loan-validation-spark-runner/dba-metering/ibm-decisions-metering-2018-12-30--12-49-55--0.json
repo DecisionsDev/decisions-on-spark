@@ -1,0 +1,9 @@
+{
+  "report" : {
+    "version" : "1.0",
+    "nbDecisions" : 400000,
+    "batchId" : "123",
+    "startTimeStamp" : "2018-12-30T12:49:55",
+    "stopTimeStamp" : "2018-12-30T12:55"
+  }
+}
