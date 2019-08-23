@@ -1,8 +1,8 @@
-# Metering automated decisions on Apache Spark
+# Metering decisions automated with IBM DBA in an Apache Spark grid
 
-IBM DBA empowers to track the decision automation in an Apache Spark cluster.
+IBM DBA empowers to track a decision automation performed in an Apache Spark cluster.
 
-![Flow](docs/images/decision_automation_in_map_reduce.png "Architecture")
+![Flow](docs/images/decision_metering_in_spark.png "Metering architecture")
 
 ### Usage metering
 The helper code is provided in the simple app project. It includes a DecisionMeteringService class responsible for metering the decision automation usage made in the grid.
