@@ -1,12 +1,20 @@
 # Metering decisions automated with IBM DBA in an Apache Spark grid
 
-IBM DBA empowers to track a decision automation performed in an Apache Spark cluster.
+IBM DBA empowers to track a decision automation performed in an Apache Spark cluster. 
+The approachs is straightforward and leverages ILMT installed on a single machine.
 
-![Flow](docs/images/decision_metering_in_spark.png "Metering architecture")
+![Metering architecture](../docs/images/decision_metering_spark_1.png "Metering architecture")
+
+When running an application that runs one or several rule based decision services in your Spark cluster you basically capture the number of decisions. You typically apply a count on your RDD or dataset of automated decisions.
+
+You then use the DecisionMetering & DecisionMeteringReport helper classes as integared in the sample code to track the number of decisions made and write it by default on the driver local file system. Each decision set usage is written into an ILMT slmtag file.
+The solution requires to have an ILMT agent scanning the file system where you write the slmtag file to report the usage for IBM compliance.
+
+You can change the file system for the writing, or automate a copy of the slmtag file to another file system outside of the big data IT. In all cases the smltag file has to be scanned by an ILMT agent.
 
 ### Usage metering
 The helper code is provided in the simple app project. It includes a DecisionMeteringService class responsible for metering the decision automation usage made in the grid.
-Approach is straigtforward as showed in the sample. Typical invocation is as follows:
+Typical invocation is as follows:
 ```console
 
 DecisionMetering decisionMetering = null;
@@ -38,8 +46,8 @@ Sequenced executed Spark batches reuses the same smltag file and extend the list
 	<InstanceId>/usr/IBM/TAMIT</InstanceId>
 </SoftwareIdentity>
 <Metric logTime="2019-07-18T16:39:34+02:00">
-	<Type>VU_VALUE_UNIT</Type>
-	<SubType>MILLION_MONTHLY_DECISIONS</SubType>
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
 	<Value>1.235</Value>
 	<Period>
 		<StartTime>2019-07-18T16:39:34+02:00</StartTime>
@@ -47,8 +55,8 @@ Sequenced executed Spark batches reuses the same smltag file and extend the list
 	</Period>
 </Metric>
 <Metric logTime="2019-07-19T14:32:21+02:00">
-	<Type>VU_VALUE_UNIT</Type>
-	<SubType>THOUSAND_MONTHLY_ARTIFACTS</SubType>
+	<Type>THOUSAND_MONTHLY_ARTIFACTS</Type>
+	<SubType></SubType>
 	<Value>23.456</Value>
 	<Period>
 		<StartTime>2019-07-19T14:30:04+02:00</StartTime>
@@ -58,4 +66,4 @@ Sequenced executed Spark batches reuses the same smltag file and extend the list
 ```
 This slmtag file directory has to be scanned by the IBM ILMT tool to consolidate and report the product usages.
 
-In the IBM ILMT console go to Reports -> Resource Utilization to see the "IBM Operational Decision Manager" usages.
+To check the decision automation usages go the IBM ILMT console, go to Reports -> Resource Utilization to see the "IBM Operational Decision Manager" usages.
