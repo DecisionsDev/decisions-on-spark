@@ -19,7 +19,7 @@ cd decisions-on-spark/simple-loan-validation-spark-runner
 ```console
 mvn clean install -Dodm.install=<INSTALLDIR>
 ```
-<INSTALLDIR> is the ODM 892 installation directory.
+<INSTALLDIR> is the ODM 892 or upper version installation directory.
 
 ## Run locally
 
