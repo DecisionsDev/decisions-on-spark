@@ -1,5 +1,4 @@
-miniloan-payment-default-1K
-creditScore,income,loanAmount,monthDuration,rate,yearlyReimbursement,payment default
+creditScore,income,loanAmount,monthDuration,rate,yearlyReimbursement,paymentDefault
 436,290532,136331,19,0.08,13979,0
 500,94722,150099,20,0.08,15091,0
 670,86878,269819,21,0.08,26947,1
