@@ -54,15 +54,6 @@ Sequenced executed Spark batches reuses the same smltag file and extend the list
 		<EndTime>2019-07-18T16:39:34+02:00</EndTime>
 	</Period>
 </Metric>
-<Metric logTime="2019-07-19T14:32:21+02:00">
-	<Type>THOUSAND_MONTHLY_ARTIFACTS</Type>
-	<SubType></SubType>
-	<Value>23.456</Value>
-	<Period>
-		<StartTime>2019-07-19T14:30:04+02:00</StartTime>
-		<EndTime>2019-07-19T14:32:21+02:00</EndTime>
-	</Period>
-</Metric>
 ```
 This slmtag file directory has to be scanned by the IBM ILMT tool to consolidate and report the product usages.
 
