@@ -23,7 +23,7 @@ mvn clean install -Dodm.install=<INSTALLDIR> -Dodm.version=8.10.3.0
 Or ODM 8.9.2
 ```console
 mvn clean install -f pom-8.9.xml -Dodm.install=<INSTALLDIR>
-
+```
 INSTALLDIR is the ODM 892 or upper version installation directory.
 
 ## Run locally
