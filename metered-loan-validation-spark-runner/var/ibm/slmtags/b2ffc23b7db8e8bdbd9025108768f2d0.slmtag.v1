@@ -1,0 +1,96 @@
+<SchemaVersion>2.1.1</SchemaVersion>
+<SoftwareIdentity>
+	<PersistentId>b1a07d4dc0364452aa6206bb6584061d</PersistentId>
+	<Name>IBM Operational Decision Manager Server</Name>
+	<InstanceId>/usr/IBM/TAMIT</InstanceId>
+</SoftwareIdentity>
+<Metric logTime="2019-08-23T13:58:44+02:00">
+	<Type>THOUSAND_MONTHLY_ARTIFACTS</Type>
+	<SubType></SubType>
+	<Value>1</Value>
+	<Period>
+		<StartTime>2019-08-23T13:58:38+02:00</StartTime>
+		<EndTime>2019-08-23T13:58:44+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-08-23T13:59:30+02:00">
+	<Type>THOUSAND_MONTHLY_ARTIFACTS</Type>
+	<SubType></SubType>
+	<Value>1</Value>
+	<Period>
+		<StartTime>2019-08-23T13:59:25+02:00</StartTime>
+		<EndTime>2019-08-23T13:59:30+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-08-23T14:00:26+02:00">
+	<Type>THOUSAND_MONTHLY_ARTIFACTS</Type>
+	<SubType></SubType>
+	<Value>1</Value>
+	<Period>
+		<StartTime>2019-08-23T14:00:20+02:00</StartTime>
+		<EndTime>2019-08-23T14:00:26+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-08-23T14:00:37+02:00">
+	<Type>THOUSAND_MONTHLY_ARTIFACTS</Type>
+	<SubType></SubType>
+	<Value>1</Value>
+	<Period>
+		<StartTime>2019-08-23T14:00:31+02:00</StartTime>
+		<EndTime>2019-08-23T14:00:37+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-08-23T14:02:25+02:00">
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
+	<Value>4.999</Value>
+	<Period>
+		<StartTime>2019-08-23T14:02:23+02:00</StartTime>
+		<EndTime>2019-08-23T14:02:25+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-08-23T14:04:06+02:00">
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
+	<Value>4.999</Value>
+	<Period>
+		<StartTime>2019-08-23T14:04:04+02:00</StartTime>
+		<EndTime>2019-08-23T14:04:06+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-08-23T14:13:50+02:00">
+	<Type>THOUSAND_MONTHLY_ARTIFACTS</Type>
+	<SubType></SubType>
+	<Value>1</Value>
+	<Period>
+		<StartTime>2019-08-23T14:13:44+02:00</StartTime>
+		<EndTime>2019-08-23T14:13:50+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-08-23T14:23:28+02:00">
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
+	<Value>4.999</Value>
+	<Period>
+		<StartTime>2019-08-23T14:23:26+02:00</StartTime>
+		<EndTime>2019-08-23T14:23:28+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-08-23T14:24:10+02:00">
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
+	<Value>4.999</Value>
+	<Period>
+		<StartTime>2019-08-23T14:24:08+02:00</StartTime>
+		<EndTime>2019-08-23T14:24:10+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-08-23T16:33:05+02:00">
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
+	<Value>4.999</Value>
+	<Period>
+		<StartTime>2019-08-23T16:33:03+02:00</StartTime>
+		<EndTime>2019-08-23T16:33:05+02:00</EndTime>
+	</Period>
+</Metric>

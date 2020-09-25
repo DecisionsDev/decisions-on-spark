@@ -1,0 +1,62 @@
+<SchemaVersion>2.1.1</SchemaVersion>
+<SoftwareIdentity>
+	<PersistentId>b1a07d4dc0364452aa6206bb6584061d</PersistentId>
+	<Name>IBM Operational Decision Manager Server</Name>
+	<InstanceId>/usr/IBM/TAMIT</InstanceId>
+</SoftwareIdentity>
+
+<Metric logTime="2019-08-28T10:31:20+02:00">
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
+	<Value>1.1</Value>
+	<Period>
+		<StartTime>2019-08-28T10:26:01+02:00</StartTime>
+		<EndTime>2019-08-28T10:31:15+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-08-28T10:46:20+02:00">
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
+	<Value>2.6</Value>
+	<Period>
+		<StartTime>2019-08-28T10:42:01+02:00</StartTime>
+		<EndTime>2019-08-28T10:45:15+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-08-28T12:31:20+02:00">
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
+	<Value>1.1</Value>
+	<Period>
+		<StartTime>2019-08-28T12:26:01+02:00</StartTime>
+		<EndTime>2019-08-28T12:31:15+02:00</EndTime>
+	</Period>
+</Metric>
+
+<Metric logTime="2019-08-29T10:31:20+02:00">
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
+	<Value>1.1</Value>
+	<Period>
+		<StartTime>2019-08-29T10:26:01+02:00</StartTime>
+		<EndTime>2019-08-29T10:31:15+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-08-29T12:31:20+02:00">
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
+	<Value>1.1</Value>
+	<Period>
+		<StartTime>2019-08-29T12:26:01+02:00</StartTime>
+		<EndTime>2019-08-29T12:31:15+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-08-30T10:31:20+02:00">
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
+	<Value>2.2</Value>
+	<Period>
+		<StartTime>2019-08-30T10:26:01+02:00</StartTime>
+		<EndTime>2019-08-30T10:31:15+02:00</EndTime>
+	</Period>
+</Metric>

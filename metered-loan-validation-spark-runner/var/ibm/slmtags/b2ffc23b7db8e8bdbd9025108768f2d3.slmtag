@@ -1,0 +1,25 @@
+<SchemaVersion>2.1.1</SchemaVersion>
+<SoftwareIdentity>
+	<PersistentId>b1a07d4dc0364452aa6206bb6584061d</PersistentId>
+	<Name>IBM Operational Decision Manager Server</Name>
+	<InstanceId>/usr/IBM/TAMIT</InstanceId>
+</SoftwareIdentity>
+
+<Metric logTime="2019-9-17T10:30:00+02:00">
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
+	<Value>50.0</Value>
+	<Period>
+		<StartTime>2019-9-17T10:00:00+02:00</StartTime>
+		<EndTime>2019-9-17T10:30:00+02:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2019-9-17T10:50:00+02:00">
+	<Type>MILLION_MONTHLY_DECISIONS</Type>
+	<SubType></SubType>
+	<Value>10.0</Value>
+	<Period>
+		<StartTime>2019-9-17T10:20:00+02:00</StartTime>
+		<EndTime>2019-9-17T10:50:00+02:00</EndTime>
+	</Period>
+</Metric>

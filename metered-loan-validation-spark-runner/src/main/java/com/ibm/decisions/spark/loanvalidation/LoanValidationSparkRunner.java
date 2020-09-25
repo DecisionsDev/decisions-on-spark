@@ -36,6 +36,8 @@ import org.apache.spark.api.java.function.Function;
 import com.ibm.decisions.spark.analytics.CoverageAnalyzer;
 import com.ibm.decisions.spark.core.*;
 import com.ibm.decisions.spark.generation.RequestGenerator;
+import com.ibm.decisions.spark.metering.DecisionMetering;
+import com.ibm.decisions.spark.metering.DecisionMeteringReport;
 
 public class LoanValidationSparkRunner {
 
@@ -61,7 +63,8 @@ public class LoanValidationSparkRunner {
 				+ "                                 specify no master option for a submit \r\n"
 				+ "     --rulecoverage              Produce the rule coverage\r\n"
 				+ "     --trace                     local[8] for standalone NYI\r\n"
-				+ "                                 input-file is not used in this generation mode\r\n";
+				+ "                                 input-file is not used in this generation mode\r\n"
+				+ "     --metering                  Meter the number of decisions and write a file for this usage\r\n";
 
 
 		// No args
@@ -110,6 +113,8 @@ public class LoanValidationSparkRunner {
 		}
 		
 		boolean ruleCoverage = argMap.get("--rulecoverage") != null;
+
+		boolean usageMetering = argMap.get("--metering") != null;
 		
 		SparkConf conf = new SparkConf().setAppName("Loan Validation Decision Service");
 		if ((masterConfig != null) && (masterConfig.isEmpty() == false)) {
@@ -138,11 +143,11 @@ public class LoanValidationSparkRunner {
 		// "data/loanvalidation/1K/loanvalidation-decisions-1K.csv";
 		String decisionFileName = outputFile;
 
-		automateDecisions(sc, requestFileName, decisionFileName, inputGeneration, inputGenerationNumber, ruleCoverage);
+		automateDecisions(sc, requestFileName, decisionFileName, inputGeneration, inputGenerationNumber, ruleCoverage, usageMetering);
 	}
 
 	@SuppressWarnings("unused")
-	public static void automateDecisions(JavaSparkContext sc, String requestFileName, String decisionFileName, boolean datasetGeneration, long inputGenerationNumber, boolean ruleCoverage) {
+	public static void automateDecisions(JavaSparkContext sc, String requestFileName, String decisionFileName, boolean datasetGeneration, long inputGenerationNumber, boolean ruleCoverage, boolean usageMetering) {
 
 		Function<LoanValidationRequest, LoanValidationDecision> executeDecisionService = new Function<LoanValidationRequest, LoanValidationDecision>() {
 			private static final long serialVersionUID = 1L;
@@ -247,6 +252,15 @@ public class LoanValidationSparkRunner {
 		}
 
 		requestRDD.count();
+
+		//Usage metering
+		DecisionMetering decisionMetering = null;
+		DecisionMeteringReport report = null;
+		if (usageMetering)  {
+			decisionMetering = new DecisionMetering("dba-metering"); //directory name can be changed
+			String batchId = sc.getConf().getAppId() + "-" +System.currentTimeMillis();
+			report = decisionMetering.createUsageReport(batchId);
+		}
 				
 		// Produce a RDD of decisions
 		//
@@ -256,6 +270,36 @@ public class LoanValidationSparkRunner {
 		System.out.println("Automation ended with " + decisions.count()  + " decisions");
 
 		long stopTime = System.currentTimeMillis();
+
+		//Usage metering
+		if (usageMetering)  {
+			report.setNbDecisions(decisions.count());
+			report.setStopTimeStamp();
+			
+			//decisionMetering.writeCSV();
+			//decisionMetering.writeJSON();
+			report.writeILMTFile();
+			
+			/*
+			//Test with >1M
+			report.setStartTimeStamp(LocalDateTime.now());
+			report.setNbDecisions(1234567);
+			report.setStopTimeStamp();
+			report.writeILMTFile();
+			
+			//Test with >1K
+			report.setStartTimeStamp(LocalDateTime.now());
+			report.setNbDecisions(1234);
+			report.setStopTimeStamp();
+			report.writeILMTFile();
+			
+			//Test with <1K
+			report.setStartTimeStamp(LocalDateTime.now());
+			report.setNbDecisions(123);
+			report.setStopTimeStamp();
+			report.writeILMTFile();
+			*/
+		}
 		
 		//Coverage
 		//
