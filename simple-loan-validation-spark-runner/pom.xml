@@ -13,33 +13,9 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target> 
-        <odm.version>8.9.2</odm.version>
+        <odm.version>ODM_VERSION</odm.version>
         <odm.install>ODM_HOME_DIR</odm.install>
     </properties>
-
-    <profiles>
-        <profile>
-         <id>Basic</id>
-            <dependencies>
-            </dependencies>
-        </profile>
-
-        <profile>
-         <id>WithMetering</id>
-            <dependencies>
-        
-        <dependency>
-            <groupId>com.ilog.rules.executionserver</groupId>
-            <artifactId>license-metric-logger</artifactId>
-            <version>${odm.version}</version>
-            <scope>system</scope>
-            <systemPath>${odm.install}/executionserver/lib/license_metric_logger_2.1.1.201507131115.jar</systemPath>
-            <optional>true</optional>
-        </dependency>
-
-    </dependencies>
-    </profile>
-</profiles>
 
     <dependencies>
         <dependency>
@@ -47,14 +23,14 @@
             <artifactId>jrules-res</artifactId>
             <version>${odm.version}</version>
             <scope>system</scope>
-            <systemPath>${odm.install}/executionserver/lib/jrules-res-execution.jar</systemPath>
+            <systemPath>${odm.install}/executionserver/lib/jrules-res-${odm.version}-execution.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.ilog.rules.executionserver</groupId>
             <artifactId>jrules-engine</artifactId>
             <version>${odm.version}</version>
             <scope>system</scope>
-            <systemPath>${odm.install}/executionserver/lib/jrules-engine.jar</systemPath>
+            <systemPath>${odm.install}/executionserver/lib/jrules-engine-${odm.version}.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.ilog.rules.executionserver</groupId>
@@ -70,16 +46,6 @@
             <scope>system</scope>
             <systemPath>${odm.install}/executionserver/lib/j2ee_connector-1_5-fr.jar</systemPath>
         </dependency>
-        
-        <dependency>
-            <groupId>com.ilog.rules.executionserver</groupId>
-            <artifactId>license-metric-logger</artifactId>
-            <version>${odm.version}</version>
-            <scope>system</scope>
-            <systemPath>${odm.install}/executionserver/lib/license_metric_logger_2.1.1.201507131115.jar</systemPath>
-            <optional>true</optional>
-        </dependency>
-        
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.11</artifactId>
