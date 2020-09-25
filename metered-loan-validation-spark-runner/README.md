@@ -131,6 +131,9 @@ Number of loans approved with a YearlyInterestRate > 5%: 45
 
 ### Usage metering
 The code includes a DecisionMeteringService class responsible for metering the decision automation usage made in the grid.
+
+[metering](metering/README.md): Explain the approach to meter decision automated in a Spark cluster and report the usage to the ILMT tool.
+
 Approach is straigtforward as showed in the sample. Typical invocation is as follows:
 ```console
 
