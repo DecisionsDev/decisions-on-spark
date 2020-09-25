@@ -7,4 +7,4 @@ IBM ODM empowers you to plug a rule engine in a map reduce Apache Spark applicat
 
 - [simple-loan-validation-spark-runner](simple-loan-validation-spark-runner/README.md): Shows how to automatically approve or reject loan applications by applying a business rules reasoning in a Spark map reduce approach.
 
-- [metered-loan-validation-spark-runner](metering-loan-validation-spark-runner/README.md): Adding decision metering on the top of the simple project
+- [metered-loan-validation-spark-runner](metered-loan-validation-spark-runner/README.md): Adding decision metering on the top of the simple project
