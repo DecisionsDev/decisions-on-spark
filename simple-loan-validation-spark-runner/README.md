@@ -19,7 +19,7 @@ cd decisions-on-spark/simple-loan-validation-spark-runner
 ```console
 mvn clean install -Dodm.install=<INSTALLDIR>
 ```
-<INSTALLDIR> is the ODM 892 installation directory.
+INSTALLDIR is the ODM 892 or upper version installation directory.
 
 ## Run locally
 
@@ -169,15 +169,6 @@ Sequenced executed Spark batches reuses the same smltag file and extend the list
 	<Period>
 		<StartTime>2019-07-18T16:39:34+02:00</StartTime>
 		<EndTime>2019-07-18T16:39:34+02:00</EndTime>
-	</Period>
-</Metric>
-<Metric logTime="2019-07-19T14:32:21+02:00">
-	<Type>VU_VALUE_UNIT</Type>
-	<SubType>THOUSAND_MONTHLY_ARTIFACTS</SubType>
-	<Value>23.456</Value>
-	<Period>
-		<StartTime>2019-07-19T14:30:04+02:00</StartTime>
-		<EndTime>2019-07-19T14:32:21+02:00</EndTime>
 	</Period>
 </Metric>
 ```
