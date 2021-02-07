@@ -58,6 +58,9 @@ Choose the 'withodmrt' jar to run in IAE.
 scp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar clsadmin@chs-qxd-170-mn001.us-south.ae.appdomain.cloud:/home/wce/clsadmin/odm
 ssh clsadmin@chs-axf-170-mn001.us-south.ae.appdomain.cloud
 ```
+```console
+ scp ../data/loanvalidation/1K/loanvalidation-requests-1K.csv clsadmin@chs-axg-170-mn001.us-south.ae.appdomain.cloud:/home/wce/clsadmin/odm/data//loanvalidation-requests-1K.csv
+```
 
 ### Submit the rule based decision making in IBM Analytic Engine through ssh
 It remains to start a stark-submit command to launch the batch.
