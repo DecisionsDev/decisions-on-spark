@@ -51,7 +51,7 @@ mkdir data
 cd ..
 ```
 
-## Copy the ODM uber jar on the Hadoop local file system
+## Copy the ODM uber jar and a request dataset files on the Hadoop local file system
 In anoter terminal of your work station you upload the uber jar from your workstation to the hadoop machine with an scp command.
 Choose the 'withodmrt' jar to run in IAE.
 ```console
