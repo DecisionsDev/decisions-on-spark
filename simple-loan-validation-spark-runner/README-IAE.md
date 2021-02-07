@@ -44,6 +44,13 @@ create an odm directory
 mkdir odm
 ```
 
+create a data sub directory
+```console
+cd odm
+mkdir data
+cd ..
+```
+
 ## Copy the ODM uber jar on the Hadoop local file system
 In anoter terminal of your work station you upload the uber jar from your workstation to the hadoop machine with an scp command.
 Choose the 'withodmrt' jar to run in IAE.
