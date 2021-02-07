@@ -69,7 +69,6 @@ It remains to start a stark-submit command to launch the batch.
 ...
 spark-submit \
 --name “loan-validation” \
---conf spark.service.spark_version=2.1 \
 --class com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner \
 /home/wce/clsadmin/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar \
 --input hdfs://machine2.bi.services.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-requests-1K.csv  \
@@ -80,7 +79,6 @@ spark-submit \
 ...
 spark-submit \
 --name “loan-validation” \
---conf spark.service.spark_version=2.1 \
 --class com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner \
 /home/wce/clsadmin/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar \
 --input hdfs://machine2.bi.services.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-requests-1K.csv  \
