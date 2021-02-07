@@ -23,25 +23,48 @@ The environment shows 4 machines including
 #### Generate the password for the clsadmin user
 #### Generate the credentials
 
-## Prepare the batch to run in the HDP cluster
-Second steps consists in copying the odm uber jar in the local file system of the hadoop environment.
+You are now ready to run a Spark batch application in your environment.
+IAE empowers to submit a batch through several ways:
+* ssh
+* cli
+* livy
 
-```console
-scp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar clsadmin@chs-qxd-170-mn001.us-south.ae.appdomain.cloud:/home/wce/clsadmin/odm
-ssh clsadmin@chs-axf-170-mn001.us-south.ae.appdomain.cloud
-```
+We explain the steps and commands for ssh. While the cli and livy differ due to the way their commands and gateway to the Hadoop environment the core Spark processing remains unchanged whatever the is the mean you select.
 
-You log with ssh as described at https://cloud.ibm.com/docs/AnalyticsEngine?topic=AnalyticsEngine-ssh-connection
+## Enter in a sshsession on the Hadoop environment
+You log in with ssh as described at https://cloud.ibm.com/docs/AnalyticsEngine?topic=AnalyticsEngine-ssh-connection
 
 ```console
 ssh clsadmin@<ssh-machine> with <ssh-machine> as described in the credentials 
 by example
 ssh clsadmin@chs-abc-170-mn001.us-south.ae.appdomain.cloud
 ```
+create an odm directory
+```console
+mkdir odm
+```
 
+## Copy the ODM uber jar on the Hadoop local file system
+In anoter terminal of your work station you upload the uber jar from your workstation to the hadoop machine with an scp command.
+Choose the 'withodmrt' jar to run in IAE.
+```console
+scp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar clsadmin@chs-qxd-170-mn001.us-south.ae.appdomain.cloud:/home/wce/clsadmin/odm
+ssh clsadmin@chs-axf-170-mn001.us-south.ae.appdomain.cloud
+```
 
 ### Submit the rule based decision making in IBM Analytic Engine through ssh
-Below is the submit command as tested with the public IBM Analytic Engine with a read of a request dataset file.
+It remains to start a stark-submit command to launch the batch.
+
+```console
+...
+spark-submit \
+--name “loan-validation” \
+--conf spark.service.spark_version=2.1 \
+--class com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner \
+/home/wce/clsadmin/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar \
+--input hdfs://machine2.bi.services.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-requests-1K.csv  \
+--output hdfs://machine2.bi.services.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-decisions-1K.csv
+```
 
 ```console
 ...
