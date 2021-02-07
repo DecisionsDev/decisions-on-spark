@@ -1,13 +1,32 @@
 
-#Automate decisions in Hortonworks Data Platform with IBM Analytic Engine
+# Automate decisions in Hortonworks Data Platform with IBM Analytic Engine
 
 ## Create an IBM Analytic Engine service instance in IBM Cloud
+You login in the IBM public cloud and provision a service instance at https://cloud.ibm.com/catalog/services/analytics-engine
+After few minutes your Hadoop environment is hosted.
+Generate the password for the clsadmin user
+Generate the credentials
 
+The free plan puts available the following configuration in Q1 2021:
+AE 1.2 Spark and Hive
+Components
+* Apache Spark 2.3.2
+* Hadoop 3.1.1
+* Apache Livy 0.5
+* Knox 1.0.0
+* Ambari 2.7.5
+* Miniconda-Py 3.7.9
+* Hive 3.1.0
+* Jupyter Enterprise Gateway 0.8.0
+
+4 machines
+So it delivers 2 executors for a total of 2 cores running
 ## Prepare the batch to run in the HDP cluster
+scp the jar
 
 
-### Submit the rule based decision making in IBM Analytic Engine
-Below is the submit command as tested with the public IBM Analylic Engine with a read of a request dataset file.
+### Submit the rule based decision making in IBM Analytic Engine through ssh
+Below is the submit command as tested with the public IBM Analytic Engine with a read of a request dataset file.
 
 ```console
 ...
