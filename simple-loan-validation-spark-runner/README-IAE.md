@@ -31,7 +31,7 @@ IAE empowers to submit a batch through several ways:
 
 We explain the steps and commands for ssh. While the cli and livy differ due to the way their commands and gateway to the Hadoop environment the core Spark processing remains unchanged whatever the is the mean you select.
 
-## Enter in a sshsession on the Hadoop environment
+## Create a ssh session with the Hadoop environment
 You log in with ssh as described at https://cloud.ibm.com/docs/AnalyticsEngine?topic=AnalyticsEngine-ssh-connection
 
 ```console
