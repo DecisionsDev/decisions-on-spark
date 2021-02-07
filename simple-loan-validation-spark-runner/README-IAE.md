@@ -21,8 +21,22 @@ Components
 
 4 machines
 So it delivers 2 executors for a total of 2 cores running
+
 ## Prepare the batch to run in the HDP cluster
-scp the jar
+Second steps consists in copying the odm uber jar in the local file system of the hadoop environment.
+
+```console
+scp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar clsadmin@chs-qxd-170-mn001.us-south.ae.appdomain.cloud:/home/wce/clsadmin/odm
+ssh clsadmin@chs-axf-170-mn001.us-south.ae.appdomain.cloud
+```
+
+You log with ssh as described at https://cloud.ibm.com/docs/AnalyticsEngine?topic=AnalyticsEngine-ssh-connection
+
+```console
+ssh clsadmin@<ssh-machine> with <ssh-machine> as described in the credentials 
+by example
+ssh clsadmin@chs-abc-170-mn001.us-south.ae.appdomain.cloud
+```
 
 
 ### Submit the rule based decision making in IBM Analytic Engine through ssh
