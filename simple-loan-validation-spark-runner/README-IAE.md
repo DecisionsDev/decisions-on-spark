@@ -1,15 +1,12 @@
 
-# Automate decisions in Hortonworks Data Platform with IBM Analytic Engine
+## Automate decisions in Hortonworks Data Platform with IBM Analytic Engine
 
-## Create an IBM Analytic Engine service instance in IBM Cloud
-You login in the IBM public cloud and provision a service instance at https://cloud.ibm.com/catalog/services/analytics-engine
-After few minutes your Hadoop environment is hosted.
-Generate the password for the clsadmin user
-Generate the credentials
+### Setup an IBM Analytic Engine service instance in IBM Cloud
 
-The free plan puts available the following configuration in Q1 2021:
-AE 1.2 Spark and Hive
-Components
+You login in the IBM public cloud and provision a service instance at https://cloud.ibm.com/catalog/services/analytics-engine.
+Your Hadoop environment is hosted after few minutes of provisioning.
+
+When choosing the free plan your instance makes available an AE 1.2 Spark and Hive configuration in Q1 2021 with the following components:
 * Apache Spark 2.3.2
 * Hadoop 3.1.1
 * Apache Livy 0.5
@@ -19,8 +16,12 @@ Components
 * Hive 3.1.0
 * Jupyter Enterprise Gateway 0.8.0
 
-4 machines
-So it delivers 2 executors for a total of 2 cores running
+The environment shows 4 machines including
+
+2 executors for a total of 2 cores running
+
+#### Generate the password for the clsadmin user
+#### Generate the credentials
 
 ## Prepare the batch to run in the HDP cluster
 Second steps consists in copying the odm uber jar in the local file system of the hadoop environment.
