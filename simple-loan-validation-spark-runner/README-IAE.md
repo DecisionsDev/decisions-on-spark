@@ -1,6 +1,8 @@
 
 ## Automate decisions in Hortonworks Data Platform with IBM Analytic Engine
 
+![decision automation in IAE/HDP](docs/images/decisions-in-iae-hdp.png "Rules in HDT through IBM Analytic Engine ")
+
 ### Setup an IBM Analytic Engine service instance in IBM Cloud
 
 You login in the IBM public cloud and provision a service instance at https://cloud.ibm.com/catalog/services/analytics-engine.
