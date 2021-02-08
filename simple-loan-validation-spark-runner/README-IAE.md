@@ -35,7 +35,7 @@ IAE empowers to submit a batch through several ways:
 
 We explain the steps and commands for ssh. While the cli and livy differ by their protocol and gateway the core Spark processing remains unchanged.
 
-## Create a ssh session with the Hadoop environment
+### Create a ssh session with the Hadoop environment
 You log in with ssh as described at https://cloud.ibm.com/docs/AnalyticsEngine?topic=AnalyticsEngine-ssh-connection
 
 ```console
@@ -53,7 +53,7 @@ mkdir data
 cd ..
 ```
 
-## Copy the ODM uber jar and a loan application request dataset on the Hadoop local file system
+#### Copy the ODM uber jar and a loan application request dataset on the Hadoop local file system
 In anoter terminal of your work station you upload the uber jar from your workstation to the hadoop machine with an scp command.
 Choose the 'withodmrt' jar to run in IAE as the Spark jars are provided.
 ```console
@@ -65,7 +65,7 @@ ssh clsadmin@chs-axf-170-mn001.us-south.ae.appdomain.cloud
 ```
 
 ### Submit the rule based decision making in IBM Analytic Engine through ssh
-It remains to start a stark-submit command to launch the batch.
+Start a spark-submit command to launch the batch.
 
 ```console
 ...
@@ -76,6 +76,9 @@ spark-submit \
 --input hdfs://machine2.bi.services.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-requests-1K.csv  \
 --output hdfs://machine2.bi.services.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-decisions-1K.csv
 ```
+In ssh you see a result like this.
+
+You can read the output decision file written on hdfs by navigation in the Ambari UI.
 
 ```console
 ...
