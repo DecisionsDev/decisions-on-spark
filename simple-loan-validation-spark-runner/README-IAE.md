@@ -1,98 +1,89 @@
-# Simple loan validation on Apache Spark
-This folder contains the source code to execute the ODM loan validation sample in an Apache Spark cluster.
 
-![Flow](docs/images/decision_automation_in_map_reduce.png "Architecture")
+## Automate decisions in Hortonworks Data Platform with IBM Analytic Engine
 
-## Pre requisites
-You need an IBM ODM 892 installation to build the application. Root of your ODM installation is referred as <INSTALLDIR> in the instructions below. Maven files will look for the ODM jars under <INSTALLDIR>/executionserver/libs directory.
+![decision automation in IAE/HDP](docs/images/decisions-in-iae-hdp.png "Rules in HDT through IBM Analytic Engine ")
 
-## Get the code
-Clone this repository.
-```console
-git clone
-```
-Open an terminal where your have cloned this repository.
-```console
-cd decisions-on-spark/simple-loan-validation-spark-runner
-```
-## Build
-For ODM 8.10.X releases
-```console
-mvn clean install -Dodm.install=<INSTALLDIR> -Dodm.version=<VERSION>
-```
-Or ODM 8.9.2
-```console
-mvn clean install -f pom-8.9.xml -Dodm.install=<INSTALLDIR>
-```
-INSTALLDIR is the ODM 892 or upper version installation directory.
-VERSION is the version of ODM by example 8.10.3.0. This number has to match with the jar names.
+### Setup an IBM Analytic Engine service instance in IBM Cloud
 
-## Run locally
+Login in the IBM public cloud and provision an Analytic Engine service instance at https://cloud.ibm.com/catalog/services/analytics-engine.
+After few minutes your Hadoop environment is hosted.
 
+When choosing the free plan your instance makes available an AE 1.2 Spark and Hive configuration in Q1 2021 with the following components:
+* Apache Spark 2.3.2
+* Hadoop 3.1.1
+* Apache Livy 0.5
+* Knox 1.0.0
+* Ambari 2.7.5
+* Miniconda-Py 3.7.9
+* Hive 3.1.0
+* Jupyter Enterprise Gateway 0.8.0
 
-Automate loan validation on a CSV applications dataset to produce a CSV decision set.
-```console
-java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --input ../data/loanvalidation/1K/loanvalidation-requests-1K.csv --output ../data/loanvalidation/1K/loanvalidation-decisions-1K.csv --master local[8]
-```
+The environment shows 4 nodes including 1 for management, 2 workers and 1 for data.
+Each worker brings an Java/Scala executor running on 1 core.
 
-Automate loan validation on a JSON applications dataset to produce a JSON decision set.
-```console
-java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --input ../data/loanvalidation/1K/loanvalidation-requests-1K.json --output ../data/loanvalidation/1K/loanvalidation-decisions-1K.json --master local[8]
-```
+#### Generate the password for the clsadmin user
+First step consists in generating the password. If action fails just take a coffe break, it will works few minutes later on.
 
-Automate loan validation on a JSON applications dataset to produce a JSON decision set and to display a Rule coverage.
-```console
-java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --input ../data/loanvalidation/1K/loanvalidation-requests-1K.json --output ../data/loanvalidation/1K/loanvalidation-decisions-1K.json --master local[8] --rulecoverage
-```
+#### Generate the credentials
+In the left side of the service UI generate the credentials meaning all the endpoints for ssh, cli and livy.
 
-## Run in a cluster
-Rule based automation works in a cluster with the same integration pattern and code than in standalone.
-Only differences of the application are about:
-- the access to the datasets, as the Spark driver and executors run on different machines and local file systems. In consequence data have to be stored in hdfs or other shared persistence.
-- the packaging, as Spark jars are not needed in the uber jar but already deployed in the cluster.
+You are now ready to run a Spark batch application in your environment.
+IAE empowers to submit a batch through several ways:
+* ssh
+* cli
+* livy
 
-The target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar contains required classes to submit a Spark job.
+We explain the steps and commands for ssh. While the cli and livy differ by their protocol and gateway the core Spark processing remains unchanged.
 
-The LoanValidationSparkRunner application can read or generate in memory the requests, then applies the loan validation decision logic, and computes metrics and finally KPIs.
-
-### Running in IBM Spark service
-Below is the submit command as tested with the IBM Cloud Spark service with a random generation of the requests.
-```console
-./spark-submit.sh \
---vcap ./vcap-odm123.json \
---name “loan-validation”  \
---deploy-mode cluster \
---conf spark.service.spark_version=2.1 \
---class com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner \
-target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar \
---inputgen 1000  \
---output loanvalidation-decisions-1K.json
-```
-By submitting the application you get a trace similar to this one.
-
-![Flow](docs/images/submit-trace.png "submit trace")
-
-When opening the stdout file you can check the loan approval traces and obtain the KPIs.
+### Create a ssh session with the Hadoop environment
+You log in with ssh as described at https://cloud.ibm.com/docs/AnalyticsEngine?topic=AnalyticsEngine-ssh-connection
 
 ```console
-...
-Loan approved=false with a yearly repayment=0.0 insurance required:false messages= [The borrower's age is not valid.,  The loan amount is under the maximum authorized] executed in thread Executor task launch worker for task 8
-Loan approved=true with a yearly repayment=1464.7636429039499 insurance required:true messages= [ The loan amount is under the maximum authorized, Low risk loan, Congratulations! Your loan has been approved] executed in thread Executor task launch worker for task 8
-
-Decision batch metrics
-Number of loan applications processed: 1000 in 2995 ms
-Number of decision per sec: 333.0
-Number of approved loan applications: 291 on a 1000 total
-Number of loans approved with a YearlyInterestRate > 5%: 291
+ssh clsadmin@<ssh-machine> with <ssh-machine> as described in the credentials 
+by example
+ssh clsadmin@chs-abc-170-mn001.us-south.ae.appdomain.cloud
 ```
-### Running Business Rules on IBM Analytic Engine
-Below is the submit command as tested with the public IBM Analylic Engine with a read of a request dataset file.
+Enter the clsadmin password and enter in the ssh session.
+
+create an odm directory and data subdirectory for convenience.
+```console
+mkdir odm
+cd odm
+mkdir data
+cd ..
+```
+
+#### Copy the ODM uber jar and a loan application request dataset on the Hadoop local file system
+In anoter terminal of your work station you upload the uber jar from your workstation to the hadoop machine with an scp command.
+Choose the 'withodmrt' jar to run in IAE as the Spark jars are provided.
+```console
+scp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar clsadmin@chs-qxd-170-mn001.us-south.ae.appdomain.cloud:/home/wce/clsadmin/odm
+by example ssh clsadmin@chs-axf-170-mn001.us-south.ae.appdomain.cloud
+```
+```console
+ scp ../data/loanvalidation/1K/loanvalidation-requests-1K.csv clsadmin@chs-axg-170-mn001.us-south.ae.appdomain.cloud:/home/wce/clsadmin/odm/data//loanvalidation-requests-1K.csv
+```
+
+### Submit the rule based decision making in IBM Analytic Engine through ssh
+Start a spark-submit command to launch the batch.
 
 ```console
 ...
 spark-submit \
 --name “loan-validation” \
---conf spark.service.spark_version=2.1 \
+--class com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner \
+/home/wce/clsadmin/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar \
+--input hdfs://machine2.bi.services.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-requests-1K.csv  \
+--output hdfs://machine2.bi.services.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-decisions-1K.csv
+```
+In ssh you see a result like this.
+
+You can read the output decision file written on hdfs by navigation in the Ambari UI.
+
+```console
+...
+spark-submit \
+--name “loan-validation” \
 --class com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner \
 /home/wce/clsadmin/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar \
 --input hdfs://machine2.bi.services.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-requests-1K.csv  \

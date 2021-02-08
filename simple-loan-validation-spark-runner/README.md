@@ -86,47 +86,5 @@ Number of approved loan applications: 291 on a 1000 total
 Number of loans approved with a YearlyInterestRate > 5%: 291
 ```
 ### Running Business Rules on IBM Analytic Engine
-Below is the submit command as tested with the public IBM Analylic Engine with a read of a request dataset file.
 
-```console
-...
-spark-submit \
---name “loan-validation” \
---conf spark.service.spark_version=2.1 \
---class com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner \
-/home/wce/clsadmin/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar \
---input hdfs://machine2.bi.services.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-requests-1K.csv  \
---output hdfs://machine2.bi.services.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-decisions-1K.csv
-```
-Result of the submit is like follows.
-```console
-...
-Executing from: /home/wce/clsadmin/.
-Loading dataset file: hdfs://machine2.us-south.bluemix.net:8020/user/clsadmin/data/loanvalidation/loanvalidation-requests-1K.csv
-...
-18/04/30 15:01:57 INFO Executor: Adding file:/tmp/spark-361d546f-d868-443e-81de-2390f58c5492/userFiles-1a30c-fb2d-4d6a-a3fb-1a9acf063e/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar to class loader
-...
-Starting decision automation...
-Dataset generation: false
-...
-18/04/30 15:01:57 INFO execution: Found user settings in file : ra.xml.
-18/04/30 15:01:57 INFO execution: Loading execution unit (XU) settings from the file descriptor.
-18/04/30 15:01:57 INFO execution: Found user settings in file : ra.xml.
-18/04/30 15:01:57 INFO execution: Loading execution unit (XU) settings from the file descriptor.
-18/04/30 15:01:58 WARN persistence: XOM repository set in file persistence mode: /home/wce/clsadmin/repo/res_xom
-18/04/30 15:01:58 WARN persistence: XOM repository set in file persistence mode: /home/wce/clsadmin/repo/res_xom
-18/04/30 15:01:58 WARN persistence: RESMGMT persistence: Adding RuleApp "/loanvalidation/1.0".
-18/04/30 15:01:58 WARN persistence: RESMGMT persistence: Adding RuleApp "/loanvalidation/1.0".
-18/04/30 15:01:58 WARN persistence: RESMGMT persistence: RuleApp "/loanvalidation/1.0" is added.
-18/04/30 15:01:58 WARN persistence: RESMGMT persistence: RuleApp "/loanvalidation/1.0" is added.
-...
-Loan approved=false with a yearly repayment=20963.776805681675 insurance required:false messages= [ The loan amount is under the maximum authorized, Risky loan, Too big Debt/Income ratio: 1.67, We are sorry. Your loan has not been approved] executed in thread Executor task launch worker for task 7
-Loan approved=false with a yearly repayment=6674.226300783769 insurance required:false messages= [ The loan amount is under the maximum authorized, Average risk loan, Too big Debt/Income ratio: 0.85, We are sorry. Your loan has not been approved] executed in thread Executor task launch worker for task 7
-...
-Automation ended with 1000 decisions
-Decision batch metrics
-Number of loan applications processed: 1000 in 7484 ms
-Number of decision per sec: 133.0
-Number of approved loan applications: 45 on a 1000 total
-Number of loans approved with a YearlyInterestRate > 5%: 45
-```
+- [Running in IBM Analytic Engine & HDP](./README-IAE.md): Shows how to automatically approve or reject loan applications by applying a business rules reasoning in a Spark map reduce approach.
