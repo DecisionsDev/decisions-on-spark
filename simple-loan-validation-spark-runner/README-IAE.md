@@ -5,8 +5,8 @@
 
 ### Setup an IBM Analytic Engine service instance in IBM Cloud
 
-You login in the IBM public cloud and provision a service instance at https://cloud.ibm.com/catalog/services/analytics-engine.
-Your Hadoop environment is hosted after few minutes of provisioning.
+Login in the IBM public cloud and provision an Analytic Engine service instance at https://cloud.ibm.com/catalog/services/analytics-engine.
+After few minutes your Hadoop environment is hosted.
 
 When choosing the free plan your instance makes available an AE 1.2 Spark and Hive configuration in Q1 2021 with the following components:
 * Apache Spark 2.3.2
@@ -18,12 +18,14 @@ When choosing the free plan your instance makes available an AE 1.2 Spark and Hi
 * Hive 3.1.0
 * Jupyter Enterprise Gateway 0.8.0
 
-The environment shows 4 machines including
-
-2 executors for a total of 2 cores running
+The environment shows 4 nodes including 1 for management, 2 workers and 1 for data.
+Each worker brings an Java/Scala executor running on 1 core.
 
 #### Generate the password for the clsadmin user
+First step consists in generating the password. If action fails just take a coffe break, it will works few minutes later on.
+
 #### Generate the credentials
+In the left side of the service UI generate the credentials meaning all the endpoints for ssh, cli and livy.
 
 You are now ready to run a Spark batch application in your environment.
 IAE empowers to submit a batch through several ways:
@@ -31,7 +33,7 @@ IAE empowers to submit a batch through several ways:
 * cli
 * livy
 
-We explain the steps and commands for ssh. While the cli and livy differ due to the way their commands and gateway to the Hadoop environment the core Spark processing remains unchanged whatever the is the mean you select.
+We explain the steps and commands for ssh. While the cli and livy differ by their protocol and gateway the core Spark processing remains unchanged.
 
 ## Create a ssh session with the Hadoop environment
 You log in with ssh as described at https://cloud.ibm.com/docs/AnalyticsEngine?topic=AnalyticsEngine-ssh-connection
@@ -41,21 +43,19 @@ ssh clsadmin@<ssh-machine> with <ssh-machine> as described in the credentials
 by example
 ssh clsadmin@chs-abc-170-mn001.us-south.ae.appdomain.cloud
 ```
-create an odm directory
+Enter the clsadmin password and enter in the ssh session.
+
+create an odm directory and data subdirectory for convenience.
 ```console
 mkdir odm
-```
-
-create a data sub directory
-```console
 cd odm
 mkdir data
 cd ..
 ```
 
-## Copy the ODM uber jar and a request dataset files on the Hadoop local file system
+## Copy the ODM uber jar and a loan application request dataset on the Hadoop local file system
 In anoter terminal of your work station you upload the uber jar from your workstation to the hadoop machine with an scp command.
-Choose the 'withodmrt' jar to run in IAE.
+Choose the 'withodmrt' jar to run in IAE as the Spark jars are provided.
 ```console
 scp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar clsadmin@chs-qxd-170-mn001.us-south.ae.appdomain.cloud:/home/wce/clsadmin/odm
 ssh clsadmin@chs-axf-170-mn001.us-south.ae.appdomain.cloud
