@@ -87,6 +87,4 @@ Number of loans approved with a YearlyInterestRate > 5%: 291
 ```
 ### Running Business Rules on IBM Analytic Engine
 
-![Flow](docs/images/decisions-in-spark.png "Rules in Apache Apache ")
-
 - [Running in IBM Analytic Engine & HDP](./README-IAE.md): Shows how to automatically approve or reject loan applications by applying a business rules reasoning in a Spark map reduce approach.
