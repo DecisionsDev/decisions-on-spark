@@ -6,12 +6,20 @@ This folder contains the source code to execute the ODM loan validation sample i
 This sample demonstrates the emission of decisions automated with IBM ODM, a capability of IBM Cloud Pak for Automation, into the BAI capability.
 IBM BUsiness Automation Insights is a business intellignece tool that captures automation events through Kafka, and delivers ootb a pipeline to monitor them in dashboards, and write them into a data lake.
 
+To perfom so we extend the simple loan validation on Spark sample with the following modifications:
+1 - the ODM eXecution Unit registers a BAI plugin to activate the emission,
+    BAI Kafka information are now read from an additional properties file, used at the plugin registration time
+2 - the RuleApp archive is augmented with ruleset properties to ask for BAI emission for input, trace and output parameters.
+
 ## Pre requisites
 
 ### ODM & BAI libs
-You need an IBM ODM 8.10.5 installation with ifixes to build the application. Root of your ODM installation is referred as <INSTALLDIR> in the instructions below. Maven files will look for the ODM jars under <INSTALLDIR>/executionserver/lib directory.
+You need an IBM ODM 8.10.5 installation with ifixes to build the application. Root of your ODM installation is referred as <INSTALLDIR> in the instructions below. Maven files will look for the ODM and BAI emission jars under <INSTALLDIR>/executionserver/lib directory.
   
 ### BAI Kafka
+Provision a BAI instance and retreive the Kafka information to feed the XU plugin.
+All BAI Kafka properties are captured in the file src/mainresources/plugin-configuration.properties
+![BAI Kafka properties](src/mainresources/plugin-configuration.propertie "BAI Kafka properties")
 
 ## Get the code
 Clone this repository.
