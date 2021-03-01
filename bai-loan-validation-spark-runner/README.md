@@ -3,12 +3,23 @@ This folder contains the source code to execute the ODM loan validation sample i
 
 ![Flow](docs/images/decision_automation_in_map_reduce.png "Architecture")
 
+This sample demonstrates the emission of decisions automated with IBM ODM, a capability of IBM Cloud Pak for Automation, into the BAI capability.
+IBM BUsiness Automation Insights is a business intellignece tool that captures automation events through Kafka, and delivers ootb a pipeline to monitor them in dashboards, and write them into a data lake.
+
+To perfom so we extend the simple loan validation on Spark sample with the following modifications:
+1 - the ODM eXecution Unit registers a BAI plugin to activate the emission,
+    BAI Kafka information are now read from an additional properties file, used at the plugin registration time
+2 - the RuleApp archive is augmented with ruleset properties to ask for BAI emission for input, trace and output parameters.
+
 ## Pre requisites
 
 ### ODM & BAI libs
-You need an IBM ODM 8.10.X installation to build the application. Root of your ODM installation is referred as <INSTALLDIR> in the instructions below. Maven files will look for the ODM jars under <INSTALLDIR>/executionserver/libs directory.
+You need an IBM ODM 8.10.5 installation with ifixes to build the application. Root of your ODM installation is referred as <INSTALLDIR> in the instructions below. Maven files will look for the ODM and BAI emission jars under <INSTALLDIR>/executionserver/lib directory.
   
 ### BAI Kafka
+Provision a BAI instance and retreive the Kafka information to feed the XU plugin.
+All BAI Kafka properties are captured in the file src/mainresources/plugin-configuration.properties
+![BAI Kafka properties](src/main/resources/plugin-configuration.properties "BAI Kafka properties")
 
 ## Get the code
 Clone this repository.
@@ -20,16 +31,10 @@ Open an terminal where your have cloned this repository.
 cd decisions-on-spark/bai-loan-validation-spark-runner
 ```
 ## Build
-For ODM 8.10.X releases
 ```console
-mvn clean install -Dodm.install=<INSTALLDIR> -Dodm.version=<VERSION>
+mvn clean install -Dodm.install=<INSTALLDIR>
 ```
-Or ODM 8.9.2
-```console
-mvn clean install -f pom-8.9.xml -Dodm.install=<INSTALLDIR>
-```
-INSTALLDIR is the ODM 892 or upper version installation directory.
-VERSION is the version of ODM by example 8.10.3.0. This number has to match with the jar names.
+INSTALLDIR is the ODM 8.10.5 or upper version installation directory.
 
 ## Run locally
 
