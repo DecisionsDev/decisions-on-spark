@@ -3,6 +3,9 @@ This folder contains the source code to execute the ODM loan validation sample i
 
 ![Flow](docs/images/decision_automation_in_map_reduce.png "Architecture")
 
+This sample demonstrates the emission of decisions automated with IBM ODM, a capability of IBM Cloud Pak for Automation, into the BAI capability.
+IBM BUsiness Automation Insights is a business intellignece tool that captures automation events through Kafka, and delivers ootb a pipeline to monitor them in dashboards, and write them into a data lake.
+
 ## Pre requisites
 
 ### ODM & BAI libs
