@@ -115,7 +115,7 @@
                                 <config-property>
 <config-property-name>JdkLoggingEnabled</config-property-name>
 <config-property-type>java.lang.Boolean</config-property-type>
-<config-property-value>false</config-property-value>
+<config-property-value>true</config-property-value>
 </config-property>
 
                                 <!-- Do NOT change the value of this parameter. Changing the value of this parameter
@@ -123,7 +123,7 @@
                                 <config-property>
 <config-property-name>SystemOutLoggingEnabled</config-property-name>
 <config-property-type>java.lang.Boolean</config-property-type>
-<config-property-value>false</config-property-value>
+<config-property-value>true</config-property-value>
 </config-property>
 
 
@@ -219,14 +219,14 @@
                                 <config-property>
 <config-property-name>TraceLevel</config-property-name>
 <config-property-type>java.lang.String</config-property-type>
-<config-property-value>FINE</config-property-value>
+<config-property-value>ALL</config-property-value>
 </config-property>
 
                                 <!-- To flush the log stream each time a message is written, change the value to true. -->
                                 <config-property>
 <config-property-name>TraceAutoFlush</config-property-name>
 <config-property-type>java.lang.Boolean</config-property-type>
-<config-property-value>false</config-property-value>
+<config-property-value>true</config-property-value>
 </config-property>
 
                                 <!-- To disable profiling, change the value to false. -->
@@ -384,7 +384,7 @@
                                 <config-property>
 <config-property-name>Plugins</config-property-name>
 <config-property-type>java.lang.String</config-property-type>
-<config-property-value>{pluginClass=Management,xuName=xuHTDS,protocol=tcpip,tcpip.port=TCPIP_PORT,tcpip.host=RES_CONSOLE_HOST},{pluginClass=HTDS}</config-property-value>
+<config-property-value>{pluginClass=Management,xuName=xuHTDS,protocol=tcpip,tcpip.port=TCPIP_PORT,tcpip.host=RES_CONSOLE_HOST},{pluginClass=HTDS},{pluginClass=ODMEmitterForBAI,topic=bai-ingress}</config-property-value>
 </config-property>
 
                                 <!--

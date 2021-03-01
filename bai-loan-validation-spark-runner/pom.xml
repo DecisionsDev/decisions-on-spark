@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.ibm.decisions.sparko</groupId>
-    <artifactId>simpleloanvalidationsparkrunner</artifactId>
+    <artifactId>bailoanvalidationsparkrunner</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 
@@ -18,19 +18,22 @@
     </properties>
 
     <dependencies>
+
+        <!-- IBM ODM -->
+
         <dependency>
             <groupId>com.ilog.rules.executionserver</groupId>
             <artifactId>jrules-res</artifactId>
             <version>${odm.version}</version>
             <scope>system</scope>
-            <systemPath>${odm.install}/executionserver/lib/jrules-res-${odm.version}-execution.jar</systemPath>
+            <systemPath>${odm.install}/executionserver/lib/jrules-res-execution.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.ilog.rules.executionserver</groupId>
             <artifactId>jrules-engine</artifactId>
             <version>${odm.version}</version>
             <scope>system</scope>
-            <systemPath>${odm.install}/executionserver/lib/jrules-engine-${odm.version}.jar</systemPath>
+            <systemPath>${odm.install}/executionserver/lib/jrules-engine.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.ilog.rules.executionserver</groupId>
@@ -46,6 +49,33 @@
             <scope>system</scope>
             <systemPath>${odm.install}/executionserver/lib/j2ee_connector-1_5-fr.jar</systemPath>
         </dependency>
+
+        <!-- IBM BAI -->
+
+        <dependency>
+            <groupId>com.ilog.rules.executionserver</groupId>
+            <artifactId>bai-events-java-sdk</artifactId>
+            <version>${odm.version}</version>
+            <scope>system</scope>
+            <systemPath>${odm.install}/executionserver/lib/bai-events-java-sdk-1.0.9.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ilog.rules.executionserver</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${odm.version}</version>
+            <scope>system</scope>
+            <systemPath>${odm.install}/executionserver/lib/kafka-clients-1.1.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ilog.rules.executionserver</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>${odm.version}</version>
+            <scope>system</scope>
+            <systemPath>${odm.install}/executionserver/lib/javax.json-1.1.jar</systemPath>
+        </dependency>
+        
+        <!-- Spark -->
+
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.11</artifactId>

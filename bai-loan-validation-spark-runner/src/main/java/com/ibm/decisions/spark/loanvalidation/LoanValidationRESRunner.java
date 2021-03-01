@@ -21,16 +21,25 @@
 **/
 
 package com.ibm.decisions.spark.loanvalidation;
-
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import ilog.rules.res.model.IlrPath;
 import ilog.rules.res.session.IlrJ2SESessionFactory;
 import ilog.rules.res.session.IlrSessionRequest;
 import ilog.rules.res.session.IlrSessionResponse;
 import ilog.rules.res.session.IlrStatelessSession;
 import java.util.Map;
-
+import ilog.rules.res.session.config.IlrPluginConfig;
+import ilog.rules.res.session.config.IlrSessionFactoryConfig;
+//import com.ibm.dba.bai.events.odm.OdmEventBuilder;
+import ilog.rules.res.session.config.IlrPersistenceType;
+import java.io.File;
+import java.io.PrintWriter;
 import loan.Borrower;
 import loan.LoanRequest;
+
+import static java.lang.Thread.*;
 
 public class LoanValidationRESRunner {
 
@@ -38,7 +47,30 @@ public class LoanValidationRESRunner {
 	
 	private static IlrJ2SESessionFactory GetRuleSessionFactory() {
 		if (ruleSessionFactory == null) {
-			ruleSessionFactory = new IlrJ2SESessionFactory();
+			
+			IlrSessionFactoryConfig config = ruleSessionFactory.createDefaultConfig();
+			System.out.println("===== getFactory -> after default config creaation");
+			
+			config.getXUConfig().getConnectionPoolConfig().setMaxSize(50);
+			PrintWriter writer = new PrintWriter(System.out);
+			config.getXUConfig().setLogWriter(writer);
+			config.getXUConfig().getPersistenceConfig().setPersistenceType(IlrPersistenceType.MEMORY);
+			config.getXUConfig().getPersistenceConfig().getFilePersistenceConfig()
+					.setDirectory(new File("repo/"));
+			if(config.getClass().getClassLoader().getResourceAsStream("plugin-configuration.properties")!=null) {
+				if (config.getXUConfig().getPluginConfigs() != null) {
+
+					IlrPluginConfig baiIlrPluginConfig = config.getXUConfig().createPluginConfig("ODMEmitterForBAI");
+
+					List<IlrPluginConfig> pluginsConfigList = new ArrayList<IlrPluginConfig>();
+					pluginsConfigList.add(baiIlrPluginConfig);
+					config.getXUConfig().setPluginConfigs(pluginsConfigList);
+				}
+			} else {
+				System.err.println("Error: ODM BAI plugin-configuration.properties file not found");
+				System.exit(0);
+				}
+			ruleSessionFactory = new IlrJ2SESessionFactory(config);
 		}
 		return ruleSessionFactory;
 	}
@@ -61,8 +93,9 @@ public class LoanValidationRESRunner {
 		//LoanValidationRequest request = new LoanValidationRequest("John", "Doe", 550, 80000, birthDate, "123-121234", 250000, 240, 0.05d);
 		LoanValidationRequest request = new LoanValidationRequest(borrower, loan);
 		LoanValidationDecision decision = runner.execute(request);
-		System.out.println("Messages:" + decision.response.report.getMessage());
-		System.out.println(decision.serializeAsJSON());
+
+	//	System.out.println("Messages:" + decision.response.report.getMessage());
+	//	System.out.println(decision.serializeAsJSON());
 	}
 	
 	public LoanValidationDecision executeAsString(String s) {
@@ -77,8 +110,8 @@ public class LoanValidationRESRunner {
 		
 		double yearlyRepayment = response.getReport().getMonthlyRepayment();
 		
-		System.out.print("Loan approved=" + response.report.isApproved() + " with a yearly repayment=" + yearlyRepayment + " insurance required:" + response.getReport().isInsuranceRequired() + " messages= " + response.getReport().getMessages());
-		System.out.println(" executed in thread " + Thread.currentThread().getName());
+//		System.out.print("Loan approved=" + response.report.isApproved() + " with a yearly repayment=" + yearlyRepayment + " insurance required:" + response.getReport().isInsuranceRequired() + " messages= " + response.getReport().getMessages());
+//		System.out.println(" executed in thread " + Thread.currentThread().getName());
 		
 		return new LoanValidationDecision(request, response);
 	}
@@ -87,6 +120,7 @@ public class LoanValidationRESRunner {
 		try {
 			
 			IlrSessionResponse sessionResponse = execute(request.borrower, request.loanRequest);
+			Thread.sleep(2000);
 			//long t3 = System.currentTimeMillis();
 			LoanValidationResponse miniLoanResponse = new LoanValidationResponse(sessionResponse);
 			return miniLoanResponse;
@@ -125,6 +159,7 @@ public class LoanValidationRESRunner {
 					.createStatelessSession();
 
 			IlrSessionResponse response = session.execute(sessionRequest);
+			
 			return response;
 
 		} catch (Exception exception) {

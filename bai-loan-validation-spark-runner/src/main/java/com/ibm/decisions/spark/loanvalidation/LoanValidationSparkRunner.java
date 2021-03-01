@@ -297,10 +297,10 @@ public class LoanValidationSparkRunner {
 		long yearlyInterestRateGreaterThan005Count = decisions.filter(isLoanApproved)
 				.filter(isYearlyInterestRatesGreaterThanX).count();
 
-		System.out.println(
-				"Number of approved loan applications: " + approvedLoanCount + " on a " + decisions.count() + " total");
-		System.out.println(
-				"Number of loans approved with a YearlyInterestRate > 5%: " + yearlyInterestRateGreaterThan005Count);
+	//	System.out.println(
+//				"Number of approved loan applications: " + approvedLoanCount + " on a " + decisions.count() + " total");
+//		System.out.println(
+//				"Number of loans approved with a YearlyInterestRate > 5%: " + yearlyInterestRateGreaterThan005Count);
 
 	}
 
