@@ -21,7 +21,7 @@ cd decisions-on-spark/bai-loan-validation-spark-runner
 ```
 ## Build
 ```console
-mvn clean install -f pom-8.9.xml -Dodm.install=<INSTALLDIR>
+mvn clean install -Dodm.install=<INSTALLDIR>
 ```
 INSTALLDIR is the ODM 892 or upper version installation directory.
 VERSION is the version of ODM by example 8.10.3.0. This number has to match with the jar names.
