@@ -19,7 +19,7 @@ You need an IBM ODM 8.10.5 installation with ifixes to build the application. Ro
 ### BAI Kafka
 Provision a BAI instance and retreive the Kafka information to feed the XU plugin.
 All BAI Kafka properties are captured in the file src/mainresources/plugin-configuration.properties
-![BAI Kafka properties](src/mainresources/plugin-configuration.propertie "BAI Kafka properties")
+![BAI Kafka properties](src/main/resources/plugin-configuration.properties "BAI Kafka properties")
 
 ## Get the code
 Clone this repository.
