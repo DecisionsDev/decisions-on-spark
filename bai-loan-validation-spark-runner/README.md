@@ -6,7 +6,7 @@ This folder contains the source code to execute the ODM loan validation sample i
 ## Pre requisites
 
 ### ODM & BAI libs
-You need an IBM ODM 8.10.5 installation with ifixes to build the application. Root of your ODM installation is referred as <INSTALLDIR> in the instructions below. Maven files will look for the ODM jars under <INSTALLDIR>/executionserver/libs directory.
+You need an IBM ODM 8.10.5 installation with ifixes to build the application. Root of your ODM installation is referred as <INSTALLDIR> in the instructions below. Maven files will look for the ODM jars under <INSTALLDIR>/executionserver/lib directory.
   
 ### BAI Kafka
 
