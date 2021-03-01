@@ -6,7 +6,7 @@ This folder contains the source code to execute the ODM loan validation sample i
 ## Pre requisites
 
 ### ODM & BAI libs
-You need an IBM ODM 8.10.X installation to build the application. Root of your ODM installation is referred as <INSTALLDIR> in the instructions below. Maven files will look for the ODM jars under <INSTALLDIR>/executionserver/libs directory.
+You need an IBM ODM 8.10.5 installation with ifixes to build the application. Root of your ODM installation is referred as <INSTALLDIR> in the instructions below. Maven files will look for the ODM jars under <INSTALLDIR>/executionserver/libs directory.
   
 ### BAI Kafka
 
@@ -20,11 +20,6 @@ Open an terminal where your have cloned this repository.
 cd decisions-on-spark/bai-loan-validation-spark-runner
 ```
 ## Build
-For ODM 8.10.X releases
-```console
-mvn clean install -Dodm.install=<INSTALLDIR> -Dodm.version=<VERSION>
-```
-Or ODM 8.9.2
 ```console
 mvn clean install -f pom-8.9.xml -Dodm.install=<INSTALLDIR>
 ```
