@@ -13,7 +13,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target> 
-        <odm.version>ODM_VERSION</odm.version>
+        <odm.version>8.10.5-IF003</odm.version>
         <odm.install>ODM_HOME_DIR</odm.install>
     </properties>
 
@@ -137,5 +137,3 @@
         </plugins>
     </build>
 </project>
-
-
