@@ -118,9 +118,9 @@ public class LoanValidationRESRunner {
 	
 	public LoanValidationResponse execute2(LoanValidationRequest request) {
 		try {
-			
 			IlrSessionResponse sessionResponse = execute(request.borrower, request.loanRequest);
-			Thread.sleep(2000);
+			// Hack to have something working
+		    //	Thread.sleep(2000);
 			//long t3 = System.currentTimeMillis();
 			LoanValidationResponse miniLoanResponse = new LoanValidationResponse(sessionResponse);
 			return miniLoanResponse;

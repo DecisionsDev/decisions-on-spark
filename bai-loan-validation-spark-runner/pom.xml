@@ -51,13 +51,19 @@
         </dependency>
 
         <!-- IBM BAI -->
-
         <dependency>
             <groupId>com.ilog.rules.executionserver</groupId>
             <artifactId>bai-events-java-sdk</artifactId>
             <version>${odm.version}</version>
             <scope>system</scope>
-            <systemPath>${odm.install}/executionserver/lib/bai-events-java-sdk-1.0.9.jar</systemPath>
+            <systemPath>${odm.install}/executionserver/lib/bai-events-java-sdk-1.0.11.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ilog.rules.executionserver</groupId>
+            <artifactId>bai-odm-events-java-sdk</artifactId>
+            <version>${odm.version}</version>
+            <scope>system</scope>
+            <systemPath>${odm.install}/executionserver/lib/bai-odm-events-java-sdk-1.1.8.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.ilog.rules.executionserver</groupId>
