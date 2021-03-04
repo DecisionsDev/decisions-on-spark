@@ -30,6 +30,15 @@ Open an terminal where your have cloned this repository.
 ```console
 cd decisions-on-spark/bai-loan-validation-spark-runner
 ```
+
+## Tune the BAI emission for a decision service
+You can change the BAI emission for input, output and trace dimensions.
+For input & output parameters you change the descriptor for the ruleset in the ruleapp archive as floows:
+```console
+cp META-INF/archive-bai-in-out.xml META-INF/archive.xml
+jar uf ../ruleapps/loanvalidation.jar META-INF/archive.xml 
+```
+
 ## Build
 ```console
 mvn clean install -Dodm.install=<INSTALLDIR>
