@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleapp-archive xsi:noNamespaceSchemaLocation="http://schemas.ilog.com/JRules/1.2/RuleAppArchive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ruleapp>
+    <ruleapp-name>loanvalidation</ruleapp-name>
+    <ruleapp-version>1.0</ruleapp-version>
+    <creation-date>1522037866239</creation-date>
+    <ruleapp-description></ruleapp-description>
+    <ruleset>
+      <ruleset-display-name>loan validation with score and grade</ruleset-display-name>
+      <ruleset-name>loan_validation_with_score_and_grade</ruleset-name>
+      <ruleset-version>1.0</ruleset-version>
+      <creation-date>1522037867274</creation-date>
+      <ruleset-description>Used for testing and simulation:
+-  input a loan request and a borrower
+- output the loan report, the grade, and the score.
+Rules from  projects : Check, Determination, Scoring
+with no extraction mechanism.
+      </ruleset-description>
+      <ruleset-property>
+        <ruleset-property-name>ruleset.engine</ruleset-property-name>
+        <ruleset-property-value>de</ruleset-property-value>
+      </ruleset-property>
+      <ruleset-property>
+        <ruleset-property-name>bai.emitter.enabled</ruleset-property-name>
+        <ruleset-property-value>true</ruleset-property-value>
+      </ruleset-property>
+      <ruleset-property>
+        <ruleset-property-name>bai.emitter.input</ruleset-property-name>
+        <ruleset-property-value>true</ruleset-property-value>
+      </ruleset-property>
+      <ruleset-property>
+        <ruleset-property-name>bai.emitter.trace</ruleset-property-name>
+        <ruleset-property-value>false</ruleset-property-value>
+      </ruleset-property>
+      
+    </ruleset>
+  </ruleapp>
+</ruleapp-archive>
