@@ -29,6 +29,10 @@ with no extraction mechanism.
         <ruleset-property-value>true</ruleset-property-value>
       </ruleset-property>
       <ruleset-property>
+        <ruleset-property-name>bai.emitter.output</ruleset-property-name>
+        <ruleset-property-value>false</ruleset-property-value>
+      </ruleset-property>
+      <ruleset-property>
         <ruleset-property-name>bai.emitter.trace</ruleset-property-name>
         <ruleset-property-value>false</ruleset-property-value>
       </ruleset-property>
