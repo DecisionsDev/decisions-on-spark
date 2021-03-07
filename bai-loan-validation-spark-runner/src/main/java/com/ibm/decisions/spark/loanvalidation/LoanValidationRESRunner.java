@@ -24,6 +24,7 @@ package com.ibm.decisions.spark.loanvalidation;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Properties;
 import ilog.rules.res.model.IlrPath;
 import ilog.rules.res.session.IlrJ2SESessionFactory;
 import ilog.rules.res.session.IlrSessionRequest;
@@ -36,6 +37,7 @@ import ilog.rules.res.session.config.IlrSessionFactoryConfig;
 import ilog.rules.res.session.config.IlrPersistenceType;
 import java.io.File;
 import java.io.PrintWriter;
+import java.io.InputStream;
 import loan.Borrower;
 import loan.LoanRequest;
 
@@ -49,7 +51,7 @@ public class LoanValidationRESRunner {
 		if (ruleSessionFactory == null) {
 			
 			IlrSessionFactoryConfig config = ruleSessionFactory.createDefaultConfig();
-			System.out.println("===== getFactory -> after default config creaation");
+			System.out.println("===== getFactory -> after default config creation");
 			
 			config.getXUConfig().getConnectionPoolConfig().setMaxSize(50);
 			PrintWriter writer = new PrintWriter(System.out);
@@ -58,13 +60,31 @@ public class LoanValidationRESRunner {
 			config.getXUConfig().getPersistenceConfig().getFilePersistenceConfig()
 					.setDirectory(new File("repo/"));
 			if(config.getClass().getClassLoader().getResourceAsStream("plugin-configuration.properties")!=null) {
+
 				if (config.getXUConfig().getPluginConfigs() != null) {
 
 					IlrPluginConfig baiIlrPluginConfig = config.getXUConfig().createPluginConfig("ODMEmitterForBAI");
 
+					//TEST - Overload of properties
+					/*
+					Properties emitterProps = new Properties();
+					try (InputStream inputStream = config.getClass().getClassLoader().getResourceAsStream("plugin-configuration.properties")) {
+
+        				emitterProps.load(inputStream);
+        				System.out.println("com.ibm.rules.bai.plugin.kafka.ssl.truststore.location " + emitterProps.getProperty("com.ibm.rules.bai.plugin.kafka.ssl.truststore.location", "default"));
+
+        				baiIlrPluginConfig.putProperties(java.util.Map<StringemitterProps);
+    					} catch (FileNotFoundException e) {
+        				e.printStackTrace(System.out);
+   						} catch (IOException e) {
+        				e.printStackTrace(System.out);
+    					}
+					*/
 					List<IlrPluginConfig> pluginsConfigList = new ArrayList<IlrPluginConfig>();
 					pluginsConfigList.add(baiIlrPluginConfig);
 					config.getXUConfig().setPluginConfigs(pluginsConfigList);
+					
+
 				}
 			} else {
 				System.err.println("Error: ODM BAI plugin-configuration.properties file not found");
@@ -119,8 +139,10 @@ public class LoanValidationRESRunner {
 	public LoanValidationResponse execute2(LoanValidationRequest request) {
 		try {
 			IlrSessionResponse sessionResponse = execute(request.borrower, request.loanRequest);
-			// Hack to have something working
-		    //	Thread.sleep(2000);
+
+			// Throttling
+		    Thread.sleep(2000);
+
 			//long t3 = System.currentTimeMillis();
 			LoanValidationResponse miniLoanResponse = new LoanValidationResponse(sessionResponse);
 			return miniLoanResponse;
@@ -146,7 +168,7 @@ public class LoanValidationRESRunner {
 			sessionRequest.getTraceFilter().setInfoRules(true);
 			sessionRequest.getTraceFilter().setInfoRulesNotFired(true);
 			sessionRequest.getTraceFilter().setInfoTasks(true);
-			sessionRequest.getTraceFilter().setInfoTotalTasksNotExecuted(true);
+			sessionRequest.getTraceFilter().setInfoTotalTasksNotExecuted(true); //TEST needs to be true for DecisionTrace
 			sessionRequest.getTraceFilter().setInfoExecutionEvents(true);
 
 			Map<String, Object> inputParameters = sessionRequest
@@ -159,7 +181,9 @@ public class LoanValidationRESRunner {
 					.createStatelessSession();
 
 			IlrSessionResponse response = session.execute(sessionRequest);
-			
+			if (response == null) {
+				throw new Exception("IBM ODM RuleSession returns a null response");
+			} 
 			return response;
 
 		} catch (Exception exception) {
