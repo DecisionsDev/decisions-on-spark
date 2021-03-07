@@ -1,7 +1,12 @@
 # A Business Automation Insights enabled loan processing on Apache Spark
-This folder contains the source code to execute the ODM loan validation sample in an Apache Spark cluster.
+This sample derives from the simple loan validation. It augments it by emitting decision events to Business Automation Insights capability.
+The motivation is to automate at scale your decisions in Spark while sending though Kafka all decision traces for an ootb monitoring based on ELK, Flink and Kibana.
+
+This folder contains the source code to execute the ODM loan validation sample in an Apache Spark cluster with BAI emission.
 
 ![Flow](../docs/images/decisions-in-spark-with-bai.packaging.png "Packaging")
+
+![Dashboard](../docs/images/bai-bpc-dashboard.png "Dashboard")
 
 This sample demonstrates the emission of decisions automated with IBM ODM, a capability of IBM Cloud Pak for Automation, into the BAI capability.
 IBM BUsiness Automation Insights is a business intellignece tool that captures automation events through Kafka, and delivers ootb a pipeline to monitor them in dashboards, and write them into a data lake.
