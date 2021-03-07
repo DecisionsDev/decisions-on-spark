@@ -47,7 +47,8 @@ public class LoanValidationResponse implements Serializable {
 		Map<String, Object> outParameters = response.getOutputParameters();
 		this.report = (Report) outParameters.get("report");
 		
-		decisionTrace = new DecisionTrace(response.getRulesetExecutionTrace());	
+		decisionTrace = new DecisionTrace(response.getRulesetExecutionTrace());	// TEST
+		//decisionTrace = new DecisionTrace();
 	}
 	
 	public Report getReport() {
