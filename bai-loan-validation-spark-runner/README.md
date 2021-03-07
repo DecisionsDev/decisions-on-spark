@@ -1,5 +1,8 @@
 # A Business Automation Insights enabled loan processing on Apache Spark
-This folder contains the source code to execute the ODM loan validation sample in an Apache Spark cluster.
+This sample derives from the simple loan validation. It augments it by emitting decision events to Business Automation Insights capability.
+The motivation is to automate at scale your decisions in Spark while sending though Kafka all decision traces for an ootb monitoring based on ELK, Flink and Kibana.
+
+This folder contains the source code to execute the ODM loan validation sample in an Apache Spark cluster with BAI emission.
 
 ![Flow](../docs/images/decisions-in-spark-with-bai.packaging.png "Packaging")
 
