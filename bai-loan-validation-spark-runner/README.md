@@ -1,6 +1,6 @@
 # A Business Automation Insights enabled loan processing on Apache Spark
-This sample derives from the simple loan validation. It augments it by emitting decision events to Business Automation Insights capability.
-The motivation is to automate at scale your decisions in Spark while sending though Kafka all decision traces for an ootb monitoring based on ELK, Flink and Kibana.
+This sample derives from the simple loan validation. It augments it by emitting decision events through the Business Automation Insights capability.
+The motivation is to automate at scale your decisions in Spark while sending through Kafka all decision traces for an ootb monitoring based on ELK, Flink and Kibana.
 
 This folder contains the source code to execute the ODM loan validation sample in an Apache Spark cluster with BAI emission.
 
@@ -19,11 +19,11 @@ To perfom so we extend the simple loan validation on Spark sample with the follo
 ## Pre requisites
 
 ### ODM & BAI libs
-You need an IBM ODM 8.10.5 installation with ifixes to build the application. Root of your ODM installation is referred as <INSTALLDIR> in the instructions below. Maven files will look for the ODM and BAI emission jars under <INSTALLDIR>/executionserver/lib directory.
+You need an IBM ODM 8.10.5 installation with IF003 ifix to build the application. Root of your ODM installation is referred as <INSTALLDIR> in the instructions below. Maven files will look for the ODM and BAI emission jars under <INSTALLDIR>/executionserver/lib directory.
   
 ### BAI Kafka
 Provision a BAI instance and retreive the Kafka information to feed the XU plugin.
-All BAI Kafka properties are captured in the file src/mainresources/plugin-configuration.properties
+All BAI Kafka properties will be captured in the file src/mainresources/plugin-configuration.properties
 ![BAI Kafka properties](src/main/resources/plugin-configuration.properties "BAI Kafka properties")
 
 ## Get the code
@@ -37,8 +37,8 @@ cd decisions-on-spark/bai-loan-validation-spark-runner
 ```
 
 ## Tune the BAI emission for a decision service
-You can change the BAI emission for input, output and trace dimensions.
-For input & output parameters you change the descriptor for the ruleset in the ruleapp archive as floows:
+You can modulate the BAI emission properties in the RuleApp archive to select what the input, output and trace information to be sent to Kafka.
+For input & output parameters only you change the descriptor for the ruleset in the ruleapp archive as follows:
 ```console
 cp META-INF/archive-bai-in-out.xml META-INF/archive.xml
 jar uf ../ruleapps/loanvalidation.jar META-INF/archive.xml 
