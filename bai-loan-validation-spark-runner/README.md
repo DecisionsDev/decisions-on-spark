@@ -6,8 +6,6 @@ This folder contains the source code to execute the ODM loan validation sample i
 
 ![Packaging](../docs/images/decisions-in-spark-with-bai.packaging.png "Packaging")
 
-![Dashboard](../docs/images/bai-bpc-dashboard.png "Dashboard")
-
 This sample demonstrates the emission of decisions automated with IBM ODM, a capability of IBM Cloud Pak for Automation, into the BAI capability.
 IBM BUsiness Automation Insights is a business intellignece tool that captures automation events through Kafka, and delivers ootb a pipeline to monitor them in dashboards, and write them into a data lake.
 
@@ -76,3 +74,8 @@ java -cp target/bailoanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.
 ## Run in a Spark cluster
 Rule based automation works in a cluster with the same integration pattern and code than in standalone.
 Please refer to the cluster section of ![simple runner](../simple-loan-validation-spark-runner/README.md "simple runner")
+
+## Visualize your automated decisions in a BAI dashboard
+Decision event emitted from the Spark application flow through a Kafka/Flink/ELK pipeline. Frim a BAI installation you see the decisions in Business Performance Center as captured below.
+
+![Dashboard](../docs/images/bai-bpc-dashboard.png "Dashboard")
