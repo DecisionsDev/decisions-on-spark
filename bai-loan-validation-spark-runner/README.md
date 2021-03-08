@@ -4,7 +4,7 @@ The motivation is to automate at scale your decisions in Spark while sending thr
 
 This folder contains the source code to execute the ODM loan validation sample in an Apache Spark cluster with BAI emission.
 
-![Flow](../docs/images/decisions-in-spark-with-bai.packaging.png "Packaging")
+![Packaging](../docs/images/decisions-in-spark-with-bai.packaging.png "Packaging")
 
 ![Dashboard](../docs/images/bai-bpc-dashboard.png "Dashboard")
 
@@ -75,24 +75,4 @@ java -cp target/bailoanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.
 
 ## Run in a Spark cluster
 Rule based automation works in a cluster with the same integration pattern and code than in standalone.
-Only differences of the application are about:
-- the access to the datasets, as the Spark driver and executors run on different machines and local file systems. In consequence data have to be stored in hdfs or other shared persistence.
-- the packaging, as Spark jars are not needed in the uber jar but already deployed in the cluster.
-
-The target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withodmrt.jar contains required classes to submit a Spark job.
-
-The LoanValidationSparkRunner application can read or generate in memory the requests, then applies the loan validation decision logic, and computes metrics and finally KPIs.
-
-When opening the stdout file you can check the loan approval traces and obtain the KPIs.
-
-```console
-...
-Loan approved=false with a yearly repayment=0.0 insurance required:false messages= [The borrower's age is not valid.,  The loan amount is under the maximum authorized] executed in thread Executor task launch worker for task 8
-Loan approved=true with a yearly repayment=1464.7636429039499 insurance required:true messages= [ The loan amount is under the maximum authorized, Low risk loan, Congratulations! Your loan has been approved] executed in thread Executor task launch worker for task 8
-
-Decision batch metrics
-Number of loan applications processed: 1000 in 2995 ms
-Number of decision per sec: 333.0
-Number of approved loan applications: 291 on a 1000 total
-Number of loans approved with a YearlyInterestRate > 5%: 291
-```
+Please refer to the cluster section of ![simple runner](../simple-loan-validation-spark-runner/README.md "simple runner")
