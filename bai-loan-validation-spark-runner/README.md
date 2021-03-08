@@ -75,6 +75,6 @@ Rule based automation works in a cluster with the same integration pattern and c
 Please refer to the cluster section of ![simple runner](../simple-loan-validation-spark-runner/README.md "simple runner")
 
 ## Visualize your automated decisions in a BAI dashboard
-The decision event emitted from the Spark application flow through a Kafka/Flink/ELK pipeline. From a BAI installation you see the decisions in Business Performance Center as captured below. In addition to the general Decisions dashboard you can make your own more tailored to you neeeds.
+The decision event emitted from the Spark application flow through a Kafka/Flink/ELK pipeline. From a BAI installation you see the decisions in Business Performance Center as captured below. In addition to the general Decisions dashboard you can make your own more tailored to vertical needs.
 
 ![Dashboard](../docs/images/bai-bpc-dashboard.png "Dashboard")
