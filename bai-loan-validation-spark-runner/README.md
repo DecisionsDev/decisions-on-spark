@@ -12,9 +12,9 @@ This sample demonstrates the emission of decisions automated with IBM ODM, a cap
 IBM BUsiness Automation Insights is a business intellignece tool that captures automation events through Kafka, and delivers ootb a pipeline to monitor them in dashboards, and write them into a data lake.
 
 To perfom so we extend the simple loan validation on Spark sample with the following modifications:
-1 - the ODM eXecution Unit registers a BAI plugin to activate the emission,
+   * the ODM eXecution Unit registers a BAI plugin to activate the emission,
     BAI Kafka information are now read from an additional properties file, used at the plugin registration time
-2 - the RuleApp archive is augmented with ruleset properties to ask for BAI emission for input, trace and output parameters.
+   * the RuleApp archive is augmented with ruleset properties to ask for BAI emission for input, trace and output parameters.
 
 ## Pre requisites
 
