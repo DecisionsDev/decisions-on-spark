@@ -34,7 +34,7 @@ cd decisions-on-spark/bai-loan-validation-spark-runner
 ```
 
 ## Tune the BAI emission for a decision service
-You can modulate the BAI emission properties in the RuleApp archive to select what the input, output and trace information to be sent to Kafka.
+You can modulate the BAI emission properties in the RuleApp archive to activate the selction of the input, output and trace information to be sent to Kafka.
 For input & output parameters only you change the descriptor for the ruleset in the ruleapp archive as follows:
 ```console
 cp META-INF/archive-bai-in-out.xml META-INF/archive.xml
