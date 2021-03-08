@@ -1,5 +1,5 @@
 # A Business Automation Insights enabled loan processing on Apache Spark
-This sample derives from the simple loan validation. It augments it by emitting decision events through the Business Automation Insights capability.
+This sample derives from the simple loan validation by adding an emission of decision events through the Business Automation Insights capability.
 The motivation is to automate at scale your decisions in Spark while sending through Kafka all decision traces for an ootb monitoring based on ELK, Flink and Kibana.
 
 This folder contains the source code to execute the ODM loan validation sample in an Apache Spark cluster with BAI emission.
@@ -7,11 +7,10 @@ This folder contains the source code to execute the ODM loan validation sample i
 ![Packaging](../docs/images/decisions-in-spark-with-bai.packaging.png "Packaging")
 
 This sample demonstrates the emission of decisions automated with IBM ODM, a capability of IBM Cloud Pak for Automation, into the BAI capability.
-IBM BUsiness Automation Insights is a business intellignece tool that captures automation events through Kafka, and delivers ootb a pipeline to monitor them in dashboards, and write them into a data lake.
+IBM Business Automation Insights is a business intellignece tool that captures automation events through Kafka, and delivers ootb a pipeline to monitor them in dashboards. You can write them into a data lake.
 
 To perfom so we extend the simple loan validation on Spark sample with the following modifications:
-   * the ODM eXecution Unit registers a BAI plugin to activate the emission,
-    BAI Kafka information are now read from an additional properties file, used at the plugin registration time
+   * the ODM eXecution Unit registers a BAI eXecution Unit plugin to activate the emission. The sample code reads the BAI Kafka information from an additional properties file, used at the plugin registration time, to pass it to the Kafka client integrated in the rule execution.
    * the RuleApp archive is augmented with ruleset properties to ask for BAI emission for input, trace and output parameters.
 
 ## Pre requisites
