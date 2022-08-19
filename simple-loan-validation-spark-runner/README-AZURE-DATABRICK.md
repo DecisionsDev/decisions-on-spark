@@ -94,3 +94,5 @@ Number of decision per sec: 133.0
 Number of approved loan applications: 45 on a 1000 total
 Number of loans approved with a YearlyInterestRate > 5%: 45
 ```
+Download your result file
+https://adb-xxx.azuredatabricks.net/files/ODM/loanvalidation-decisions-10K.json?o=yourId
