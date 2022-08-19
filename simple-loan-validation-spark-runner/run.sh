@@ -1,0 +1,1 @@
+java -cp target/simpleloanvalidationsparkrunner-1.0-SNAPSHOT-withspark.jar com.ibm.decisions.spark.loanvalidation.LoanValidationSparkRunner --inputgen 2 --output ../data/loanvalidation/1K/loanvalidation-decisions-1K.csv --master local[8]

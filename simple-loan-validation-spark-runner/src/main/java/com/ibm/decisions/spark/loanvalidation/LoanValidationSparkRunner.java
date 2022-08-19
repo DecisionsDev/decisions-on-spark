@@ -58,10 +58,10 @@ public class LoanValidationSparkRunner {
 				+ "                                 can be a local or hdfs file\r\n" + "\r\n" + " options:\r\n"
 				+ "     --version                   Print out the version\r\n"
 				+ "     --master                    Set the master \r\n"
+				+ "									local[8] for standalone \r\n"
 				+ "                                 specify no master option for a submit \r\n"
 				+ "     --rulecoverage              Produce the rule coverage\r\n"
-				+ "     --trace                     local[8] for standalone NYI\r\n"
-				+ "                                 input-file is not used in this generation mode\r\n";
+				+ "     --trace                     Activate the trace\r\n";
 
 
 		// No args
@@ -75,6 +75,9 @@ public class LoanValidationSparkRunner {
 			System.out.println(applicationName + " version: " + version);
 			System.exit(0);
 		}
+
+		//Trace
+		System.out.println("Executing with parameters: " + String.join(" ",args));
 
 		HashMap<String, String> argMap = new HashMap<String, String>();
 		int nbArg = args.length;
