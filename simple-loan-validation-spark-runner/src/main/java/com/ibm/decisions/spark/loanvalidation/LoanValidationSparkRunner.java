@@ -61,6 +61,7 @@ public class LoanValidationSparkRunner {
 				+ "									local[8] for standalone \r\n"
 				+ "                                 specify no master option for a submit \r\n"
 				+ "     --rulecoverage              Produce the rule coverage\r\n"
+				+ "     --coalesce               	number of parquet files to be written\r\n"
 				+ "     --trace                     Activate the trace\r\n";
 
 
@@ -111,6 +112,12 @@ public class LoanValidationSparkRunner {
 		if (inputGeneration)  {
 			inputGenerationNumber = Long.parseLong(argMap.get("--inputgen"));
 		}
+
+		boolean coalescePresence = argMap.get("--coalesce") != null;
+		int coalesceNumber = 0;
+		if (coalescePresence)  {
+			coalesceNumber = Integer.parseInt(argMap.get("--coalesce"));
+		}
 		
 		boolean ruleCoverage = argMap.get("--rulecoverage") != null;
 		
@@ -141,11 +148,11 @@ public class LoanValidationSparkRunner {
 		// "data/loanvalidation/1K/loanvalidation-decisions-1K.csv";
 		String decisionFileName = outputFile;
 
-		automateDecisions(sc, requestFileName, decisionFileName, inputGeneration, inputGenerationNumber, ruleCoverage);
+		automateDecisions(sc, requestFileName, decisionFileName, inputGeneration, inputGenerationNumber, ruleCoverage, coalesceNumber);
 	}
 
 	@SuppressWarnings("unused")
-	public static void automateDecisions(JavaSparkContext sc, String requestFileName, String decisionFileName, boolean datasetGeneration, long inputGenerationNumber, boolean ruleCoverage) {
+	public static void automateDecisions(JavaSparkContext sc, String requestFileName, String decisionFileName, boolean datasetGeneration, long inputGenerationNumber, boolean ruleCoverage, int coalesceNumber) {
 
 		Function<LoanValidationRequest, LoanValidationDecision> executeDecisionService = new Function<LoanValidationRequest, LoanValidationDecision>() {
 			private static final long serialVersionUID = 1L;
@@ -282,7 +289,11 @@ public class LoanValidationSparkRunner {
 		}
 
 		Util.DeleteFileDirectory(decisionFileName);
-		serializedAnswers.coalesce(1).saveAsTextFile(decisionFileName);
+		//Coalesce decisions fpr parquet file writing
+		if (coalesceNumber > 0) {
+			serializedAnswers = serializedAnswers.coalesce(coalesceNumber);
+		}
+		serializedAnswers.saveAsTextFile(decisionFileName);
 
 		// Display Metrics
 		System.out.println("");
