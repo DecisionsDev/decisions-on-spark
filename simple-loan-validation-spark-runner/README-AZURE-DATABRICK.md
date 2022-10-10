@@ -18,13 +18,8 @@ When choosing the free plan your instance makes available an AE 1.2 Spark and Hi
 * Hive 3.1.0
 * Jupyter Enterprise Gateway 0.8.0
 
-The environment shows 4 nodes including 1 for management, 2 workers and 1 for data.
+The environment is composed of 4 nodes including 1 for management, 2 workers and 1 for data.
 Each worker brings an Java/Scala executor running on 1 core.
-
-
-```console
-...
-```
 
 #### Copy the ODM uber jar and a loan application request dataset on the Hadoop local file system
 In anoter terminal of your work station you upload the uber jar from your workstation to the hadoop machine with an scp command.
