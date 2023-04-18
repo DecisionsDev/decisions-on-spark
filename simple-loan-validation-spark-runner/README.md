@@ -91,4 +91,4 @@ Number of loans approved with a YearlyInterestRate > 5%: 291
 
 ### Running Business Rules in Azure Databricks
 
-- [Running in Microsoft Azure Databricks](./README-AZURE-DATABRICK.md): Shows how to automatically approve or reject loan applications by applying a business rules reasoning in a Spark map reduce approach.
+- [Running in Microsoft Azure Databricks](./README-AZURE-DATABRICKS.md): Shows how to automatically approve or reject loan applications by applying a business rules reasoning in a Spark map reduce approach.
