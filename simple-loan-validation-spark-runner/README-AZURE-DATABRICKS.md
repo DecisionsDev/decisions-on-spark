@@ -1,7 +1,7 @@
 
 ## Automate decisions in Azure Databrick
 
-![decision automation in IAE/HDP](../docs/images/decisions-on-azure-databrick.png "Rules in Azure Databrick ")
+![decision automation in IAE/HDP](../docs/images/decisions-on-iae-hdp.png "Rules in Azure Databrick ")
 
 ### Setup a Databrick instance in Azure
 
